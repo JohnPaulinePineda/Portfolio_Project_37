@@ -30,19 +30,17 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 | Specific objectives are given as follows:
 |
-| **[A]** Objective 1
+| **[A]** Obtain an optimal subset of observations and descriptors by conducting data quality assessment and applying preprocessing operations most suitable for the downstream analysis
 |
-| **[B]** Objective 2
+| **[B]** Develop exploratory factor analysis models using various extraction methods to estimate and identify potential underlying structures from observed descriptors and different rotation approaches in simplifying the derived factor structures to achieve a more interpretable pattern of factor loadings
 |
-| **[C]** Objective 3
+| **[C]** Select the final exploratory factor analysis model among candidates based on robust performance estimates
 |
-| **[D]** Objective 4
-|
-| **[E]** Objective 5
+| **[D]** Verify the relationship obtained from the final exploratory analysis model between the observed descriptors and their underlying latent constructs using confirmatory factor analysis.
 |
 ###  1.1.2 Outcome
 |
-| The analysis endpoint for the study is described below:
+| There is no explicit endpoint for the study given the unsupervised learning nature of the analysis.
 |
 | **[A]** Details
 |
@@ -50,7 +48,34 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 | Detailed descriptions for each individual descriptor used in the study are provided as follows:
 |
-| **[A]** <span style="color: #FF0000">VARIABLE</span> (character): **Variable**; Variable Details.
+| **[A]** **Chronic Disease Topic Area : Alcohol**
+|      **[A.1]** <span style="color: #FF0000">VARIABLE</span> (character): **Variable**; Variable Details.
+|
+| **[B]** **Chronic Disease Topic Area : Arthritis**
+|
+| **[C]** **Chronic Disease Topic Area : Asthma**
+|
+| **[D]** **Chronic Disease Topic Area : Cancer**
+|
+| **[E]** **Chronic Disease Topic Area : Chronic Kidney Disease**
+|
+| **[F]** **Chronic Disease Topic Area : Chronic Obstructive Pulmonary Disease**
+|
+| **[G]** **Chronic Disease Topic Area : Cardiovascular Disease**
+|
+| **[H]** **Chronic Disease Topic Area : Diabetes**
+|
+| **[I]** **Chronic Disease Topic Area : Immunization**
+|
+| **[J]** **Chronic Disease Topic Area : Mental Health**
+|
+| **[K]** **Chronic Disease Topic Area : Nutrition, Physical Activity, and Weight Status**
+|
+| **[L]** **Chronic Disease Topic Area : Oral Health**
+|
+| **[M]** **Chronic Disease Topic Area : Overarching Conditions**
+|
+| **[N]** **Chronic Disease Topic Area : Tobacco**
 |
 ##  1.2 Methodology
 |
