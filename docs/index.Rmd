@@ -1,0 +1,369 @@
+---
+title: 'Unsupervised Learning : Uncovering Underlying Constructs of Chronic Disease Indicators Across US States Using Exploratory and Confirmatory Factor Analyses'
+author: "John Pauline Pineda"
+date: "September 30, 2023"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 4
+    theme: readable
+    highlight: tango
+    css: doc.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
+```
+# **1. Table of Contents**
+|
+##  1.1 Introduction
+|
+| Topic description.
+|
+| Dataset description. 
+|
+| Subsequent analysis and modelling steps involving data understanding, data preparation, data exploration, model development, model validation and model presentation were individually detailed below, with all the results consolidated in a [<span style="color: #FF0000">**Summary**</span>](#summary) provided at the end of the document.
+|
+###  1.1.1 Study Objectives
+|
+| **The main objective of the study is to explore and verify the possible underlying factor structures and relationships among a set of observed US chronic disease indicators by identifying latent factors that explain the observed correlations and reducing the complexity of the data by grouping related variables together under these latent factors.**
+|
+| Specific objectives are given as follows:
+|
+| **[A]** Objective 1
+|
+| **[B]** Objective 2
+|
+| **[C]** Objective 3
+|
+| **[D]** Objective 4
+|
+| **[E]** Objective 5
+|
+###  1.1.2 Outcome
+|
+| The analysis endpoint for the study is described below:
+|
+| **[A]** Details
+|
+###  1.1.3 Predictors
+|
+| Detailed descriptions for each individual descriptor used in the study are provided as follows:
+|
+| **[A]** <span style="color: #FF0000">VARIABLE</span> (character): **Variable**; Variable Details.
+|
+##  1.2 Methodology
+|
+###  1.2.1 Data Assessment
+|
+| Preliminary data used in the study was evaluated and prepared for analysis and modelling using the following methods: 
+|
+| [Covariance Validity](https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543) evaluates whether the ratio of associated variables in the data set are sufficient enough to support the assumption that correlations exist. The criterion is computed by determining the proportion of correlation coefficients with values of at least 30% between all pairs of variables in the data set. A value closer to 1 suggests an adequate percentage of pairwise-correlated variables.
+|
+| [Determinant Computation](https://www.taylorfrancis.com/books/mono/10.4324/9781003120001/step-step-guide-exploratory-factor-analysis-rstudio-marley-watkins) reflects the extent of multicollinearity among the variables in a correlation matrix. An extremely small determinant value indicates that the variables are highly correlated and nearly linearly dependent which can lead to unstable results and difficulty in interpreting their individual contributions.
+|
+| [Bartlett’s Test of Sphericity](https://www.semanticscholar.org/paper/THE-EFFECT-OF-STANDARDIZATION-ON-A-%CF%872-APPROXIMATION-Bartlett/95d549d2c055360b34cc7d1fce739179c29e39bb) evaluates whether the correlations between variables in a data set are significant enough to support the assumption that underlying factors exist and can be extracted. The test calculates a Chi-Square statistic based on the differences between the observed correlation matrix and an identity matrix. The larger the Chi-Square value, there is more evidence against the null hypothesis stating that the correlation matrix is an identity matrix which indicates that the variables are uncorrelated and do not have any underlying structure.
+|
+| [Kaiser-Meyer-Olkin Factor Adequacy](https://link.springer.com/article/10.1007/BF02291817) evaluates whether the observed variables are suitable for exploratory factor analysis based on their common variance and the potential for extracting meaningful factors. The criterion is computed by examining the ratio of the sum of squared correlations between variables to the sum of squared partial correlations. A KMO value closer to 1 suggests that the variables have high shared variance and are suitable to proceed with the analysis.
+|
+###  1.2.2 Model Formulation
+|
+##  1.3 Results
+|
+###  1.3.1 Data Preparation
+|
+| 
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.1, warning=FALSE, message=FALSE}
+
+
+```
+
+</details>
+
+###  1.3.2 Data Quality Assessment
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.2, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+###  1.3.3 Data Preprocessing
+|
+|
+####  1.3.3.1 Outlier Detection
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.3.0, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+|
+|
+####  1.3.3.2 Zero and Near-Zero Variance
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.3.2, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+|
+|
+####  1.3.3.3 Collinearity
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.3.3, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+|
+|
+####  1.3.3.4 Linear Dependencies
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.3.4, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+|
+|
+####  1.3.3.5 Shape Transformation
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.3.5, warning=FALSE, message=FALSE, fig.width=15, fig.height=2}
+
+```
+
+</details>
+
+|
+|
+####  1.3.3.6 Pre-Processed Dataset
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.3.6, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+###  1.3.4 Data Exploration
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.4, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+|
+|
+####  1.3.5.6 Pre-Modelling Dataset
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.5.6, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+###  1.3.6 Model Development and Performance Estimation
+|
+|
+####  1.3.6.1 Method
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.6.1, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+|
+|
+
+###  1.3.7 Model Performance Validation
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.7, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+###  1.3.8 Model Selection
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.8, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+###  1.3.9 Model Presentation
+|
+|
+####  1.3.9.1 Dataset Level Exploration : Variable Importance (DLE_VARIMP)
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.9.1, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+
+|
+|
+
+```{r section_1.3.9.3, warning=FALSE, message=FALSE}
+
+```
+
+</details>
+|
+|
+
+</details>
+|
+|
+# **2. Summary** <a name="summary"></a>
+|
+| **Details.**
+|
+| **[A]** Details
+|
+|
+# **3. References**
+|
+| **[Book]** [Using Multivariate Analysis](https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543) by Barbara Tabachnick and Linda Fidell
+| **[Book]** [A Step-by-Step Guide to Exploratory Factor Analysis with R and RStudio](https://www.taylorfrancis.com/books/mono/10.4324/9781003120001/step-step-guide-exploratory-factor-analysis-rstudio-marley-watkins) by Marley Watkins
+| **[Book]** [Just Enough R](https://benwhalley.github.io/just-enough-r/) by Ben Whalley
+| **[Book]** [Multiple Factor Analysis by Example Using R](https://www.oreilly.com/library/view/multiple-factor-analysis/9781498786690/) by Jerome Pages
+| **[Book]** [Nonlinear Principal Component Analysis and Its Applications](https://link.springer.com/book/10.1007/978-981-10-0159-8#toc) by Yuichi Mori, Masahiro Kuroda and Naomichi Makino
+| **[Book]** [Applied Predictive Modeling](http://appliedpredictivemodeling.com/) by Max Kuhn and Kjell Johnson
+| **[Book]** [An Introduction to Statistical Learning](https://www.statlearning.com/) by Gareth James, Daniela Witten, Trevor Hastie and Rob Tibshirani
+| **[Book]** [Multivariate Data Visualization with R](http://lmdvr.r-forge.r-project.org/figures/figures.html) by Deepayan Sarkar
+| **[Book]** [Machine Learning](https://bookdown.org/ssjackson300/Machine-Learning-Lecture-Notes/) by Samuel Jackson
+| **[Book]** [Data Modeling Methods](https://bookdown.org/larget_jacob/data-modeling-methods/) by Jacob Larget
+| **[Book]** [Introduction to R and Statistics](https://saestatsteaching.tech/) by University of Western Australia
+| **[Book]** [Feature Engineering and Selection: A Practical Approach for Predictive Models](http://www.feat.engineering/index.html) by Max Kuhn and Kjell Johnson
+| **[Book]** [Introduction to Research Methods](https://bookdown.org/ejvanholm/Textbook/) by Eric van Holm
+| **[R Package]** [AppliedPredictiveModeling](https://cran.r-project.org/web//packages/AppliedPredictiveModeling/AppliedPredictiveModeling.pdf) by Max Kuhn
+| **[R Package]** [caret](https://topepo.github.io/caret/index.html) by Max Kuhn
+| **[R Package]** [rpart](https://mran.microsoft.com/web/packages/rpart/rpart.pdf) by Terry Therneau and Beth Atkinson
+| **[R Package]** [lattice](https://cran.r-project.org/web/packages/lattice/lattice.pdf) by  Deepayan Sarkar
+| **[R Package]** [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html/) by Hadley Wickham
+| **[R Package]** [tidyr](https://cran.r-project.org/web/packages/tidyr/tidyr.pdf) by Hadley Wickham
+| **[R Package]** [moments](https://cran.r-project.org/web/packages/moments/index.html) by Lukasz Komsta and Frederick
+| **[R Package]** [skimr](https://cran.r-project.org/web/packages/skimr/skimr.pdf) by  Elin Waring
+| **[R Package]** [RANN](https://cran.r-project.org/web/packages/RANN/RANN.pdf) by  Sunil Arya, David Mount, Samuel Kemp and Gregory Jefferis
+| **[R Package]** [corrplot](https://cran.r-project.org/web/packages/corrplot/corrplot.pdf) by Taiyun Wei
+| **[R Package]** [tidyverse](https://cran.r-project.org/web/packages/tidyverse/tidyverse.pdf) by Hadley Wickham
+| **[R Package]** [lares](https://cran.rstudio.com/web/packages/lares/lares.pdf) by Bernardo Lares
+| **[R Package]** [DMwR](https://mran.microsoft.com/snapshot/2016-05-02/web/packages/DMwR/DMwR.pdf) by Luis Torgo
+| **[R Package]** [gridExtra](https://cran.r-project.org/web/packages/gridExtra/gridExtra.pdf) by Baptiste Auguie and Anton Antonov
+| **[R Package]** [rattle](https://cran.r-project.org/web/packages/rattle/rattle.pdf) by Graham Williams
+| **[R Package]** [RColorBrewer](https://cran.r-project.org/web//packages/RColorBrewer/RColorBrewer.pdf) by Erich Neuwirth
+| **[R Package]** [stats](https://search.r-project.org/R/refmans/stats/html/00Index.html) by R Core Team
+| **[R Package]** [factoextra](https://cran.r-project.org/web/packages/factoextra/factoextra.pdf) by Alboukadel Kassambara and Fabian Mundt
+| **[R Package]** [FactoMineR](https://search.r-project.org/R/refmans/stats/html/00Index.html) by Francois Husson, Julie Josse, Sebastien Le and Jeremy Mazet
+| **[R Package]** [gplots](https://cran.r-project.org/web/packages/gplots/gplots.pdf) by Tal Galili
+| **[R Package]** [qgraph](https://cran.r-project.org/web/packages/qgraph/qgraph.pdf) by Sacha Epskamp
+| **[R Package]** [ggplot2](https://search.r-project.org/R/refmans/stats/html/00Index.html) by Hadley Wickham, Winston Chang, Lionel Henry and Thomas Lin Pedersen
+| **[R Package]** [psych](https://cran.r-project.org/web/packages/psych/psych.pdf) by William Revelle
+| **[R Package]** [nFactors](https://cran.r-project.org/web/packages/nFactors/nFactors.pdf) by Gilles Raiche and David Magis
+| **[R Package]** [MBESS](https://cran.r-project.org/web/packages/MBESS/MBESS.pdf) by Ken Kelley
+| **[R Package]** [DandEFA](https://cran.r-project.org/web/packages/DandEFA/DandEFA.pdf) by Artur Manukyan, Ahmet Sedef, Erhan Cene and Ibrahim Demir
+| **[R Package]** [EFAtools](https://cran.r-project.org/web/packages/EFAtools/EFAtools.pdf) by Markus Steiner and Silvia Grieder
+| **[R Package]** [parameters](https://cran.r-project.org/web/packages/parameters/parameters.pdf) by Daniel Ludecke
+| **[R Package]** [performance](https://cran.r-project.org/web/packages/performance/performance.pdf) by Daniel Ludecke
+| **[R Package]** [HH](https://cran.r-project.org/web/packages/HH/HH.pdf) by Richard Heiberger
+| **[Article]** [6 Dimensionality Reduction Techniques in R (with Examples)](https://cmdlinetips.com/2022/07/dimensionality-reduction-techniques-in-r/) by CMDLineTips Team
+| **[Article]** [6 Dimensionality Reduction Algorithms With Python](https://machinelearningmastery.com/dimensionality-reduction-algorithms-with-python/) by Jason Brownlee
+| **[Article]** [Introduction to Dimensionality Reduction for Machine Learning](https://machinelearningmastery.com/dimensionality-reduction-for-machine-learning/) by Jason Brownlee
+| **[Article]** [Introduction to Dimensionality Reduction](https://www.geeksforgeeks.org/dimensionality-reduction/) by Geeks For Geeks
+| **[Article]** [Factor Analysis with the psych package](https://m-clark.github.io/posts/2020-04-10-psych-explained/) by Michael Clark
+| **[Article]** [Factor Analysis in R with Psych Package: Measuring Consumer Involvement](https://www.r-bloggers.com/2019/01/factor-analysis-in-r-with-psych-package-measuring-consumer-involvement/) by Peter Prevos
+| **[Article]** [Factor Analysis in R](http://jinjian-mu.com/tutorial/2021-04-14-Factor%20Analysis/) by Jinjian Mu
+| **[Article]** [How To: Use the psych package for Factor Analysis and Data Reduction](http://personality-project.org/r/psych/HowTo/factor.pdf) by William Revelle
+| **[Article]** [A Practical Introduction to Factor Analysis: Exploratory Factor Analysis](https://stats.oarc.ucla.edu/spss/seminars/introduction-to-factor-analysis/a-practical-introduction-to-factor-analysis/) by UCLA Advanced Research Computing Team
+| **[Article]** [Examining the Big 5 Personality Dataset with Factor Analysis](https://taridwong.github.io/posts/2022-01-01-efacfa/) by Tarid Wongvorachan
+| **[Article]** [Principal Component Analysis versus Exploratory Factor Analysis](https://support.sas.com/resources/papers/proceedings/proceedings/sugi30/203-30.pdf) by Diana Suhr
+| **[Article]** [Exploratory Factor Analysis](https://www.publichealth.columbia.edu/research/population-health-methods/exploratory-factor-analysis) by Columbia University Irving Medical Center
+| **[Article]** [Factor Analysis Example](https://real-statistics.com/multivariate-statistics/factor-analysis/factor-analysis-example/) by Charles Zaiontz
+| **[Article]** [Factor Analysis Guide with an Example](https://statisticsbyjim.com/basics/factor-analysis/) by Jim Frost
+| **[Article]** [What Is Factor Analysis and How Does It Simplify Research Findings?](https://www.qualtrics.com/experience-management/research/factor-analysis/) by Qualtrics Team
+| **[Article]** [How Can I Perform A Factor Analysis With Categorical (Or Categorical And Continuous) Variables?](https://stats.oarc.ucla.edu/stata/faq/how-can-i-perform-a-factor-analysis-with-categorical-or-categorical-and-continuous-variables/) by UCLA Advanced Research Computing Team
+| **[Article]** [Factor Analysis on Ordinal Data Example in R (psych, homals)](https://alice86.github.io/2018/04/08/Factor-Analysis-on-Ordinal-Data-example-in-R-(psych,-homals)/) by Jiayu Wu
+| **[Article]** [Factor Analysis](https://handwiki.org/wiki/Factor%20analysis) by HandWiki Team
+| **[Article]** [On Likert Scales In R](https://jakec007.github.io/2021-06-23-R-likert/) by Jake Chanenson
+| **[Publication]** [General Intelligence Objectively Determined and Measured](https://psycnet.apa.org/record/1926-00296-001) by Charles Spearman (The American Journal of Psychology)
+| **[Publication]** [The Effect of Standardization on a Chi-Square Approximation in Factor Analysis](https://www.semanticscholar.org/paper/THE-EFFECT-OF-STANDARDIZATION-ON-A-%CF%872-APPROXIMATION-Bartlett/95d549d2c055360b34cc7d1fce739179c29e39bb) by Maurice Bartlett (Psychometrika)
+| **[Publication]** [A Second Generation Little Jiffy](https://link.springer.com/article/10.1007/BF02291817) by Henry Kaiser (Psychometrika)
+| **[Publication]** [Tests of Significance in Factor Analysis](https://www.semanticscholar.org/paper/TESTS-OF-SIGNIFICANCE-IN-FACTOR-ANALYSIS-Burt/25975f19d17ab2577845ec3d61f52806b28d8f28) by Maurice Bartlett (British Journal of Statistical Psychology)
+| **[Publication]** [Test of Linear Trend in Eigenvalues of a Covariance Matrix with Application to Data Analysis](https://psycnet.apa.org/record/1996-01978-006) by Peter Bentler and KeHai Yuan (British Journal of Mathematical and Statistical Psychology)
+| **[Publication]** [The Scree Test For The Number Of Factors](https://www.semanticscholar.org/paper/The-Scree-Test-For-The-Number-Of-Factors.-Cattell/379df72de684003963f11427c97490a8c2d2a593) by Raymond Cattell (Multivariate Behavioral Research)
+| **[Publication]** [Using Fit Statistic Differences to Determine the Optimal Number of Factors to Retain in an Exploratory Factor Analysis](https://journals.sagepub.com/doi/10.1177/0013164419865769) by William Finch (Educational and Psychological Measurement)
+| **[Publication]** [An Objective Counterpart to the Visual Scree Test for Factor Analysis: The Standard Error Scree](https://journals.sagepub.com/doi/10.1177/0013164496056003006) by Keith Zoski and Stephen Jurs (Educational and Psychological Measurement)
+| **[Publication]** [The Performance of Regression-Based Variations of the Visual Scree for Determining the Number of Common Factors](https://journals.sagepub.com/doi/10.1177/00164402062003001) by Fadia Nasser, Jeri Benson and Joseph Wisenbaker (Educational and Psychological Measurement)
+| **[Publication]** [Investigating the Performance of Exploratory Graph Analysis and Traditional Techniques to Identify the Number of Latent Factors: A Simulation and Tutorial](https://www.semanticscholar.org/paper/Investigating-the-performance-of-exploratory-graph-Golino-Shi/470c4e8aeebd08699fe9092463540a1b24b7e2e8) by Hudson Golino, Dingjing Shi, Alexander Christensen, Luis Garrido, Maria Nieto, Ritu Sadana, Jotheeswaran Thiyagarajan, Agustin Martinez-Molina (Psychological Methods)
+| **[Publication]** [Exploratory Graph Analysis: A New Approach for Estimating the Number of Dimensions in Psychological Research](https://www.semanticscholar.org/paper/Exploratory-graph-analysis%3A-A-new-approach-for-the-Golino-Epskamp/f44110bff4345eb228b27de8a0b8aec235edd478) by Hudson Galino and Sacha Epskamp (Plos One)
+| **[Publication]** [Very Simple Structure: An Alternative Procedure For Estimating The Optimal Number Of Interpretable Factors](https://www.tandfonline.com/doi/abs/10.1207/s15327906mbr1404_2) by William Revelle and Thomas Rocklin (Multivariate Behavioral Research )
+| **[Publication]** [Determining the Number of Components from the Matrix of Partial Correlations](https://psycnet.apa.org/record/1977-07293-001) by Wayne Velicer (Psychometrika)
+| **[Publication]** [Dandelion Plot: A Method for the Visualization of R-mode Exploratory Factor Analyses](https://link.springer.com/article/10.1007/s00180-014-0518-x) by Artur Manukyan, Erhan Cene, Ahmet Sedef and Ibrahim Demir (Computational Statistics) 
+| **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
+|
+|
+|
+|
