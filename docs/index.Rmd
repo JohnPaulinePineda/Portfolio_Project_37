@@ -18,9 +18,9 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 ##  1.1 Introduction
 |
-| Topic description.
+| Chronic disease indicators (CDI) are a set of surveillance indicators developed by consensus among the [Center for Disease Controls and Prevention (CDC)](https://www.cdc.gov/), [Council of State and Territorial Epidemiologists (CSTE)](https://www.cste.org/), and [National Association of Chronic Disease Directors (NACDD)](https://chronicdisease.org/). [CDI enables public health professionals and policymakers to retrieve uniformly defined state-level data for chronic diseases and risk factors](https://www.cdc.gov/cdi/overview.html) that have a substantial impact on public health. These indicators are essential for surveillance, prioritization, and evaluation of public health interventions.
 |
-| Dataset description. 
+| Using an open dataset from [Data.World](https://data.world/) as primarily sourced from [CDC](https://www.cdc.gov/cdi/index.html), this study hypothesized that latent patterns are present among sufficiently correlated [indicators](https://datatopics.worldbank.org/world-development-indicators/) encompassing multiple chronic disease topic areas in the US. A number of factor analysis models was formulated to explore and verify the relationship between these factors.
 |
 | Subsequent analysis and modelling steps involving data understanding, data preparation, data exploration, model development, model validation and model presentation were individually detailed below, with all the results consolidated in a [<span style="color: #FF0000">**Summary**</span>](#summary) provided at the end of the document.
 |
