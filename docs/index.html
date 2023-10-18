@@ -11,7 +11,7 @@
 
 <meta name="author" content="John Pauline Pineda" />
 
-<meta name="date" content="2023-09-30" />
+<meta name="date" content="2023-11-05" />
 
 <title>Unsupervised Learning : Uncovering Underlying Constructs of Chronic Disease Indicators Across US States Using Exploratory and Confirmatory Factor Analyses</title>
 
@@ -351,7 +351,7 @@ pre code {
 Underlying Constructs of Chronic Disease Indicators Across US States
 Using Exploratory and Confirmatory Factor Analyses</h1>
 <h4 class="author">John Pauline Pineda</h4>
-<h4 class="date">September 30, 2023</h4>
+<h4 class="date">November 5, 2023</h4>
 
 </div>
 
@@ -488,8 +488,6 @@ underlying latent constructs using confirmatory factor analysis.<br />
 <div class="line-block"><br />
 There is no explicit endpoint for the study given the unsupervised
 learning nature of the analysis.<br />
-<br />
-<strong>[A]</strong> Details<br />
 </div>
 </div>
 <div id="predictors" class="section level3">
@@ -682,7 +680,59 @@ and are suitable to proceed with the analysis.<br />
 </div>
 <div id="model-formulation" class="section level3">
 <h3>1.2.2 Model Formulation</h3>
-<div class="line-block"></div>
+<div class="line-block"><br />
+<a href="https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543">Principal
+Axes Factor Extraction</a> identifies the underlying constructs that
+explain the observed correlations among variables by capturing both
+common variance (shared among variables) and unique variance (specific
+to each variable). This process potentially results to factors with
+lower communalities (explained variance) but with more direct
+interpretability. The algorithm performs eigenvalue decomposition on the
+correlation matrix. The eigenvalues represent the amount of variance
+explained by each eigenvector. Given a defined number of factors,
+loadings are calculated for each observed variable on each extracted
+factor. Factor loadings indicate the strength and direction of the
+relationship between variables and factors. Factors are interpreted
+based on the loading patterns. Variables with high loadings on a factor
+are strongly associated with the factor.<br />
+<br />
+<a href="https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543">Maximum
+Likelihood Factor Extraction</a> aims to estimate the factor loadings in
+a way that maximizes the likelihood of observing the given data,
+assuming a specific factor model. Given the correlation matrix, the
+algorithm formulates a likelihood function that represents the
+probability of observing the given data under an assumed factor model
+representing the relationships between the latent factors and observed
+variables. The likelihood function quantifies how well the model
+explains the observed data. Optimization techniques are applied to
+determine the factor loadings that maximize the likelihood function. The
+process involves iteratively adjusting the factor loadings to improve
+the fit between the model and the data. Factor loadings indicate the
+strength and direction of the relationship between variables and
+factors. Factors are interpreted based on the loading patterns.
+Variables with high loadings on a factor are strongly associated with
+the factor.<br />
+<br />
+<a href="https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543">Varimax
+Rotation</a> is an orthogonal rotation method which forces the rotated
+factors to be uncorrelated with each other, leading to simpler and more
+easily interpretable factor solutions. The algorithm aims to maximize
+the variance of the squared loadings within each factor which helps
+identify variables that are strongly associated with a single factor.
+The results are straightforward to interpret and can be particularly
+useful when the factors are expected to be independent.<br />
+<br />
+<a href="https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543">Promax
+Rotation</a> is an oblique rotation method which allows for more
+flexibility by accommodating the possibility of correlated factors. The
+algorithm aims to simplify the factor structure by both maximizing the
+variance of the squared loadings within each factor and allowing for
+correlated factors. It uses a more complex mathematical approach to find
+the optimal rotation that accounts for both variance and correlation.
+The results provide a more accurate representation of the underlying
+relationships when the factors are expected to be correlated.<br />
+<br />
+</div>
 </div>
 </div>
 <div id="results" class="section level2">
