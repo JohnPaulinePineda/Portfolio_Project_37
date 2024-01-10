@@ -47,62 +47,62 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 | Detailed descriptions for each individual descriptor used in the study are provided as follows:
 |
 | **[A]** **Chronic Disease Topic Area : Alcohol**
-|      **[A.1]** <span style="color: #FF0000">ALC2_2</span> (numeric): **Binge Drinking Prevalence**; Binge drinking prevalence among adults aged >= 18 years.
-|      **[A.2]** <span style="color: #FF0000">ALC6_0</span> (numeric): **Liver Disease Mortality**; Chronic liver disease mortality.
+|      **[A.1]** <span style="color: #FF0000">BDPREV</span> (numeric): **Binge Drinking Prevalence**; Binge drinking prevalence among adults aged >= 18 years.
+|      **[A.2]** <span style="color: #FF0000">LDMORT</span> (numeric): **Liver Disease Mortality**; Chronic liver disease mortality.
 |
 | **[B]** **Chronic Disease Topic Area : Arthritis**
-|      **[B.1]** <span style="color: #FF0000">ART1_1</span> (numeric): **Arthritis Incidence**; Arthritis among adults aged >= 18 years.
+|      **[B.1]** <span style="color: #FF0000">ARTINC</span> (numeric): **Arthritis Incidence**; Arthritis among adults aged >= 18 years.
 |
 | **[C]** **Chronic Disease Topic Area : Asthma**
-|      **[C.1]** <span style="color: #FF0000">AST1_1</span> (numeric): **Asthma Prevalence**; Current asthma prevalence among adults aged >= 18 years.
-|      **[C.2]** <span style="color: #FF0000">AST4_1</span> (numeric): **Asthma Mortality**; Asthma mortality rate.
+|      **[C.1]** <span style="color: #FF0000">ASPREV</span> (numeric): **Asthma Prevalence**; Current asthma prevalence among adults aged >= 18 years.
+|      **[C.2]** <span style="color: #FF0000">ASMORT</span> (numeric): **Asthma Mortality**; Asthma mortality rate.
 |
 | **[D]** **Chronic Disease Topic Area : Cancer**
-|      **[D.1]** <span style="color: #FF0000">CAN1_0</span> (numeric): **Mammography Use**; Mammography use among women aged 50-74 years.
-|      **[D.2]** <span style="color: #FF0000">CAN2_1</span> (numeric): **Papanicolaou Smear Use**; Papanicolaou smear use among adult women aged 21-65 years.
-|      **[D.3]** <span style="color: #FF0000">CAN3_0</span> (numeric): **Colon Cancer Test Use**; Fecal occult blood test, sigmoidoscopy, or colonoscopy among adults aged 50-75 years.
+|      **[D.1]** <span style="color: #FF0000">MAMUSE</span> (numeric): **Mammography Use**; Mammography use among women aged 50-74 years.
+|      **[D.2]** <span style="color: #FF0000">PSMUSE</span> (numeric): **Papanicolaou Smear Use**; Papanicolaou smear use among adult women aged 21-65 years.
+|      **[D.3]** <span style="color: #FF0000">CCTUSE</span> (numeric): **Colon Cancer Test Use**; Fecal occult blood test, sigmoidoscopy, or colonoscopy among adults aged 50-75 years.
 |
 | **[E]** **Chronic Disease Topic Area : Chronic Kidney Disease**
-|      **[E.1]** <span style="color: #FF0000">CKD1_0</span> (numeric): **Renal Disease Mortality**; Mortality with end-stage renal disease.
-|      **[E.2]** <span style="color: #FF0000">CKD3_0</span> (numeric): **Kidney Disease Prevalence**; Prevalence of chronic kidney disease among adults aged >= 18 years.
+|      **[E.1]** <span style="color: #FF0000">RDMORT</span> (numeric): **Renal Disease Mortality**; Mortality with end-stage renal disease.
+|      **[E.2]** <span style="color: #FF0000">KDPREV</span> (numeric): **Kidney Disease Prevalence**; Prevalence of chronic kidney disease among adults aged >= 18 years.
 |
 | **[F]** **Chronic Disease Topic Area : Chronic Obstructive Pulmonary Disease**
-|      **[F.1]** <span style="color: #FF0000">COPD1_1</span> (numeric): **Pulmonary Disease Mortality**; Mortality with chronic obstructive pulmonary disease as underlying cause among adults aged >=45 years.
-|      **[F.2]** <span style="color: #FF0000">COPD2_0</span> (numeric): **Pulmonary Disease Prevalence**; Prevalence of chronic obstructive pulmonary disease among adults >= 18.
-|      **[F.3]** <span style="color: #FF0000">COPD3_0</span> (numeric): **Smoking Prevalence**; Prevalence of current smoking among adults >= 18 with diagnosed chronic obstructive pulmonary disease.
+|      **[F.1]** <span style="color: #FF0000">PDMORT</span> (numeric): **Pulmonary Disease Mortality**; Mortality with chronic obstructive pulmonary disease as underlying cause among adults aged >=45 years.
+|      **[F.2]** <span style="color: #FF0000">PDPREV</span> (numeric): **Pulmonary Disease Prevalence**; Prevalence of chronic obstructive pulmonary disease among adults >= 18.
+|      **[F.3]** <span style="color: #FF0000">SMPREV</span> (numeric): **Smoking Prevalence**; Prevalence of current smoking among adults >= 18 with diagnosed chronic obstructive pulmonary disease.
 |
 | **[G]** **Chronic Disease Topic Area : Cardiovascular Disease**
-|      **[G.1]** <span style="color: #FF0000">CVD1_1</span> (numeric): **Cardiovascular Disease Mortality**; Mortality from total cardiovascular disease.
-|      **[G.2]** <span style="color: #FF0000">CVD1_2</span> (numeric): **Heart Disease Mortality**; Mortality from diseases of the heart.
-|      **[G.3]** <span style="color: #FF0000">CVD1_5</span> (numeric): **Cardiovascular Disease Mortality**; Mortality from cerebrovascular disease (stroke).
+|      **[G.1]** <span style="color: #FF0000">CDMORT</span> (numeric): **Cardiovascular Disease Mortality**; Mortality from total cardiovascular disease.
+|      **[G.2]** <span style="color: #FF0000">HDMORT</span> (numeric): **Heart Disease Mortality**; Mortality from diseases of the heart.
+|      **[G.3]** <span style="color: #FF0000">STMORT</span> (numeric): **Stroke Mortality**; Mortality from stroke.
 |
 | **[H]** **Chronic Disease Topic Area : Diabetes**
-|      **[H.1]** <span style="color: #FF0000">DIA1_1</span> (numeric): **Diabetes Mortality**; Mortality due to diabetes reported as any listed cause of death.
-|      **[H.2]** <span style="color: #FF0000">DIA2_1</span> (numeric): **Diabetes Prevalence**; Prevalence of diagnosed diabetes among adults aged >= 18 years.
+|      **[H.1]** <span style="color: #FF0000">DBMORT</span> (numeric): **Diabetes Mortality**; Mortality due to diabetes reported as any listed cause of death.
+|      **[H.2]** <span style="color: #FF0000">DBPREV</span> (numeric): **Diabetes Prevalence**; Prevalence of diagnosed diabetes among adults aged >= 18 years.
 |
 | **[I]** **Chronic Disease Topic Area : Immunization**
-|      **[I.1]** <span style="color: #FF0000">IMM1_0</span> (numeric): **Influenza Vaccination**; Influenza vaccination among noninstitutionalized adults aged >= 18 years.
+|      **[I.1]** <span style="color: #FF0000">INFVAC</span> (numeric): **Influenza Vaccination**; Influenza vaccination among noninstitutionalized adults aged >= 18 years.
 |
 | **[J]** **Chronic Disease Topic Area : Mental Health**
-|      **[I.1]** <span style="color: #FF0000">MTH1_0</span> (numeric): **Mentally Unhealthy Days**; Recent mentally unhealthy days among adults aged >= 18 years.
+|      **[I.1]** <span style="color: #FF0000">MEUNDA</span> (numeric): **Mentally Unhealthy Days**; Recent mentally unhealthy days among adults aged >= 18 years.
 |
 | **[K]** **Chronic Disease Topic Area : Nutrition, Physical Activity and Weight Status**
-|      **[K.1]** <span style="color: #FF0000">NPAW10_0</span> (numeric): **Physical Activity**; No leisure-time physical activity among adults aged >= 18 years.
-|      **[K.2]** <span style="color: #FF0000">NPAW2_1</span> (numeric): **Overweight Incidence**; Overweight or obesity among adults aged >= 18 years.
+|      **[K.1]** <span style="color: #FF0000">PHYACT</span> (numeric): **Physical Activity**; No leisure-time physical activity among adults aged >= 18 years.
+|      **[K.2]** <span style="color: #FF0000">OVWINC</span> (numeric): **Overweight Incidence**; Overweight or obesity among adults aged >= 18 years.
 |
 | **[L]** **Chronic Disease Topic Area : Oral Health**
-|      **[L.1]** <span style="color: #FF0000">ORH1_1</span> (numeric): **Dentist Visit**; Visits to dentist or dental clinic among adults aged >= 18 years.
-|      **[L.2]** <span style="color: #FF0000">ORH4_3</span> (numeric): **Tooth Loss**; No tooth loss among adults aged 18-64 years.
+|      **[L.1]** <span style="color: #FF0000">DENVIS</span> (numeric): **Dentist Visit**; Visits to dentist or dental clinic among adults aged >= 18 years.
+|      **[L.2]** <span style="color: #FF0000">TTHLOS</span> (numeric): **Tooth Loss**; No tooth loss among adults aged 18-64 years.
 |
 | **[M]** **Chronic Disease Topic Area : Overarching Conditions**
-|      **[M.1]** <span style="color: #FF0000">OVC1_1</span> (numeric): **Health Insurance**; Current lack of health insurance among adults aged 18-64 years.
-|      **[M.2]** <span style="color: #FF0000">OVC6_1</span> (numeric): **Health Status**; Fair or poor self-rated health status among adults aged >= 18 years.
-|      **[M.3]** <span style="color: #FF0000">OVC8_0</span> (numeric): **Sleep Status**; Prevalence of sufficient sleep among adults aged >= 18 years.
+|      **[M.1]** <span style="color: #FF0000">HLTINS</span> (numeric): **Health Insurance**; Current lack of health insurance among adults aged 18-64 years.
+|      **[M.2]** <span style="color: #FF0000">HLTSTA</span> (numeric): **Health Status**; Fair or poor self-rated health status among adults aged >= 18 years.
+|      **[M.3]** <span style="color: #FF0000">SLPSTA</span> (numeric): **Sleep Status**; Prevalence of sufficient sleep among adults aged >= 18 years.
 |
 | **[N]** **Chronic Disease Topic Area : Tobacco**
-|      **[N.1]** <span style="color: #FF0000">TOB1_2</span> (numeric): **Smoking Prevalence**; Current smoking among adults aged >= 18 years.
-|      **[N.2]** <span style="color: #FF0000">TOB11_1</span> (numeric): **Pneumococcal Vaccination**; Pneumococcal vaccination among noninstitutionalized adults aged 18-64 years who smoke.
-|      **[N.3]** <span style="color: #FF0000">TOB3_0</span> (numeric): **Quit Attempts**; Quit attempts in the past year among current smokers.
+|      **[N.1]** <span style="color: #FF0000">SMPREV</span> (numeric): **Smoking Prevalence**; Current smoking among adults aged >= 18 years.
+|      **[N.2]** <span style="color: #FF0000">PNEVAC</span> (numeric): **Pneumococcal Vaccination**; Pneumococcal vaccination among noninstitutionalized adults aged 18-64 years who smoke.
+|      **[N.3]** <span style="color: #FF0000">QUITAT</span> (numeric): **Quit Attempts**; Quit attempts in the past year among current smokers.
 |
 ##  1.2 Methodology
 |
@@ -132,6 +132,42 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 ##  1.3 Results
 |
 ###  1.3.1 Data Preparation
+|
+| **[A]** The initial tabular dataset was comprised of 50 observations and 31 variables (including 1 metadata and 30 descriptors). 
+|      **[A.1]** 50 rows (observations)
+|      **[A.2]** 31 columns (variables)
+|             **[A.2.1]** 1/31 instance labels = <span style="color: #FF0000">STATE</span> (character)
+|             **[A.2.2]** 30/31 predictors = 30/30 numeric
+|                      **[A.2.2.1]** <span style="color: #FF0000">BDPREV</span> (numeric)
+|                      **[A.2.2.2]** <span style="color: #FF0000">LDMORT</span> (numeric)
+|                      **[A.2.2.3]** <span style="color: #FF0000">ARTINC</span> (numeric)
+|                      **[A.2.2.4]** <span style="color: #FF0000">ASPREV</span> (numeric)
+|                      **[A.2.2.5]** <span style="color: #FF0000">ASMORT</span> (numeric)
+|                      **[A.2.2.6]** <span style="color: #FF0000">MAMUSE</span> (numeric)
+|                      **[A.2.2.7]** <span style="color: #FF0000">PSMUSE</span> (numeric)
+|                      **[A.2.2.8]** <span style="color: #FF0000">CCTUSE</span> (numeric)
+|                      **[A.2.2.9]** <span style="color: #FF0000">RDMORT</span> (numeric)
+|                      **[A.2.2.10]** <span style="color: #FF0000">KDPREV</span> (numeric)
+|                      **[A.2.2.11]** <span style="color: #FF0000">PDMORT</span> (numeric)
+|                      **[A.2.2.12]** <span style="color: #FF0000">PDPREV</span> (numeric)
+|                      **[A.2.2.13]** <span style="color: #FF0000">SMPREV</span> (numeric)
+|                      **[A.2.2.14]** <span style="color: #FF0000">CDMORT</span> (numeric)
+|                      **[A.2.2.15]** <span style="color: #FF0000">HDMORT</span> (numeric)
+|                      **[A.2.2.16]** <span style="color: #FF0000">STMORT</span> (numeric)
+|                      **[A.2.2.17]** <span style="color: #FF0000">DBMORT</span> (numeric)
+|                      **[A.2.2.18]** <span style="color: #FF0000">DBPREV</span> (numeric)
+|                      **[A.2.2.19]** <span style="color: #FF0000">INFVAC</span> (numeric)
+|                      **[A.2.2.20]** <span style="color: #FF0000">MEUNDA</span> (numeric)
+|                      **[A.2.2.21]** <span style="color: #FF0000">PHYACT</span> (numeric)
+|                      **[A.2.2.22]** <span style="color: #FF0000">OVWINC</span> (numeric)
+|                      **[A.2.2.23]** <span style="color: #FF0000">DENVIS</span> (numeric)
+|                      **[A.2.2.24]** <span style="color: #FF0000">TTHLOS</span> (numeric)
+|                      **[A.2.2.25]** <span style="color: #FF0000">HLTINS</span> (numeric)
+|                      **[A.2.2.26]** <span style="color: #FF0000">HLTSTA</span> (numeric)
+|                      **[A.2.2.27]** <span style="color: #FF0000">SLPSTA</span> (numeric)
+|                      **[A.2.2.28]** <span style="color: #FF0000">SMPREV</span> (numeric)
+|                      **[A.2.2.29]** <span style="color: #FF0000">PNEVAC</span> (numeric)
+|                      **[A.2.2.30]** <span style="color: #FF0000">QUITAT</span> (numeric)
 |
 | 
 
