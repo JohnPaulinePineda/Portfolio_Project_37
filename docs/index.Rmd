@@ -414,6 +414,12 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 | **[Article]** [Confirmatory Factor Analysis (CFA) Example in R](https://pj.freefaculty.org/guides/crmda_workshops/semexample/R/Ex-02-CFA/cfa-01.html) by Ben Kite
 | **[Article]** [Confirmatory Factor Analysis with R](https://shiny.rit.albany.edu/stat/cfa1test/cfabase.pdf) by Bruce Dudek
 | **[RPubs Project]** [EFA and CFA Intro](https://rpubs.com/isbell_daniel/efa_cfa_intro) by Dan Isbell
+| **[RPubs Project]** [Factor Analysis: CFA](https://rpubs.com/scblanco/944896) by Silvia Blanco
+| **[RPubs Project]** [Exploratory and Confirmatory Factor Analysis in R](https://rpubs.com/Symrna/EFA_CFA) by Ergul Demir
+| **[RPubs Project]** [Confirmatory Factor Analysis - CFA](https://rpubs.com/mikhilesh/643303) by Mikhilesh Dehane
+| **[RPubs Project]** [Exploratory and Confirmatory Factor Analysis on SF-36 Scales](https://rpubs.com/jbeckste/FA_demo) by Jason Beckstead
+| **[RPubs Project]** [Using R for Social Work Research: Exploratory Factor Analysis](https://rpubs.com/JBean/840128) by Jerry Bean
+| **[RPubs Project]** [Using R for Social Work Research: Confirmatory Factor Analysis](https://rpubs.com/JBean/723517) by Jerry Bean
 | **[Publication]** [General Intelligence Objectively Determined and Measured](https://psycnet.apa.org/record/1926-00296-001) by Charles Spearman (The American Journal of Psychology)
 | **[Publication]** [The Effect of Standardization on a Chi-Square Approximation in Factor Analysis](https://www.semanticscholar.org/paper/THE-EFFECT-OF-STANDARDIZATION-ON-A-%CF%872-APPROXIMATION-Bartlett/95d549d2c055360b34cc7d1fce739179c29e39bb) by Maurice Bartlett (Psychometrika)
 | **[Publication]** [A Second Generation Little Jiffy](https://link.springer.com/article/10.1007/BF02291817) by Henry Kaiser (Psychometrika)
