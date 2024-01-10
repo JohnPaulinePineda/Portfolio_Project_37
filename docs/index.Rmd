@@ -360,6 +360,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 | **[Book]** [Introduction to R and Statistics](https://saestatsteaching.tech/) by University of Western Australia
 | **[Book]** [Feature Engineering and Selection: A Practical Approach for Predictive Models](http://www.feat.engineering/index.html) by Max Kuhn and Kjell Johnson
 | **[Book]** [Introduction to Research Methods](https://bookdown.org/ejvanholm/Textbook/) by Eric van Holm
+| **[Book]** [Using R for Social Work Research](https://bookdown.org/bean_jerry/using_r_for_social_work_research/) by Jerry Bean
 | **[R Package]** [AppliedPredictiveModeling](https://cran.r-project.org/web//packages/AppliedPredictiveModeling/AppliedPredictiveModeling.pdf) by Max Kuhn
 | **[R Package]** [caret](https://topepo.github.io/caret/index.html) by Max Kuhn
 | **[R Package]** [rpart](https://mran.microsoft.com/web/packages/rpart/rpart.pdf) by Terry Therneau and Beth Atkinson
@@ -409,6 +410,10 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 | **[Article]** [Factor Analysis on Ordinal Data Example in R (psych, homals)](https://alice86.github.io/2018/04/08/Factor-Analysis-on-Ordinal-Data-example-in-R-(psych,-homals)/) by Jiayu Wu
 | **[Article]** [Factor Analysis](https://handwiki.org/wiki/Factor%20analysis) by HandWiki Team
 | **[Article]** [On Likert Scales In R](https://jakec007.github.io/2021-06-23-R-likert/) by Jake Chanenson
+| **[Article]** [Confirmatory Factor Analysis (CFA) in R With LAVAAN](https://stats.oarc.ucla.edu/r/seminars/rcfa/) by UCLA Advanced Research Computing Team
+| **[Article]** [Confirmatory Factor Analysis (CFA) Example in R](https://pj.freefaculty.org/guides/crmda_workshops/semexample/R/Ex-02-CFA/cfa-01.html) by Ben Kite
+| **[Article]** [Confirmatory Factor Analysis with R](https://shiny.rit.albany.edu/stat/cfa1test/cfabase.pdf) by Bruce Dudek
+| **[RPubs Project]** [EFA and CFA Intro](https://rpubs.com/isbell_daniel/efa_cfa_intro) by Dan Isbell
 | **[Publication]** [General Intelligence Objectively Determined and Measured](https://psycnet.apa.org/record/1926-00296-001) by Charles Spearman (The American Journal of Psychology)
 | **[Publication]** [The Effect of Standardization on a Chi-Square Approximation in Factor Analysis](https://www.semanticscholar.org/paper/THE-EFFECT-OF-STANDARDIZATION-ON-A-%CF%872-APPROXIMATION-Bartlett/95d549d2c055360b34cc7d1fce739179c29e39bb) by Maurice Bartlett (Psychometrika)
 | **[Publication]** [A Second Generation Little Jiffy](https://link.springer.com/article/10.1007/BF02291817) by Henry Kaiser (Psychometrika)
