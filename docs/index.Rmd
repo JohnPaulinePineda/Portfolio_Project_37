@@ -855,6 +855,8 @@ for (i in 1:ncol(DPA.Descriptors.Numeric)) {
 |
 ####  1.3.4.1 Correlation Matrix Assessment - Kaiser-Meyer-Olkin Factor Adequacy
 |
+| **[A]** The KMO measure of sampling adequacy was acceptable with a computed value of 0.85 for the complete model, indicating the suitability of the data for exploratory factor analysis. The estimated proportion of variance among all the observed variable was sufficiently adequate.
+|
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
@@ -873,7 +875,7 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 
 ##################################
 # Removing individual descriptors
-# with low KMO criterion
+# with low KMO values
 ##################################
 DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("ASMORT")]
 
@@ -884,7 +886,7 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 
 ##################################
 # Removing individual descriptors
-# with low KMO criterion
+# with low KMO values
 ##################################
 DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("PNEVAC")]
 
@@ -895,7 +897,7 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 
 ##################################
 # Removing individual descriptors
-# with low KMO criterion
+# with low KMO values
 ##################################
 DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("INFVAC")]
 
@@ -906,7 +908,7 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 
 ##################################
 # Removing individual descriptors
-# with low KMO criterion
+# with low KMO values
 ##################################
 DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("ASPREV")]
 
@@ -917,7 +919,7 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 
 ##################################
 # Removing individual descriptors
-# with low KMO criterion
+# with low KMO values
 ##################################
 DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("MAMUSE")]
 
@@ -928,9 +930,75 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 
 ##################################
 # Removing individual descriptors
-# with low KMO criterion
+# with low KMO values
 ##################################
 DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("SLPSTA")]
+
+##################################
+# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
+##################################
+(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
+
+##################################
+# Removing individual descriptors
+# with low KMO values
+##################################
+DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("KDPREV")]
+
+##################################
+# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
+##################################
+(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
+
+##################################
+# Removing individual descriptors
+# with low KMO values
+##################################
+DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("QUITAT")]
+
+##################################
+# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
+##################################
+(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
+
+##################################
+# Removing individual descriptors
+# with low KMO values
+##################################
+DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("LDMORT")]
+
+##################################
+# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
+##################################
+(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
+
+##################################
+# Removing individual descriptors
+# with low KMO values
+##################################
+DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("SCPREV")]
+
+##################################
+# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
+##################################
+(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
+
+##################################
+# Removing individual descriptors
+# with low KMO values
+##################################
+DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("PSMUSE")]
+
+##################################
+# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
+##################################
+(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
+
+##################################
+# Removing individual descriptors
+# with low KMO values
+##################################
+DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("HLTINS")]
 
 ##################################
 # Calculating the Kaiser-Meyer-Olkin Factor Adequacy
@@ -943,13 +1011,36 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 
 |
 |
-####  1.3.4.2 Correlation Matrix Assessment - Covariance Validity
+####  1.3.4.2 Correlation Matrix Assessment - Bartlett’s Test of Sphericity
+|
+| **[A]** The computed p-value from the Bartlett’s Test of Sphericity was statistically significant (<0.00001), rejecting the null hypothesis that the correlation matrix is an identity matrix (ones on the diagonal and zeros on the off-diagonal). Results indicated that there is enough evidence to support the existence of underlying factors, suggesting that the correlation matrix is appropriate for exploratory factor analysis.
 |
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.4.2, warning=FALSE, message=FALSE}
+##################################
+# Calculating the Bartlett's Test of Sphericity
+##################################
+(DPA_BartlettTest <- cortest.bartlett(DPA.Descriptors.Numeric,
+                                      n=nrow(DPA.Descriptors.Numeric)))
+
+```
+
+</details>
+
+|
+|
+####  1.3.4.3 Correlation Matrix Assessment - Covariance Validity
+|
+| **[A]** Covariance among descriptors in the correlation matrix was sufficient to justify the conduct of an exploratory factor analysis. 91% (124/136) of the pairwise associations using the Pearson correlation coefficient were above 30%.
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.4.3, warning=FALSE, message=FALSE}
 ##################################
 # Measuring pairwise correlation between descriptors
 ##################################
@@ -978,27 +1069,19 @@ qgraph(cor(DPA.Descriptors.Numeric),
 </details>
 |
 |
-####  1.3.4.3 Correlation Matrix Assessment - Determinant Computation
+####  1.3.4.4 Correlation Matrix Assessment - Determinant Computation
 |
-|
-
-<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
-
-```{r section_1.3.4.3, warning=FALSE, message=FALSE}
-
-```
-
-</details>
-
-|
-|
-####  1.3.4.4 Correlation Matrix Assessment - Bartlett’s Test of Sphericity
+| **[A]** The determinant of the correlation matrix was computed as less than .00001 indicating the minimal presence of the likelihood for a multicollinearity problem allowing matrix operations to potentially produce unstable results during exploratory factor analysis.
 |
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.4.4, warning=FALSE, message=FALSE}
+##################################
+# Computing the determinant of the correlation matrix
+##################################
+(DPA_CorrelationMatrixDeterminant <- det(cor(DPA.Descriptors.Numeric)))
 
 ```
 
@@ -1041,7 +1124,29 @@ qgraph(cor(DPA.Descriptors.Numeric),
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.5.1, warning=FALSE, message=FALSE}
+##################################
+# Testing pairwise correlation between descriptors
+##################################
+DPA_CorrelationTest <- cor.mtest(DPA.Descriptors.Numeric,
+                       method = "pearson",
+                       conf.level = 0.95)
 
+##################################
+# Plotting the pairwise association
+# between descriptors 
+##################################
+corrplot(cor(DPA.Descriptors.Numeric,
+             method = "pearson",
+             use="pairwise.complete.obs"),
+             method = "number",
+             type = "upper",
+             order = "original",
+             tl.col = "black",
+             tl.cex = 0.75,
+             tl.srt = 90,
+             sig.level = 0.05,
+             p.mat = DPA_CorrelationTest$p,
+             insig = "blank")
 ```
 
 </details>
@@ -1055,7 +1160,17 @@ qgraph(cor(DPA.Descriptors.Numeric),
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.5.2, warning=FALSE, message=FALSE}
-
+##################################
+# Formulating the pairwise scatterplots
+# among descriptors
+##################################
+splom(~DPA.Descriptors.Numeric,
+      pch = 16,
+      cex = 1,
+      alpha = 0.45,
+      auto.key = list(points = TRUE, space = "right"),
+      main = "Exploratory Analysis Between Descriptors",
+      xlab = "Scatterplot Matrix of Descriptors")
 ```
 
 </details>
@@ -1072,7 +1187,70 @@ qgraph(cor(DPA.Descriptors.Numeric),
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.6.1, warning=FALSE, message=FALSE}
+##################################
+# Implementing various procedures for determining
+# factor retention based on
+# the maximum consensus between methods
+##################################
+(FA_PA_V_MethodAgreementProcedure <- parameters::n_factors(DPA.Descriptors.Numeric,
+                                                           algorithm = "pa",
+                                                           rotation = "varimax"))
 
+as.data.frame(FA_PA_V_MethodAgreementProcedure)
+
+##################################
+# Conducting exploratory factor analysis
+# using Principal Axes extraction
+# and Varimax rotation
+# with 3 factors
+##################################
+(FA_PA_V_3F <- fa(DPA.Descriptors.Numeric,
+              nfactors = 3,
+              fm="pa",
+              rotate = "varimax",
+              residuals=TRUE,
+              SMC=TRUE,
+              n.obs=nrow(DPA.Descriptors.Numeric)))
+
+(FA_PA_V_3F_Summary <- FA_PA_V_3F %>%
+  model_parameters(sort = TRUE, threshold = "max"))
+
+summary(FA_PA_V_3F_Summary)
+
+##################################
+# Extracting the residuals
+# from the Exploratory Factor Analysis
+##################################
+(FA_PA_V_3F_Residual <- residuals(FA_PA_V_3F,
+                              diag=FALSE,
+                              na.rm=TRUE))
+
+##################################
+# Obtaining Fit Indices
+##################################
+(FA_PA_V_3F_RMS <- FA_PA_V_3F$rms)
+
+(FA_PA_V_3F_TLI <- FA_PA_V_3F$TLI)
+
+(FA_PA_V_3F_BIC <- FA_PA_V_3F$BIC)
+
+(FA_PA_V_3F_MaxResidual   <- max(abs(FA_PA_V_3F_Residual),na.rm=TRUE))
+
+(FA_PA_V_3F_HighResidual  <- sum(FA_PA_V_3F_Residual>abs(0.05),na.rm=TRUE))
+
+(FA_PA_V_3F_TotalResidual <- length(DPA.Descriptors.Numeric)*(length(DPA.Descriptors.Numeric)-1)/2)
+
+(FA_PA_V_3F_HighResidualRate <- FA_PA_V_3F_HighResidual/FA_PA_V_3F_TotalResidual)
+
+##################################
+# Graph the factor loading matrices
+##################################
+fa.diagram(FA_PA_V_3F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Principal Axes Factor Extraction + Varimax Rotation : 3 Factors",
+           cex=0.75)
 ```
 
 </details>
