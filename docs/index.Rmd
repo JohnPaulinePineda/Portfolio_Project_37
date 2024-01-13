@@ -640,6 +640,10 @@ if ((nrow(DPA_LowVariance[DPA_LowVariance$nzv,]))==0){
 |
 ####  1.3.3.4 Collinearity
 |
+| **[A]** High multicollinearity with Pearson correlation coefficients >90% was noted among pairs of descriptors in the dataset.
+|      **[A.1]** <span style="color: #FF0000">HDMORT</span> and <span style="color: #FF0000">CDMORT</span> = 0.99
+|      **[A.2]** <span style="color: #FF0000">DBPREV</span> and <span style="color: #FF0000">HLSTAT</span> = 0.91
+|
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
@@ -703,6 +707,22 @@ if (DPA_HighlyCorrelatedCount > 0) {
                  " for removal: ",
                  DPA_HighlyCorrelatedRemovedVariable))
   }
+  
+}
+
+if (DPA_HighlyCorrelatedCount == 0) {
+  print("No highly correlated predictors noted.")
+} else {
+  print(paste0("High correlation observed for ",
+               (DPA_HighlyCorrelatedCount),
+               " pairs of numeric variable(s) with Correlation.Coefficient>0.90."))
+  
+  (DPA_HighlyCorrelatedPairs <- corr_cross(DPA.Descriptors.Numeric,
+  max_pvalue = 0.05, 
+  top = DPA_HighlyCorrelatedCount,
+  rm.na = TRUE,
+  grid = FALSE
+))
   
 }
 
