@@ -1251,6 +1251,51 @@ fa.diagram(FA_PA_V_3F,
            digits=3,
            main="Principal Axes Factor Extraction + Varimax Rotation : 3 Factors",
            cex=0.75)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("HLTSTA","MEUNDA","DBPREV","TTHLOS","BDPREV","PDPREV","HDMORT","PHYACT")],
+      check.keys=TRUE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","ARTINC","RDMORT","OVWINC","PDMORT","DBMORT","STMORT")],
+      check.keys=TRUE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("CCTUSE","DENVIS")],
+      check.keys=TRUE)
+
+##################################
+# Formulating the dandelion plot to
+# visualize both factor variances and loadings
+# from the factor loading matrices
+##################################
+FA_PA_V_3F_FactorLoading <- factload(DPA.Descriptors.Numeric,
+                                  cormeth = "pearson",
+                                  method = "prax",
+                                  nfac = 3,
+                                  rotation = "varimax")
+
+DandelionPlotPalette <- rev(rainbow(100, start = 0, end = 0.2))
+
+dandelion(FA_PA_V_3F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
 ```
 
 </details>
