@@ -1360,10 +1360,277 @@ dandelion(FA_PA_V_4F_FactorLoading,
 ####  1.3.6.2 Principal Axes Factor Extraction and Promax Rotation
 |
 |
+| **[A]** Appplying **Principal Axes** factor extraction and **Promax** rotation, an evaluation was conducted using a set of empirical guidelines to determine the optimal number of factors to be retained for exploratory factor analysis. It was determined that:
+|      **[A.1]** 4 factors would be sufficient for an optimal balance between comprehensiveness and parsimony. 
+|      **[A.2]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
+|      **[A.3]** The choice of 4 factors was supported by the **Beta** and **Bartlett** methods for determining the optimal number of factors.
+|
+| **[B]** Results for the exploratory factor analysis using a **3-Factor Structure** were as follows:
+|      **[B.1]** Standardized Root Mean Square of the Residual = 0.03
+|      **[B.2]** Tucker-Lewis Fit Index = 0.98
+|      **[B.3]** Bayesian Information Criterion = -33.48
+|      **[B.4]** High Residual Rate = 0.11
+|      **[B.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|             **[B.5.1]** <span style="color: #FF0000">STMORT</span>: Loading = 0.98, Communality = 0.80
+|             **[B.5.2]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.73, Communality = 0.72
+|             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.74, Communality = 0.63
+|             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.52, Communality = 0.62
+|             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.48, Communality = 0.41
+|             **[B.5.6]** Standardized Cronbach's Alpha = 0.88
+|      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|             **[B.6.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.91, Communality = 0.90
+|             **[B.6.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.63, Communality = 0.63
+|             **[B.6.3]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.57, Communality = 0.84
+|             **[B.6.4]** Standardized Cronbach's Alpha = 0.89
+|      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|             **[B.7.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 1.05, Communality = 1.06
+|             **[B.7.3]** Standardized Cronbach's Alpha = 0.85
+|
+| **[C]** Results for the exploratory factor analysis using a **4-Factor Structure** were as follows:
+|      **[C.1]** Standardized Root Mean Square of the Residual = 0.01
+|      **[C.2]** Tucker-Lewis Fit Index = 1.08
+|      **[C.3]** Bayesian Information Criterion = -21.18
+|      **[C.4]** High Residual Rate = 0.05
+|      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.91, Communality = 0.90
+|             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.56, Communality = 0.89
+|             **[C.5.3]** Standardized Cronbach's Alpha = 0.89
+|      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 1.04, Communality = 0.95
+|             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.47, Communality = 0.44
+|             **[C.6.3]** Standardized Cronbach's Alpha = 0.76
+|      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.87, Communality = 0.87
+|             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.71, Communality = 0.65
+|             **[C.7.3]** Standardized Cronbach's Alpha = 0.85
+|      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
+|             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.78, Communality = 0.79
+|             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.60, Communality = 0.73
+|             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.53, Communality = 0.79
+|             **[C.8.4]** Standardized Cronbach's Alpha = 0.86
+|
+|
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.6.2, warning=FALSE, message=FALSE}
+##################################
+# Implementing various procedures for determining
+# factor retention based on
+# the maximum consensus between methods
+##################################
+(FA_PA_P_MethodAgreementProcedure <- parameters::n_factors(DPA.Descriptors.Numeric,
+                                                           algorithm = "pa",
+                                                           rotation = "promax"))
+
+as.data.frame(FA_PA_P_MethodAgreementProcedure)
+
+##################################
+# Conducting exploratory factor analysis
+# using Principal Axes extraction
+# and Promax rotation
+# with 3 factors
+##################################
+(FA_PA_P_3F <- fa(DPA.Descriptors.Numeric,
+              nfactors = 3,
+              fm="pa",
+              rotate = "promax",
+              residuals=TRUE,
+              SMC=TRUE,
+              n.obs=nrow(DPA.Descriptors.Numeric)))
+
+(FA_PA_P_3F_Summary <- FA_PA_P_3F %>%
+  model_parameters(sort = TRUE, threshold = "max"))
+
+summary(FA_PA_P_3F_Summary)
+
+##################################
+# Extracting the residuals
+# from the Exploratory Factor Analysis
+##################################
+(FA_PA_P_3F_Residual <- residuals(FA_PA_P_3F,
+                              diag=FALSE,
+                              na.rm=TRUE))
+
+##################################
+# Obtaining Fit Indices
+##################################
+(FA_PA_P_3F_RMS <- FA_PA_P_3F$rms)
+
+(FA_PA_P_3F_TLI <- FA_PA_P_3F$TLI)
+
+(FA_PA_P_3F_BIC <- FA_PA_P_3F$BIC)
+
+(FA_PA_P_3F_MaxResidual   <- max(abs(FA_PA_P_3F_Residual),na.rm=TRUE))
+
+(FA_PA_P_3F_HighResidual  <- sum(FA_PA_P_3F_Residual>abs(0.05),na.rm=TRUE))
+
+(FA_PA_P_3F_TotalResidual <- length(DPA.Descriptors.Numeric)*(length(DPA.Descriptors.Numeric)-1)/2)
+
+(FA_PA_P_3F_HighResidualRate <- FA_PA_P_3F_HighResidual/FA_PA_P_3F_TotalResidual)
+
+##################################
+# Graph the factor loading matrices
+##################################
+fa.diagram(FA_PA_P_3F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Principal Axes Factor Extraction + Promax Rotation : 3 Factors",
+           cex=0.75)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("STMORT","OVWINC","RDMORT","HDMORT","DBMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
+      check.keys=FALSE)
+
+##################################
+# Formulating the dandelion plot to
+# visualize both factor variances and loadings
+# from the factor loading matrices
+##################################
+FA_PA_P_3F_FactorLoading <- factload(DPA.Descriptors.Numeric,
+                                  cormeth = "pearson",
+                                  method = "prax",
+                                  nfac = 3,
+                                  rotation = "promax")
+
+DandelionPlotPalette <- rev(rainbow(100, start = 0, end = 0.2))
+
+dandelion(FA_PA_P_3F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
+
+##################################
+# Conducting exploratory factor analysis
+# using Principal Axes extraction
+# and Promax rotation
+# with 4 factors
+##################################
+(FA_PA_P_4F <- fa(DPA.Descriptors.Numeric,
+              nfactors = 4,
+              fm="pa",
+              rotate = "promax",
+              residuals=TRUE,
+              SMC=TRUE,
+              n.obs=nrow(DPA.Descriptors.Numeric)))
+
+(FA_PA_P_4F_Summary <- FA_PA_P_4F %>%
+  model_parameters(sort = TRUE, threshold = "max"))
+
+summary(FA_PA_P_4F_Summary)
+
+##################################
+# Extracting the residuals
+# from the Exploratory Factor Analysis
+##################################
+(FA_PA_P_4F_Residual <- residuals(FA_PA_P_4F,
+                              diag=FALSE,
+                              na.rm=TRUE))
+
+##################################
+# Obtaining Fit Indices
+##################################
+(FA_PA_P_4F_RMS <- FA_PA_P_4F$rms)
+
+(FA_PA_P_4F_TLI <- FA_PA_P_4F$TLI)
+
+(FA_PA_P_4F_BIC <- FA_PA_P_4F$BIC)
+
+(FA_PA_P_4F_MaxResidual   <- max(abs(FA_PA_P_4F_Residual),na.rm=TRUE))
+
+(FA_PA_P_4F_HighResidual  <- sum(FA_PA_P_4F_Residual>abs(0.05),na.rm=TRUE))
+
+(FA_PA_P_4F_TotalResidual <- length(DPA.Descriptors.Numeric)*(length(DPA.Descriptors.Numeric)-1)/2)
+
+(FA_PA_P_4F_HighResidualRate <- FA_PA_P_4F_HighResidual/FA_PA_P_4F_TotalResidual)
+
+##################################
+# Graph the factor loading matrices
+##################################
+fa.diagram(FA_PA_P_4F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Principal Axes Factor Extraction + Promax Rotation : 4 Factors",
+           cex=0.75)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("RDMORT","DBMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("STMORT","OVWINC","HDMORT")],
+      check.keys=FALSE)
+
+##################################
+# Formulating the dandelion plot to
+# visualize both factor variances and loadings
+# from the factor loading matrices
+##################################
+FA_PA_P_4F_FactorLoading <- factload(DPA.Descriptors.Numeric,
+                                  cormeth = "pearson",
+                                  method = "prax",
+                                  nfac = 4,
+                                  rotation = "promax")
+
+DandelionPlotPalette <- rev(rainbow(100, start = 0, end = 0.2))
+
+dandelion(FA_PA_P_4F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
 
 ```
 
@@ -1378,6 +1645,223 @@ dandelion(FA_PA_V_4F_FactorLoading,
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.6.3, warning=FALSE, message=FALSE}
+##################################
+# Implementing various procedures for determining
+# factor retention based on
+# the maximum consensus between methods
+##################################
+(FA_ML_V_MethodAgreementProcedure <- parameters::n_factors(DPA.Descriptors.Numeric,
+                                                           algorithm = "mle",
+                                                           rotation = "varimax"))
+
+as.data.frame(FA_ML_V_MethodAgreementProcedure)
+
+##################################
+# Conducting exploratory factor analysis
+# using Maximum Likelihood extraction
+# and Varimax rotation
+# with 3 factors
+##################################
+(FA_ML_V_3F <- fa(DPA.Descriptors.Numeric,
+              nfactors = 3,
+              fm="ml",
+              rotate = "varimax",
+              residuals=TRUE,
+              SMC=TRUE,
+              n.obs=nrow(DPA.Descriptors.Numeric)))
+
+(FA_ML_V_3F_Summary <- FA_ML_V_3F %>%
+  model_parameters(sort = TRUE, threshold = "max"))
+
+summary(FA_ML_V_3F_Summary)
+
+##################################
+# Extracting the residuals
+# from the Exploratory Factor Analysis
+##################################
+(FA_ML_V_3F_Residual <- residuals(FA_ML_V_3F,
+                              diag=FALSE,
+                              na.rm=TRUE))
+
+##################################
+# Obtaining Fit Indices
+##################################
+(FA_ML_V_3F_RMS <- FA_ML_V_3F$rms)
+
+(FA_ML_V_3F_TLI <- FA_ML_V_3F$TLI)
+
+(FA_ML_V_3F_BIC <- FA_ML_V_3F$BIC)
+
+(FA_ML_V_3F_MaxResidual   <- max(abs(FA_ML_V_3F_Residual),na.rm=TRUE))
+
+(FA_ML_V_3F_HighResidual  <- sum(FA_ML_V_3F_Residual>abs(0.05),na.rm=TRUE))
+
+(FA_ML_V_3F_TotalResidual <- length(DPA.Descriptors.Numeric)*(length(DPA.Descriptors.Numeric)-1)/2)
+
+(FA_ML_V_3F_HighResidualRate <- FA_ML_V_3F_HighResidual/FA_ML_V_3F_TotalResidual)
+
+##################################
+# Graph the factor loading matrices
+##################################
+fa.diagram(FA_ML_V_3F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Maximum Likelihood Factor Extraction + Varimax Rotation : 3 Factors",
+           cex=0.75)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("STMORT","OVWINC","RDMORT","HDMORT","DBMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
+      check.keys=FALSE)
+
+##################################
+# Formulating the dandelion plot to
+# visualize both factor variances and loadings
+# from the factor loading matrices
+##################################
+FA_ML_V_3F_FactorLoading <- factload(DPA.Descriptors.Numeric,
+                                  cormeth = "pearson",
+                                  method = "mle",
+                                  nfac = 3,
+                                  rotation = "varimax")
+
+DandelionPlotPalette <- rev(rainbow(100, start = 0, end = 0.2))
+
+dandelion(FA_ML_V_3F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
+
+##################################
+# Conducting exploratory factor analysis
+# using Maximum Likelihood extraction
+# and Varimax rotation
+# with 4 factors
+##################################
+(FA_ML_V_4F <- fa(DPA.Descriptors.Numeric,
+              nfactors = 4,
+              fm="ml",
+              rotate = "varimax",
+              residuals=TRUE,
+              SMC=TRUE,
+              n.obs=nrow(DPA.Descriptors.Numeric)))
+
+(FA_ML_V_4F_Summary <- FA_ML_V_4F %>%
+  model_parameters(sort = TRUE, threshold = "max"))
+
+summary(FA_ML_V_4F_Summary)
+
+##################################
+# Extracting the residuals
+# from the Exploratory Factor Analysis
+##################################
+(FA_ML_V_4F_Residual <- residuals(FA_ML_V_4F,
+                              diag=FALSE,
+                              na.rm=TRUE))
+
+##################################
+# Obtaining Fit Indices
+##################################
+(FA_ML_V_4F_RMS <- FA_ML_V_4F$rms)
+
+(FA_ML_V_4F_TLI <- FA_ML_V_4F$TLI)
+
+(FA_ML_V_4F_BIC <- FA_ML_V_4F$BIC)
+
+(FA_ML_V_4F_MaxResidual   <- max(abs(FA_ML_V_4F_Residual),na.rm=TRUE))
+
+(FA_ML_V_4F_HighResidual  <- sum(FA_ML_V_4F_Residual>abs(0.05),na.rm=TRUE))
+
+(FA_ML_V_4F_TotalResidual <- length(DPA.Descriptors.Numeric)*(length(DPA.Descriptors.Numeric)-1)/2)
+
+(FA_ML_V_4F_HighResidualRate <- FA_ML_V_4F_HighResidual/FA_ML_V_4F_TotalResidual)
+
+##################################
+# Graph the factor loading matrices
+##################################
+fa.diagram(FA_ML_V_4F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Maximum Likelihood Factor Extraction + Varimax Rotation : 4 Factors",
+           cex=0.75)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("RDMORT","DBMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("STMORT","OVWINC","HDMORT")],
+      check.keys=FALSE)
+
+##################################
+# Formulating the dandelion plot to
+# visualize both factor variances and loadings
+# from the factor loading matrices
+##################################
+FA_ML_V_4F_FactorLoading <- factload(DPA.Descriptors.Numeric,
+                                  cormeth = "pearson",
+                                  method = "mle",
+                                  nfac = 4,
+                                  rotation = "varimax")
+
+DandelionPlotPalette <- rev(rainbow(100, start = 0, end = 0.2))
+
+dandelion(FA_ML_V_4F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
 
 ```
 
@@ -1385,13 +1869,230 @@ dandelion(FA_PA_V_4F_FactorLoading,
 
 |
 |
-####  1.3.6.4 Maximum Likelihood Factor Extraction and Promax Rotation (FA_ML_P)
+####  1.3.6.4 Maximum Likelihood Factor Extraction and Promax Rotation
 |
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.6.4, warning=FALSE, message=FALSE}
+##################################
+# Implementing various procedures for determining
+# factor retention based on
+# the maximum consensus between methods
+##################################
+(FA_ML_P_MethodAgreementProcedure <- parameters::n_factors(DPA.Descriptors.Numeric,
+                                                           algorithm = "mle",
+                                                           rotation = "promax"))
+
+as.data.frame(FA_ML_P_MethodAgreementProcedure)
+
+##################################
+# Conducting exploratory factor analysis
+# using Maximum Likelihood extraction
+# and Promax rotation
+# with 3 factors
+##################################
+(FA_ML_P_3F <- fa(DPA.Descriptors.Numeric,
+              nfactors = 3,
+              fm="ml",
+              rotate = "promax",
+              residuals=TRUE,
+              SMC=TRUE,
+              n.obs=nrow(DPA.Descriptors.Numeric)))
+
+(FA_ML_P_3F_Summary <- FA_ML_P_3F %>%
+  model_parameters(sort = TRUE, threshold = "max"))
+
+summary(FA_ML_P_3F_Summary)
+
+##################################
+# Extracting the residuals
+# from the Exploratory Factor Analysis
+##################################
+(FA_ML_P_3F_Residual <- residuals(FA_ML_P_3F,
+                              diag=FALSE,
+                              na.rm=TRUE))
+
+##################################
+# Obtaining Fit Indices
+##################################
+(FA_ML_P_3F_RMS <- FA_ML_P_3F$rms)
+
+(FA_ML_P_3F_TLI <- FA_ML_P_3F$TLI)
+
+(FA_ML_P_3F_BIC <- FA_ML_P_3F$BIC)
+
+(FA_ML_P_3F_MaxResidual   <- max(abs(FA_ML_P_3F_Residual),na.rm=TRUE))
+
+(FA_ML_P_3F_HighResidual  <- sum(FA_ML_P_3F_Residual>abs(0.05),na.rm=TRUE))
+
+(FA_ML_P_3F_TotalResidual <- length(DPA.Descriptors.Numeric)*(length(DPA.Descriptors.Numeric)-1)/2)
+
+(FA_ML_P_3F_HighResidualRate <- FA_ML_P_3F_HighResidual/FA_ML_P_3F_TotalResidual)
+
+##################################
+# Graph the factor loading matrices
+##################################
+fa.diagram(FA_ML_P_3F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Maximum Likelihood Factor Extraction + Promax Rotation : 3 Factors",
+           cex=0.75)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("STMORT","OVWINC","RDMORT","HDMORT","DBMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
+      check.keys=FALSE)
+
+##################################
+# Formulating the dandelion plot to
+# visualize both factor variances and loadings
+# from the factor loading matrices
+##################################
+FA_ML_P_3F_FactorLoading <- factload(DPA.Descriptors.Numeric,
+                                  cormeth = "pearson",
+                                  method = "mle",
+                                  nfac = 3,
+                                  rotation = "promax")
+
+DandelionPlotPalette <- rev(rainbow(100, start = 0, end = 0.2))
+
+dandelion(FA_ML_P_3F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
+
+##################################
+# Conducting exploratory factor analysis
+# using Maximum Likelihood extraction
+# and Promax rotation
+# with 4 factors
+##################################
+(FA_ML_P_4F <- fa(DPA.Descriptors.Numeric,
+              nfactors = 4,
+              fm="ml",
+              rotate = "promax",
+              residuals=TRUE,
+              SMC=TRUE,
+              n.obs=nrow(DPA.Descriptors.Numeric)))
+
+(FA_ML_P_4F_Summary <- FA_ML_P_4F %>%
+  model_parameters(sort = TRUE, threshold = "max"))
+
+summary(FA_ML_P_4F_Summary)
+
+##################################
+# Extracting the residuals
+# from the Exploratory Factor Analysis
+##################################
+(FA_ML_P_4F_Residual <- residuals(FA_ML_P_4F,
+                              diag=FALSE,
+                              na.rm=TRUE))
+
+##################################
+# Obtaining Fit Indices
+##################################
+(FA_ML_P_4F_RMS <- FA_ML_P_4F$rms)
+
+(FA_ML_P_4F_TLI <- FA_ML_P_4F$TLI)
+
+(FA_ML_P_4F_BIC <- FA_ML_P_4F$BIC)
+
+(FA_ML_P_4F_MaxResidual   <- max(abs(FA_ML_P_4F_Residual),na.rm=TRUE))
+
+(FA_ML_P_4F_HighResidual  <- sum(FA_ML_P_4F_Residual>abs(0.05),na.rm=TRUE))
+
+(FA_ML_P_4F_TotalResidual <- length(DPA.Descriptors.Numeric)*(length(DPA.Descriptors.Numeric)-1)/2)
+
+(FA_ML_P_4F_HighResidualRate <- FA_ML_P_4F_HighResidual/FA_ML_P_4F_TotalResidual)
+
+##################################
+# Graph the factor loading matrices
+##################################
+fa.diagram(FA_ML_P_4F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Maximum Likelihood Factor Extraction + Promax Rotation : 4 Factors",
+           cex=0.75)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("RDMORT","DBMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("STMORT","OVWINC","HDMORT")],
+      check.keys=FALSE)
+
+##################################
+# Formulating the dandelion plot to
+# visualize both factor variances and loadings
+# from the factor loading matrices
+##################################
+FA_ML_P_4F_FactorLoading <- factload(DPA.Descriptors.Numeric,
+                                  cormeth = "pearson",
+                                  method = "mle",
+                                  nfac = 4,
+                                  rotation = "promax")
+
+DandelionPlotPalette <- rev(rainbow(100, start = 0, end = 0.2))
+
+dandelion(FA_ML_P_4F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
 
 ```
 
@@ -1525,6 +2226,7 @@ dandelion(FA_PA_V_4F_FactorLoading,
 | **[Article]** [Factor Analysis on Ordinal Data Example in R (psych, homals)](https://alice86.github.io/2018/04/08/Factor-Analysis-on-Ordinal-Data-example-in-R-(psych,-homals)/) by Jiayu Wu
 | **[Article]** [Factor Analysis](https://handwiki.org/wiki/Factor%20analysis) by HandWiki Team
 | **[Article]** [On Likert Scales In R](https://jakec007.github.io/2021-06-23-R-likert/) by Jake Chanenson
+| **[Article]** [Exploratory Factor Analysis](https://opgabriel.github.io/ISMIR2020/visualizations/efa.html) by Mariana Silva
 | **[Article]** [Confirmatory Factor Analysis (CFA) in R With LAVAAN](https://stats.oarc.ucla.edu/r/seminars/rcfa/) by UCLA Advanced Research Computing Team
 | **[Article]** [Confirmatory Factor Analysis (CFA) Example in R](https://pj.freefaculty.org/guides/crmda_workshops/semexample/R/Ex-02-CFA/cfa-01.html) by Ben Kite
 | **[Article]** [Confirmatory Factor Analysis with R](https://shiny.rit.albany.edu/stat/cfa1test/cfabase.pdf) by Bruce Dudek
