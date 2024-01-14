@@ -1919,6 +1919,55 @@ dandelion(FA_ML_V_4F_FactorLoading,
 |
 ####  1.3.6.4 Maximum Likelihood Factor Extraction and Promax Rotation
 |
+| **[A]** Appplying **Maximum Likelihood** factor extraction and **Promax** rotation, an evaluation was conducted using a set of empirical guidelines to determine the optimal number of factors to be retained for exploratory factor analysis. It was determined that:
+|      **[A.1]** 4 factors would be sufficient for an optimal balance between comprehensiveness and parsimony. 
+|      **[A.2]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
+|      **[A.3]** The choice of 4 factors was supported by the **Beta**, **Bartlett** and **Adjusted BIC** methods for determining the optimal number of factors.
+|
+| **[B]** Results for the exploratory factor analysis using a **3-Factor Structure** were as follows:
+|      **[B.1]** Standardized Root Mean Square of the Residual = 0.03
+|      **[B.2]** Tucker-Lewis Fit Index = 0.99
+|      **[B.3]** Bayesian Information Criterion = -34.38
+|      **[B.4]** High Residual Rate = 0.17
+|      **[B.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|             **[B.5.1]** <span style="color: #FF0000">STMORT</span>: Loading = 0.96, Communality = 0.79
+|             **[B.5.2]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.76, Communality = 0.75
+|             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.72, Communality = 0.61
+|             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.58, Communality = 0.67
+|             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.50, Communality = 0.38
+|             **[B.5.6]** Standardized Cronbach's Alpha = 0.88
+|      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|             **[B.6.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.91, Communality = 0.93
+|             **[B.6.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.56, Communality = 0.61
+|             **[B.6.3]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.54, Communality = 0.84
+|             **[B.6.4]** Standardized Cronbach's Alpha = 0.89
+|      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|             **[B.7.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 1.02, Communality = 1.00
+|             **[B.7.2]** Standardized Cronbach's Alpha = 0.85
+|
+| **[C]** Results for the exploratory factor analysis using a **4-Factor Structure** were as follows:
+|      **[C.1]** Standardized Root Mean Square of the Residual = 0.01
+|      **[C.2]** Tucker-Lewis Fit Index = 1.09
+|      **[C.3]** Bayesian Information Criterion = -21.63
+|      **[C.4]** High Residual Rate = 0.06
+|      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.91, Communality = 0.90
+|             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.55, Communality = 0.89
+|             **[C.5.3]** Standardized Cronbach's Alpha = 0.89
+|      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 1.05, Communality = 0.96
+|             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.48, Communality = 0.43
+|             **[C.6.3]** Standardized Cronbach's Alpha = 0.76
+|      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.89, Communality = 0.90
+|             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.67, Communality = 0.63
+|             **[C.7.3]** Standardized Cronbach's Alpha = 0.85
+|      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
+|             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.76, Communality = 0.77
+|             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.61, Communality = 0.73
+|             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.56, Communality = 0.79
+|             **[C.8.4]** Standardized Cronbach's Alpha = 0.86
+|
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
