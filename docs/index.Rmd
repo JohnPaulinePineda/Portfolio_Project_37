@@ -165,6 +165,13 @@ library(MBESS)
 library(mice)
 library(DandEFA)
 library(EFAtools)
+library(tidyverse)
+library(lavaan)
+library(semPlot)
+library(semoutput)
+library(sjPlot)
+library(GPArotation)
+library(semTools)
 
 ##################################
 # Loading source and
@@ -346,7 +353,7 @@ if (length(names(DQA.Descriptors.Numeric))>0) {
   Median=sapply(DQA.Descriptors.Numeric, function(x) format(round(median(x,na.rm = TRUE),3), nsmall=3)),
   Maximum=sapply(DQA.Descriptors.Numeric, function(x) format(round(max(x,na.rm = TRUE),3), nsmall=3)),
   Skewness=sapply(DQA.Descriptors.Numeric, function(x) format(round(skewness(x,na.rm = TRUE),3), nsmall=3)),
-  Kurtosis=sapply(DQA.Descriptors.Numeric, function(x) format(round(kurtosis(x,na.rm = TRUE),3), nsmall=3)),
+  Kurtosis=sapply(DQA.Descriptors.Numeric, function(x) format(round(moments::kurtosis(x,na.rm = TRUE),3), nsmall=3)),
   Percentile25th=sapply(DQA.Descriptors.Numeric, function(x) format(round(quantile(x,probs=0.25,na.rm = TRUE),3), nsmall=3)),
   Percentile75th=sapply(DQA.Descriptors.Numeric, function(x) format(round(quantile(x,probs=0.75,na.rm = TRUE),3), nsmall=3)),
   row.names=NULL)
@@ -595,7 +602,7 @@ if ((nrow(DPA_LowVariance[DPA_LowVariance$nzv,]))==0){
 |
 | **[A]** High multicollinearity with Pearson correlation coefficients >90% was noted in a pair of descriptors in the dataset.
 |      **[A.1]** <span style="color: #FF0000">HDMORT</span> and <span style="color: #FF0000">CDMORT</span> = 0.99
-|      **[A.2]** <span style="color: #FF0000">CDMORT</span> was removed based on its higher correlation with other descriptors
+|      **[A.2]** <span style="color: #FF0000">CDMORT</span> was removed based on its higher correlation with other descriptors.
 |
 |
 
@@ -838,6 +845,10 @@ for (i in 1:ncol(DPA.Descriptors.Numeric)) {
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.4.1, warning=FALSE, message=FALSE}
+
+DPA.Descriptors.Numeric.CenteredScaled <- preProcess(DPA.Descriptors.Numeric, method = c("center","scale"))
+DPA.Descriptors.Numeric <- predict(DPA.Descriptors.Numeric.CenteredScaled, DPA.Descriptors.Numeric)
+
 ##################################
 # Calculating the Kaiser-Meyer-Olkin Factor Adequacy
 ##################################
@@ -2202,6 +2213,80 @@ dandelion(FA_ML_P_4F_FactorLoading,
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.7, warning=FALSE, message=FALSE}
+
+CFA_4F <- 'CARDIO =~ HDMORT + STMORT + OVWINC
+           PULMON =~ SMPREV + PDMORT
+           MENTAL =~ MEUNDA + ARTINC
+           NEPHRO =~ RDMORT + DBMORT'
+
+CFA_4F_MODEL <- cfa(CFA_4F, data = DPA.Descriptors.Numeric, mimic =c("MPlus"), std.lv = TRUE)
+
+summary(CFA_4F_MODEL, fit.measures = TRUE)
+
+fitMeasures(CFA_4F_MODEL, c("chisq", "df", "pvalue"))
+
+fitMeasures(CFA_4F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.pvalue"))
+
+fitMeasures(CFA_4F_MODEL, c("cfi", "srmr"))
+
+residuals(CFA_4F_MODEL)$cov
+
+parameterEstimates(CFA_4F_MODEL) %>% 
+  filter(op == "=~")
+
+standardizedSolution(CFA_4F_MODEL)
+
+semTools::compRelSEM(CFA_4F_MODEL, tau.eq=T, obs.var=T, return.total=T)
+
+CFA_4F_MODEL_FACTORS <- CFA_4F_MODEL@pta$vnames$lv[[1]]
+size <- .65
+semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "std", layout = "tree2", 
+         rotation = 4, style = "lisrel", optimizeLatRes = TRUE, 
+         structural = FALSE, layoutSplit = FALSE,
+         intercepts = FALSE, residuals = T, 
+         curve = 1, curvature = 3, nCharNodes = 8, 
+         sizeLat = 11 * size, sizeMan = 11 * size, sizeMan2 = 4 * size, 
+         edge.label.cex = 1.2 * size, 
+         edge.color = "#000000", edge.label.position = .40)
+
+CFA_3F <- 'CARDIO =~ HDMORT + STMORT + OVWINC + RDMORT + DBMORT
+           PULMON =~ SMPREV + PDMORT
+           MENTAL =~ MEUNDA + ARTINC'
+
+CFA_3F_MODEL <- cfa(CFA_3F, data = DPA.Descriptors.Numeric, mimic =c("MPlus"), std.lv = TRUE)
+
+summary(CFA_3F_MODEL, fit.measures = TRUE)
+
+fitMeasures(CFA_3F_MODEL, c("chisq.scaled", "df", "pvalue.scaled"))
+
+fitMeasures(CFA_3F_MODEL, c("rmsea.scaled", "rmsea.ci.lower.scaled", "rmsea.ci.upper.scaled", "rmsea.pvalue.scaled"))
+
+fitMeasures(CFA_3F_MODEL, c("cfi.scaled", "srmr"))
+
+residuals(CFA_3F_MODEL)$cov
+
+parameterEstimates(CFA_3F_MODEL, standardized=FALSE) %>% 
+  filter(op == "=~") %>% 
+  select(Item=rhs, Standardized=est, ci.lower, ci.upper, SE=se, Z=z, 'p-value'=pvalue)
+
+parameterEstimates(CFA_3F_MODEL, standardized=FALSE, rsquare = TRUE) %>% 
+  filter(op == "r2") %>% 
+  select(Item=rhs, R2 = est) 
+
+semTools::compRelSEM(CFA_3F_MODEL, tau.eq=T, obs.var=T, return.total=T)
+
+CFA_3F_MODEL <- cfa(CFA_3F, data = DPA.Descriptors.Numeric)
+CFA_3F_MODEL_FACTORS <- CFA_3F_MODEL@pta$vnames$lv[[1]]
+size <- .65
+semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "std", layout = "tree2", 
+         rotation = 4, style = "lisrel", optimizeLatRes = TRUE, 
+         structural = FALSE, layoutSplit = FALSE,
+         intercepts = FALSE, residuals = T, 
+         curve = 1, curvature = 3, nCharNodes = 8, 
+         sizeLat = 11 * size, sizeMan = 11 * size, sizeMan2 = 4 * size, 
+         edge.label.cex = 1.2 * size, 
+         edge.color = "#000000", edge.label.position = .40)
+
 
 ```
 
