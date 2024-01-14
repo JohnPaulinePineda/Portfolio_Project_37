@@ -857,6 +857,25 @@ for (i in 1:ncol(DPA.Descriptors.Numeric)) {
 |
 | **[A]** The KMO measure of sampling adequacy was acceptable with a computed value of 0.85 for the complete model, indicating the suitability of the data for exploratory factor analysis. The estimated proportion of variance among all the observed variable was sufficiently adequate.
 |
+| **[B]**  The sampling adequacy for each variable in the model was acceptable with KMO values ranging from 0.83 to 0.93. Results indicated that each variable can be sufficiently predicted by other variables. 
+|      **[B.1]** <span style="color: #FF0000">RDMORT</span> = 0.93
+|      **[B.2]** <span style="color: #FF0000">DBMORT</span> = 0.92
+|      **[B.3]** <span style="color: #FF0000">HLTSTA</span> = 0.92
+|      **[B.4]** <span style="color: #FF0000">DBPREV</span> = 0.89
+|      **[B.5]** <span style="color: #FF0000">PDPREV</span> = 0.89
+|      **[B.6]** <span style="color: #FF0000">TTHLOSS</span> = 0.88
+|      **[B.7]** <span style="color: #FF0000">OVWINC</span> = 0.88
+|      **[B.8]** <span style="color: #FF0000">DENVIS</span> = 0.88
+|      **[B.9]** <span style="color: #FF0000">ARTINC</span> = 0.86
+|      **[B.10]** <span style="color: #FF0000">STMORT</span> = 0.85
+|      **[B.11]** <span style="color: #FF0000">SMPREV</span> = 0.85
+|      **[B.12]** <span style="color: #FF0000">MEUNDA</span> = 0.84
+|      **[B.13]** <span style="color: #FF0000">MEUNDA</span> = 0.84
+|      **[B.14]** <span style="color: #FF0000">HDMORT</span> = 0.84
+|      **[B.15]** <span style="color: #FF0000">BDPREV</span> = 0.84
+|      **[B.16]** <span style="color: #FF0000">CCTUSE</span> = 0.83
+|      **[B.17]** <span style="color: #FF0000">PHYACT</span> = 0.82
+|
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
@@ -1092,10 +1111,36 @@ qgraph(cor(DPA.Descriptors.Numeric),
 ####  1.3.4.5 Pre-Processed Dataset
 |
 |
+| **[A]** The pre-processed tabular dataset was comprised of 50 observations and 17 descriptor variables. 
+|      **[A.1]** 50 rows (observations)
+|      **[A.2]** 17 columns (descriptors)
+|             **[A.2.1]** <span style="color: #FF0000">RDMORT</span> (numeric)
+|             **[A.2.2]** <span style="color: #FF0000">DBMORT</span> (numeric)
+|             **[A.2.3]** <span style="color: #FF0000">HLTSTA</span> (numeric)
+|             **[A.2.4]** <span style="color: #FF0000">DBPREV</span> (numeric)
+|             **[A.2.5]** <span style="color: #FF0000">PDPREV</span> (numeric)
+|             **[A.2.6]** <span style="color: #FF0000">TTHLOSS</span> (numeric)
+|             **[A.2.7]** <span style="color: #FF0000">OVWINC</span> (numeric)
+|             **[A.2.8]** <span style="color: #FF0000">DENVIS</span> (numeric)
+|             **[A.2.9]** <span style="color: #FF0000">ARTINC</span> (numeric)
+|             **[A.2.10]** <span style="color: #FF0000">STMORT</span> (numeric)
+|             **[A.2.11]** <span style="color: #FF0000">SMPREV</span> (numeric)
+|             **[A.2.12]** <span style="color: #FF0000">MEUNDA</span> (numeric)
+|             **[A.2.13]** <span style="color: #FF0000">MEUNDA</span> (numeric)
+|             **[A.2.14]** <span style="color: #FF0000">HDMORT</span> (numeric)
+|             **[A.2.15]** <span style="color: #FF0000">BDPREV</span> (numeric)
+|             **[A.2.16]** <span style="color: #FF0000">CCTUSE</span>  (numeric)
+|             **[A.2.17]** <span style="color: #FF0000">PHYACT</span> (numeric)
+|
+|
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.4.5, warning=FALSE, message=FALSE}
+##################################
+# Gathering descriptive statistics
+##################################
+(DPA_Skimmed <- skim(DPA.Descriptors.Numeric))
 
 ```
 
@@ -1104,17 +1149,6 @@ qgraph(cor(DPA.Descriptors.Numeric),
 |
 |
 ###  1.3.5 Data Exploration
-|
-|
-
-<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
-
-```{r section_1.3.5, warning=FALSE, message=FALSE}
-
-```
-
-</details>
-
 |
 |
 ####  1.3.5.1 Correlation Matrix
@@ -1180,7 +1214,7 @@ splom(~DPA.Descriptors.Numeric,
 ###  1.3.6 Model Development
 |
 |
-####  1.3.6.1 Principal Axes Factor Extraction and Varimax Rotation (FA_PA_V)
+####  1.3.6.1 Principal Axes Factor Extraction and Varimax Rotation
 |
 |
 
@@ -1302,7 +1336,7 @@ dandelion(FA_PA_V_3F_FactorLoading,
 
 |
 |
-####  1.3.6.2 Principal Axes Factor Extraction and Promax Rotation (FA_PA_P)
+####  1.3.6.2 Principal Axes Factor Extraction and Promax Rotation
 |
 |
 
@@ -1316,7 +1350,7 @@ dandelion(FA_PA_V_3F_FactorLoading,
 
 |
 |
-####  1.3.6.3 Maximum Likelihood Factor Extraction and Varimax Rotation (FA_ML_V)
+####  1.3.6.3 Maximum Likelihood Factor Extraction and Varimax Rotation
 |
 |
 
