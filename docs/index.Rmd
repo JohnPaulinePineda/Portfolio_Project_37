@@ -26,7 +26,7 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 ###  1.1.1 Study Objectives
 |
-| **The main objective of the study is to explore and verify the possible underlying factor structures and relationships among a set of observed US chronic disease indicators by identifying latent factors that explain the observed correlations and reducing the complexity of the data by grouping related variables together under these latent factors.**
+| **The main objective of the study is to explore and validate potential underlying factor structures and relationships among a set of observed US chronic disease indicators by identifying latent factors that explain the observed correlations and reducing the complexity of the data by grouping related indicators together under these discovered factors.**
 |
 | Specific objectives are given as follows:
 |
@@ -36,73 +36,45 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 | **[C]** Select the final exploratory factor analysis model among candidates based on robust performance estimates
 |
-| **[D]** Verify the relationship obtained from the final exploratory analysis model between the observed descriptors and their underlying latent constructs using confirmatory factor analysis.
+| **[D]** Validate the relationship obtained from the final exploratory analysis model between the observed descriptors and their underlying latent constructs using confirmatory factor analysis
 |
 ###  1.1.2 Outcome
 |
 | There is no explicit endpoint for the study given the unsupervised learning nature of the analysis.
 |
-###  1.1.3 Predictors
+###  1.1.3 Descriptors
 |
-| Detailed descriptions for each individual descriptor used in the study are provided as follows:
+| Detailed information for each individual descriptor used in the study are provided as follows:
 |
-| **[A]** **Chronic Disease Topic Area : Alcohol**
-|      **[A.1]** <span style="color: #FF0000">BDPREV</span> (numeric): **Binge Drinking Prevalence**; Binge drinking prevalence among adults aged >= 18 years.
-|      **[A.2]** <span style="color: #FF0000">LDMORT</span> (numeric): **Liver Disease Mortality**; Chronic liver disease mortality.
+| **[A]** <span style="color: #FF0000">LDMORT</span> (numeric): **Liver Disease Mortality**; Chronic liver disease mortality.
 |
-| **[B]** **Chronic Disease Topic Area : Arthritis**
-|      **[B.1]** <span style="color: #FF0000">ARTINC</span> (numeric): **Arthritis Incidence**; Arthritis among adults aged >= 18 years.
+| **[B]** <span style="color: #FF0000">ARTINC</span> (numeric): **Arthritis Incidence**; Arthritis among adults aged >= 18 years.
 |
-| **[C]** **Chronic Disease Topic Area : Asthma**
-|      **[C.1]** <span style="color: #FF0000">ASPREV</span> (numeric): **Asthma Prevalence**; Current asthma prevalence among adults aged >= 18 years.
-|      **[C.2]** <span style="color: #FF0000">ASMORT</span> (numeric): **Asthma Mortality**; Asthma mortality rate.
+| **[C]** <span style="color: #FF0000">ASMORT</span> (numeric): **Asthma Mortality**; Asthma mortality rate.
 |
-| **[D]** **Chronic Disease Topic Area : Cancer**
-|      **[D.1]** <span style="color: #FF0000">MAMUSE</span> (numeric): **Mammography Use**; Mammography use among women aged 50-74 years.
-|      **[D.2]** <span style="color: #FF0000">PSMUSE</span> (numeric): **Papanicolaou Smear Use**; Papanicolaou smear use among adult women aged 21-65 years.
-|      **[D.3]** <span style="color: #FF0000">CCTUSE</span> (numeric): **Colon Cancer Test Use**; Fecal occult blood test, sigmoidoscopy, or colonoscopy among adults aged 50-75 years.
+| **[D]** <span style="color: #FF0000">PSMUSE</span> (numeric): **Papanicolaou Smear Use**; Papanicolaou smear use among adult women aged 21-65 years.
 |
-| **[E]** **Chronic Disease Topic Area : Chronic Kidney Disease**
-|      **[E.1]** <span style="color: #FF0000">RDMORT</span> (numeric): **Renal Disease Mortality**; Mortality with end-stage renal disease.
-|      **[E.2]** <span style="color: #FF0000">KDPREV</span> (numeric): **Kidney Disease Prevalence**; Prevalence of chronic kidney disease among adults aged >= 18 years.
+| **[E]** <span style="color: #FF0000">RDMORT</span> (numeric): **Renal Disease Mortality**; Mortality with end-stage renal disease.
 |
-| **[F]** **Chronic Disease Topic Area : Chronic Obstructive Pulmonary Disease**
-|      **[F.1]** <span style="color: #FF0000">PDMORT</span> (numeric): **Pulmonary Disease Mortality**; Mortality with chronic obstructive pulmonary disease as underlying cause among adults aged >=45 years.
-|      **[F.2]** <span style="color: #FF0000">PDPREV</span> (numeric): **Pulmonary Disease Prevalence**; Prevalence of chronic obstructive pulmonary disease among adults >= 18.
-|      **[F.3]** <span style="color: #FF0000">SCPREV</span> (numeric): **Smoking Prevalence**; Prevalence of current smoking among adults >= 18 with diagnosed chronic obstructive pulmonary disease.
+| **[F]** <span style="color: #FF0000">PDMORT</span> (numeric): **Pulmonary Disease Mortality**; Mortality with chronic obstructive pulmonary disease as underlying cause among adults aged >=45 years.
 |
-| **[G]** **Chronic Disease Topic Area : Cardiovascular Disease**
-|      **[G.1]** <span style="color: #FF0000">CDMORT</span> (numeric): **Cardiovascular Disease Mortality**; Mortality from total cardiovascular disease.
-|      **[G.2]** <span style="color: #FF0000">HDMORT</span> (numeric): **Heart Disease Mortality**; Mortality from diseases of the heart.
-|      **[G.3]** <span style="color: #FF0000">STMORT</span> (numeric): **Stroke Mortality**; Mortality from stroke.
+| **[G]** <span style="color: #FF0000">CDMORT</span> (numeric): **Cardiovascular Disease Mortality**; Mortality from total cardiovascular disease.
 |
-| **[H]** **Chronic Disease Topic Area : Diabetes**
-|      **[H.1]** <span style="color: #FF0000">DBMORT</span> (numeric): **Diabetes Mortality**; Mortality due to diabetes reported as any listed cause of death.
-|      **[H.2]** <span style="color: #FF0000">DBPREV</span> (numeric): **Diabetes Prevalence**; Prevalence of diagnosed diabetes among adults aged >= 18 years.
+| **[H]** <span style="color: #FF0000">HDMORT</span> (numeric): **Heart Disease Mortality**; Mortality from diseases of the heart.
 |
-| **[I]** **Chronic Disease Topic Area : Immunization**
-|      **[I.1]** <span style="color: #FF0000">INFVAC</span> (numeric): **Influenza Vaccination**; Influenza vaccination among noninstitutionalized adults aged >= 18 years.
+| **[I]** <span style="color: #FF0000">STMORT</span> (numeric): **Stroke Mortality**; Mortality from stroke.
 |
-| **[J]** **Chronic Disease Topic Area : Mental Health**
-|      **[I.1]** <span style="color: #FF0000">MEUNDA</span> (numeric): **Mentally Unhealthy Days**; Recent mentally unhealthy days among adults aged >= 18 years.
+| **[J]** <span style="color: #FF0000">DBMORT</span> (numeric): **Diabetes Mortality**; Mortality due to diabetes reported as any listed cause of death.
 |
-| **[K]** **Chronic Disease Topic Area : Nutrition, Physical Activity and Weight Status**
-|      **[K.1]** <span style="color: #FF0000">PHYACT</span> (numeric): **Physical Activity**; No leisure-time physical activity among adults aged >= 18 years.
-|      **[K.2]** <span style="color: #FF0000">OVWINC</span> (numeric): **Overweight Incidence**; Overweight or obesity among adults aged >= 18 years.
+| **[K]** <span style="color: #FF0000">INFVAC</span> (numeric): **Influenza Vaccination**; Influenza vaccination among noninstitutionalized adults aged >= 18 years.
 |
-| **[L]** **Chronic Disease Topic Area : Oral Health**
-|      **[L.1]** <span style="color: #FF0000">DENVIS</span> (numeric): **Dentist Visit**; Visits to dentist or dental clinic among adults aged >= 18 years.
-|      **[L.2]** <span style="color: #FF0000">TTHLOS</span> (numeric): **Tooth Loss**; No tooth loss among adults aged 18-64 years.
+| **[L]** <span style="color: #FF0000">MEUNDA</span> (numeric): **Mentally Unhealthy Days**; Recent mentally unhealthy days among adults aged >= 18 years.
 |
-| **[M]** **Chronic Disease Topic Area : Overarching Conditions**
-|      **[M.1]** <span style="color: #FF0000">HLTINS</span> (numeric): **Health Insurance**; Current lack of health insurance among adults aged 18-64 years.
-|      **[M.2]** <span style="color: #FF0000">HLTSTA</span> (numeric): **Health Status**; Fair or poor self-rated health status among adults aged >= 18 years.
-|      **[M.3]** <span style="color: #FF0000">SLPSTA</span> (numeric): **Sleep Status**; Prevalence of sufficient sleep among adults aged >= 18 years.
+| **[M]** <span style="color: #FF0000">OVWINC</span> (numeric): **Overweight Incidence**; Overweight or obesity among adults aged >= 18 years.
 |
-| **[N]** **Chronic Disease Topic Area : Tobacco**
-|      **[N.1]** <span style="color: #FF0000">SMPREV</span> (numeric): **Smoking Prevalence**; Current smoking among adults aged >= 18 years.
-|      **[N.2]** <span style="color: #FF0000">PNEVAC</span> (numeric): **Pneumococcal Vaccination**; Pneumococcal vaccination among noninstitutionalized adults aged 18-64 years who smoke.
-|      **[N.3]** <span style="color: #FF0000">QUITAT</span> (numeric): **Quit Attempts**; Quit attempts in the past year among current smokers.
+| **[N]** <span style="color: #FF0000">HLTINS</span> (numeric): **Health Insurance**; Current lack of health insurance among adults aged 18-64 years.
+|
+| **[O]** <span style="color: #FF0000">SMPREV</span> (numeric): **Smoking Prevalence**; Current smoking among adults aged >= 18 years.
 |
 ##  1.2 Methodology
 |
@@ -133,41 +105,26 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 ###  1.3.1 Data Preparation
 |
-| **[A]** The initial tabular dataset was comprised of 50 observations and 31 variables (including 1 metadata and 30 descriptors). 
+| **[A]** The initial tabular dataset was comprised of 50 observations and 16 variables (including 1 metadata and 30 descriptors). 
 |      **[A.1]** 50 rows (observations)
-|      **[A.2]** 31 columns (variables)
-|             **[A.2.1]** 1/31 instance labels = <span style="color: #FF0000">STATE</span> (character)
-|             **[A.2.2]** 30/31 predictors = 30/30 numeric
-|                      **[A.2.2.1]** <span style="color: #FF0000">BDPREV</span> (numeric)
-|                      **[A.2.2.2]** <span style="color: #FF0000">LDMORT</span> (numeric)
-|                      **[A.2.2.3]** <span style="color: #FF0000">ARTINC</span> (numeric)
-|                      **[A.2.2.4]** <span style="color: #FF0000">ASPREV</span> (numeric)
-|                      **[A.2.2.5]** <span style="color: #FF0000">ASMORT</span> (numeric)
-|                      **[A.2.2.6]** <span style="color: #FF0000">MAMUSE</span> (numeric)
-|                      **[A.2.2.7]** <span style="color: #FF0000">PSMUSE</span> (numeric)
-|                      **[A.2.2.8]** <span style="color: #FF0000">CCTUSE</span> (numeric)
-|                      **[A.2.2.9]** <span style="color: #FF0000">RDMORT</span> (numeric)
-|                      **[A.2.2.10]** <span style="color: #FF0000">KDPREV</span> (numeric)
-|                      **[A.2.2.11]** <span style="color: #FF0000">PDMORT</span> (numeric)
-|                      **[A.2.2.12]** <span style="color: #FF0000">PDPREV</span> (numeric)
-|                      **[A.2.2.13]** <span style="color: #FF0000">SMPREV</span> (numeric)
-|                      **[A.2.2.14]** <span style="color: #FF0000">CDMORT</span> (numeric)
-|                      **[A.2.2.15]** <span style="color: #FF0000">HDMORT</span> (numeric)
-|                      **[A.2.2.16]** <span style="color: #FF0000">STMORT</span> (numeric)
-|                      **[A.2.2.17]** <span style="color: #FF0000">DBMORT</span> (numeric)
-|                      **[A.2.2.18]** <span style="color: #FF0000">DBPREV</span> (numeric)
-|                      **[A.2.2.19]** <span style="color: #FF0000">INFVAC</span> (numeric)
-|                      **[A.2.2.20]** <span style="color: #FF0000">MEUNDA</span> (numeric)
-|                      **[A.2.2.21]** <span style="color: #FF0000">PHYACT</span> (numeric)
-|                      **[A.2.2.22]** <span style="color: #FF0000">OVWINC</span> (numeric)
-|                      **[A.2.2.23]** <span style="color: #FF0000">DENVIS</span> (numeric)
-|                      **[A.2.2.24]** <span style="color: #FF0000">TTHLOS</span> (numeric)
-|                      **[A.2.2.25]** <span style="color: #FF0000">HLTINS</span> (numeric)
-|                      **[A.2.2.26]** <span style="color: #FF0000">HLTSTA</span> (numeric)
-|                      **[A.2.2.27]** <span style="color: #FF0000">SLPSTA</span> (numeric)
-|                      **[A.2.2.28]** <span style="color: #FF0000">SMPREV</span> (numeric)
-|                      **[A.2.2.29]** <span style="color: #FF0000">PNEVAC</span> (numeric)
-|                      **[A.2.2.30]** <span style="color: #FF0000">QUITAT</span> (numeric)
+|      **[A.2]** 16 columns (variables)
+|             **[A.2.1]** 1/16 instance labels = <span style="color: #FF0000">STATE</span> (character)
+|             **[A.2.2]** 15/16 predictors = 15/15 numeric
+|                      **[A.2.2.1]** <span style="color: #FF0000">LDMORT</span> (numeric)
+|                      **[A.2.2.2]** <span style="color: #FF0000">ARTINC</span> (numeric)
+|                      **[A.2.2.3]** <span style="color: #FF0000">ASMORT</span> (numeric)
+|                      **[A.2.2.4]** <span style="color: #FF0000">PSMUSE</span> (numeric)
+|                      **[A.2.2.5]** <span style="color: #FF0000">RDMORT</span> (numeric)
+|                      **[A.2.2.6]** <span style="color: #FF0000">PDMORT</span> (numeric)
+|                      **[A.2.2.7]** <span style="color: #FF0000">CDMORT</span> (numeric)
+|                      **[A.2.2.8]** <span style="color: #FF0000">HDMORT</span> (numeric)
+|                      **[A.2.2.9]** <span style="color: #FF0000">STMORT</span> (numeric)
+|                      **[A.2.2.10]** <span style="color: #FF0000">DBMORT</span> (numeric)
+|                      **[A.2.2.11]** <span style="color: #FF0000">INFVAC</span> (numeric)
+|                      **[A.2.2.12]** <span style="color: #FF0000">MEUNDA</span> (numeric)
+|                      **[A.2.2.13]** <span style="color: #FF0000">OVWINC</span> (numeric)
+|                      **[A.2.2.14]** <span style="color: #FF0000">HLTINS</span> (numeric)
+|                      **[A.2.2.15]** <span style="color: #FF0000">SMPREV</span> (numeric)
 |
 | 
 
@@ -473,7 +430,6 @@ if (length(names(DQA.Descriptors.Numeric))==0) {
 ###  1.3.3 Data Preprocessing
 |
 |
-
 ####  1.3.3.1 Missing Data Imputation
 |
 | **[A]** Missing data identified for 1 out of the 30 descriptors were replaced using multivariate imputation by chained equations with predictive mean matching specified as the imputation method.
@@ -511,15 +467,12 @@ visdat::vis_miss(DQA.Descriptors.Numeric, sort_miss = FALSE)
 |
 ####  1.3.3.2 Outlier Detection
 |
-| **[A]** Minimal outliers noted for 10 out of the 30 descriptors. Descriptor values were visualized through a boxplot including observations classified as suspected outliers using the IQR criterion. The IQR criterion means that all observations above the (75th percentile + 1.5 x IQR) or below the (25th percentile - 1.5 x IQR) are suspected outliers, where IQR is the difference between the third quartile (75th percentile) and first quartile (25th percentile).
+| **[A]** Minimal outliers noted for 7 out of the 15 descriptors. Descriptor values were visualized through a boxplot including observations classified as suspected outliers using the IQR criterion. The IQR criterion means that all observations above the (75th percentile + 1.5 x IQR) or below the (25th percentile - 1.5 x IQR) are suspected outliers, where IQR is the difference between the third quartile (75th percentile) and first quartile (25th percentile).
 |      **[A.1]** <span style="color: #FF0000">LDMORT</span> = 1
 |      **[A.2]** <span style="color: #FF0000">ARTINC</span> = 4
 |      **[A.3]** <span style="color: #FF0000">RDMORT</span> = 2
-|      **[A.4]** <span style="color: #FF0000">KDPREV</span> = 1
 |      **[A.5]** <span style="color: #FF0000">PDMORT</span> = 1
-|      **[A.6]** <span style="color: #FF0000">PDPREV</span> = 2
 |      **[A.7]** <span style="color: #FF0000">DBMORT</span> = 1
-|      **[A.8]** <span style="color: #FF0000">TTHLOS</span> = 2
 |      **[A.9]** <span style="color: #FF0000">HLTINS</span> = 1
 |      **[A.10]** <span style="color: #FF0000">SMPREV</span> = 1
 |
@@ -640,9 +593,9 @@ if ((nrow(DPA_LowVariance[DPA_LowVariance$nzv,]))==0){
 |
 ####  1.3.3.4 Collinearity
 |
-| **[A]** High multicollinearity with Pearson correlation coefficients >90% was noted among pairs of descriptors in the dataset.
+| **[A]** High multicollinearity with Pearson correlation coefficients >90% was noted in a pair of descriptors in the dataset.
 |      **[A.1]** <span style="color: #FF0000">HDMORT</span> and <span style="color: #FF0000">CDMORT</span> = 0.99
-|      **[A.2]** <span style="color: #FF0000">DBPREV</span> and <span style="color: #FF0000">HLSTAT</span> = 0.91
+|      **[A.2]** <span style="color: #FF0000">CDMORT</span> was removed based on its higher correlation with other descriptors
 |
 |
 
@@ -732,6 +685,11 @@ if (DPA_HighlyCorrelatedCount == 0) {
   
 }
 
+##################################
+# Removing individual descriptors
+# among the highly correlated pair
+##################################
+DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("CDMORT")]
 ```
 
 </details>
@@ -855,38 +813,31 @@ for (i in 1:ncol(DPA.Descriptors.Numeric)) {
 |
 ####  1.3.4.1 Correlation Matrix Assessment - Kaiser-Meyer-Olkin Factor Adequacy
 |
-| **[A]** The KMO measure of sampling adequacy was acceptable with a computed value of 0.85 for the complete model, indicating the suitability of the data for exploratory factor analysis. The estimated proportion of variance among all the observed variable was sufficiently adequate.
+| **[A]** 5 descriptors with low KMO values were excluded from the dataset to improve the strength and patterns of relationships between variables and ensure sufficient common variance among variables for extracting underlying factors.
+|      **[A.1]** <span style="color: #FF0000">PDMORT</span> = 0.15
+|      **[A.2]** <span style="color: #FF0000">DBMORT</span> = 0.35
+|      **[A.3]** <span style="color: #FF0000">STMORT</span> = 0.56
+|      **[A.4]** <span style="color: #FF0000">HDMORT</span> = 0.47
+|      **[A.5]** <span style="color: #FF0000">RDMORT</span> = 0.59
 |
-| **[B]**  The sampling adequacy for each variable in the model was acceptable with KMO values ranging from 0.83 to 0.93. Results indicated that each variable can be sufficiently predicted by other variables. 
-|      **[B.1]** <span style="color: #FF0000">RDMORT</span> = 0.93
-|      **[B.2]** <span style="color: #FF0000">DBMORT</span> = 0.92
-|      **[B.3]** <span style="color: #FF0000">HLTSTA</span> = 0.92
-|      **[B.4]** <span style="color: #FF0000">DBPREV</span> = 0.89
-|      **[B.5]** <span style="color: #FF0000">PDPREV</span> = 0.89
-|      **[B.6]** <span style="color: #FF0000">TTHLOSS</span> = 0.88
-|      **[B.7]** <span style="color: #FF0000">OVWINC</span> = 0.88
-|      **[B.8]** <span style="color: #FF0000">DENVIS</span> = 0.88
-|      **[B.9]** <span style="color: #FF0000">ARTINC</span> = 0.86
-|      **[B.10]** <span style="color: #FF0000">STMORT</span> = 0.85
-|      **[B.11]** <span style="color: #FF0000">SMPREV</span> = 0.85
-|      **[B.12]** <span style="color: #FF0000">MEUNDA</span> = 0.84
-|      **[B.13]** <span style="color: #FF0000">MEUNDA</span> = 0.84
-|      **[B.14]** <span style="color: #FF0000">HDMORT</span> = 0.84
-|      **[B.15]** <span style="color: #FF0000">BDPREV</span> = 0.84
-|      **[B.16]** <span style="color: #FF0000">CCTUSE</span> = 0.83
-|      **[B.17]** <span style="color: #FF0000">PHYACT</span> = 0.82
+| **[B]** The KMO measure of sampling adequacy was acceptable with a computed value of 0.87 for the complete model, indicating the suitability of the data for exploratory factor analysis. The estimated proportion of variance among all the observed variables was sufficiently adequate.
+|
+| **[C]**  The sampling adequacy for each variable in the model was acceptable with KMO values ranging from 0.78 to 0.94. Results indicated that each variable can be sufficiently predicted by other variables. 
+|      **[C.1]** <span style="color: #FF0000">PDMORT</span> = 0.94
+|      **[C.2]** <span style="color: #FF0000">DBMORT</span> = 0.92
+|      **[C.3]** <span style="color: #FF0000">STMORT</span> = 0.90
+|      **[C.4]** <span style="color: #FF0000">HDMORT</span> = 0.89
+|      **[C.5]** <span style="color: #FF0000">RDMORT</span> = 0.88
+|      **[C.6]** <span style="color: #FF0000">SMPREV</span> = 0.88
+|      **[C.7]** <span style="color: #FF0000">OVWINC</span> = 0.85
+|      **[C.8]** <span style="color: #FF0000">ARTINC</span> = 0.83
+|      **[C.9]** <span style="color: #FF0000">MEUNDA</span> = 0.78
 |
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.4.1, warning=FALSE, message=FALSE}
-##################################
-# Removing individual descriptors
-# among the highly correlated pair
-##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("CDMORT","HLSTAT")]
-
 ##################################
 # Calculating the Kaiser-Meyer-Olkin Factor Adequacy
 ##################################
@@ -897,17 +848,6 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 # with low KMO values
 ##################################
 DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("ASMORT")]
-
-##################################
-# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
-##################################
-(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
-
-##################################
-# Removing individual descriptors
-# with low KMO values
-##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("PNEVAC")]
 
 ##################################
 # Calculating the Kaiser-Meyer-Olkin Factor Adequacy
@@ -929,51 +869,7 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 # Removing individual descriptors
 # with low KMO values
 ##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("ASPREV")]
-
-##################################
-# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
-##################################
-(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
-
-##################################
-# Removing individual descriptors
-# with low KMO values
-##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("MAMUSE")]
-
-##################################
-# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
-##################################
-(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
-
-##################################
-# Removing individual descriptors
-# with low KMO values
-##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("SLPSTA")]
-
-##################################
-# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
-##################################
-(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
-
-##################################
-# Removing individual descriptors
-# with low KMO values
-##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("KDPREV")]
-
-##################################
-# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
-##################################
-(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
-
-##################################
-# Removing individual descriptors
-# with low KMO values
-##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("QUITAT")]
+DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("HLTINS")]
 
 ##################################
 # Calculating the Kaiser-Meyer-Olkin Factor Adequacy
@@ -995,29 +891,7 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 # Removing individual descriptors
 # with low KMO values
 ##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("SCPREV")]
-
-##################################
-# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
-##################################
-(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
-
-##################################
-# Removing individual descriptors
-# with low KMO values
-##################################
 DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("PSMUSE")]
-
-##################################
-# Calculating the Kaiser-Meyer-Olkin Factor Adequacy
-##################################
-(DPA_KMOFactorAdequacy <- KMO(DPA.Descriptors.Numeric))
-
-##################################
-# Removing individual descriptors
-# with low KMO values
-##################################
-DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Numeric) %in% c("HLTINS")]
 
 ##################################
 # Calculating the Kaiser-Meyer-Olkin Factor Adequacy
@@ -1053,7 +927,7 @@ DPA.Descriptors.Numeric <- DPA.Descriptors.Numeric[,!colnames(DPA.Descriptors.Nu
 |
 ####  1.3.4.3 Correlation Matrix Assessment - Covariance Validity
 |
-| **[A]** Covariance among descriptors in the correlation matrix was sufficient to justify the conduct of an exploratory factor analysis. 91% (124/136) of the pairwise associations using the Pearson correlation coefficient were above 30%.
+| **[A]** Covariance among descriptors in the correlation matrix was sufficient to justify the conduct of an exploratory factor analysis. 97% (35/36) of the pairwise associations using the Pearson correlation coefficient were above 30%.
 |
 |
 
@@ -1090,7 +964,7 @@ qgraph(cor(DPA.Descriptors.Numeric),
 |
 ####  1.3.4.4 Correlation Matrix Assessment - Determinant Computation
 |
-| **[A]** The determinant of the correlation matrix was computed as less than .00001 indicating the minimal presence of the likelihood for a multicollinearity problem allowing matrix operations to potentially produce unstable results during exploratory factor analysis.
+| **[A]** The determinant of the correlation matrix was computed as 0.00080 which was greater than 0.00001 indicating the absence of the likelihood for a multicollinearity problem. The results allowed for matrix operations to produce stable results during exploratory factor analysis.
 |
 |
 
@@ -1110,27 +984,18 @@ qgraph(cor(DPA.Descriptors.Numeric),
 |
 ####  1.3.4.5 Pre-Processed Dataset
 |
-|
-| **[A]** The pre-processed tabular dataset was comprised of 50 observations and 17 descriptor variables. 
+| **[A]** The pre-processed tabular dataset was comprised of 50 observations and 9 descriptor variables. 
 |      **[A.1]** 50 rows (observations)
-|      **[A.2]** 17 columns (descriptors)
-|             **[A.2.1]** <span style="color: #FF0000">RDMORT</span> (numeric)
-|             **[A.2.2]** <span style="color: #FF0000">DBMORT</span> (numeric)
-|             **[A.2.3]** <span style="color: #FF0000">HLTSTA</span> (numeric)
-|             **[A.2.4]** <span style="color: #FF0000">DBPREV</span> (numeric)
-|             **[A.2.5]** <span style="color: #FF0000">PDPREV</span> (numeric)
-|             **[A.2.6]** <span style="color: #FF0000">TTHLOSS</span> (numeric)
-|             **[A.2.7]** <span style="color: #FF0000">OVWINC</span> (numeric)
-|             **[A.2.8]** <span style="color: #FF0000">DENVIS</span> (numeric)
-|             **[A.2.9]** <span style="color: #FF0000">ARTINC</span> (numeric)
-|             **[A.2.10]** <span style="color: #FF0000">STMORT</span> (numeric)
-|             **[A.2.11]** <span style="color: #FF0000">SMPREV</span> (numeric)
-|             **[A.2.12]** <span style="color: #FF0000">MEUNDA</span> (numeric)
-|             **[A.2.13]** <span style="color: #FF0000">MEUNDA</span> (numeric)
-|             **[A.2.14]** <span style="color: #FF0000">HDMORT</span> (numeric)
-|             **[A.2.15]** <span style="color: #FF0000">BDPREV</span> (numeric)
-|             **[A.2.16]** <span style="color: #FF0000">CCTUSE</span>  (numeric)
-|             **[A.2.17]** <span style="color: #FF0000">PHYACT</span> (numeric)
+|      **[A.2]** 9 columns (descriptors)
+|             **[A.2.1]** <span style="color: #FF0000">PDMORT</span>
+|             **[A.2.2]** <span style="color: #FF0000">DBMORT</span>
+|             **[A.2.3]** <span style="color: #FF0000">STMORT</span>
+|             **[A.2.4]** <span style="color: #FF0000">HDMORT</span>
+|             **[A.2.5]** <span style="color: #FF0000">RDMORT</span>
+|             **[A.2.6]** <span style="color: #FF0000">SMPREV</span>
+|             **[A.2.7]** <span style="color: #FF0000">OVWINC</span>
+|             **[A.2.8]** <span style="color: #FF0000">ARTINC</span>
+|             **[A.2.9]** <span style="color: #FF0000">MEUNDA</span>
 |
 |
 
@@ -1146,12 +1011,12 @@ qgraph(cor(DPA.Descriptors.Numeric),
 
 </details>
 
-|
-|
 ###  1.3.5 Data Exploration
 |
 |
 ####  1.3.5.1 Correlation Matrix
+|
+| **[A]** All pairwise correlations among descriptors were positive with values ranging from 0.28 to 0.82 . 
 |
 |
 
@@ -1167,7 +1032,31 @@ DPA_CorrelationTest <- cor.mtest(DPA.Descriptors.Numeric,
 
 ##################################
 # Plotting the pairwise association
-# between descriptors 
+# between descriptors
+##################################
+corrplot(cor(DPA.Descriptors.Numeric,
+             method = "pearson",
+             use="pairwise.complete.obs"),
+             method = "number",
+             type = "upper",
+             order = "original",
+             tl.col = "black",
+             tl.cex = 0.75,
+             tl.srt = 90,
+             sig.level = 0.05,
+             p.mat = DPA_CorrelationTest$p,
+             insig = "blank")
+
+##################################
+# Testing pairwise correlation between descriptors
+##################################
+DPA_CorrelationTest <- cor.mtest(DPA.Descriptors.Numeric,
+                       method = "pearson",
+                       conf.level = 0.95)
+
+##################################
+# Plotting the pairwise association
+# between descriptors
 ##################################
 corrplot(cor(DPA.Descriptors.Numeric,
              method = "pearson",
@@ -1185,36 +1074,59 @@ corrplot(cor(DPA.Descriptors.Numeric,
 
 </details>
 
-|
-|
-####  1.3.5.2 Scatterplot Matrix
-|
-|
-
-<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
-
-```{r section_1.3.5.2, warning=FALSE, message=FALSE}
-##################################
-# Formulating the pairwise scatterplots
-# among descriptors
-##################################
-splom(~DPA.Descriptors.Numeric,
-      pch = 16,
-      cex = 1,
-      alpha = 0.45,
-      auto.key = list(points = TRUE, space = "right"),
-      main = "Exploratory Analysis Between Descriptors",
-      xlab = "Scatterplot Matrix of Descriptors")
-```
-
-</details>
-
-|
-|
 ###  1.3.6 Model Development
 |
 |
 ####  1.3.6.1 Principal Axes Factor Extraction and Varimax Rotation
+|
+| **[A]** Appplying **Principal Axes** factor extraction and **Varimax** rotation, an evaluation was conducted using a set of empirical guidelines to determine the optimal number of factors to be retained for exploratory factor analysis. It was determined that:
+|      **[A.1]** 4 factors would be sufficient for an optimal balance between comprehensiveness and parsimony. 
+|      **[A.2]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
+|      **[A.3]** The choice of 4 factors was supported by the **Beta** and **Bartlett** methods for determining the optimal number of factors.
+|
+| **[B]** Results for the exploratory factor analysis using a **3-Factor Structure** were as follows:
+|      **[B.1]** Standardized Root Mean Square of the Residual = 0.03
+|      **[B.2]** Tucker-Lewis Fit Index = 0.98
+|      **[B.3]** Bayesian Information Criterion = -33.48
+|      **[B.4]** High Residual Rate = 0.11
+|      **[B.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|             **[B.5.1]** <span style="color: #FF0000">STMORT</span>: Loading = 0.82, Communality = 0.80
+|             **[B.5.2]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.73, Communality = 0.72
+|             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.70, Communality = 0.63
+|             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.57, Communality = 0.62
+|             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.52, Communality = 0.41
+|             **[B.5.6]** Standardized Cronbach's Alpha = 0.88
+|      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|             **[B.6.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.99, Communality = 1.06
+|             **[B.6.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.62, Communality = 0.84
+|             **[B.6.3]** Standardized Cronbach's Alpha = 0.89
+|      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|             **[B.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.77, Communality = 0.90
+|             **[B.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.60, Communality = 0.62
+|             **[B.7.3]** Standardized Cronbach's Alpha = 0.85
+|
+| **[C]** Results for the exploratory factor analysis using a **4-Factor Structure** were as follows:
+|      **[C.1]** Standardized Root Mean Square of the Residual = 0.01
+|      **[C.2]** Tucker-Lewis Fit Index = 1.08
+|      **[C.3]** Bayesian Information Criterion = -21.18
+|      **[C.4]** High Residual Rate = 0.05
+|      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.90, Communality = 0.90
+|             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.70, Communality = 0.89
+|             **[C.5.3]** Standardized Cronbach's Alpha = 0.89
+|      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.89, Communality = 0.95
+|             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.50, Communality = 0.44
+|             **[C.6.3]** Standardized Cronbach's Alpha = 0.76
+|      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.73, Communality = 0.87
+|             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.61, Communality = 0.65
+|             **[C.7.3]** Standardized Cronbach's Alpha = 0.85
+|      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
+|             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.68, Communality = 0.79
+|             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.60, Communality = 0.73
+|             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.59, Communality = 0.79
+|             **[C.8.4]** Standardized Cronbach's Alpha = 0.86
 |
 |
 
@@ -1292,8 +1204,8 @@ fa.diagram(FA_PA_V_3F,
 # Cronbach's alpha coefficient
 # for each factor
 ##################################
-alpha(DPA.Descriptors.Numeric[,c("HLTSTA","MEUNDA","DBPREV","TTHLOS","BDPREV","PDPREV","HDMORT","PHYACT")],
-      check.keys=TRUE)
+alpha(DPA.Descriptors.Numeric[,c("STMORT","OVWINC","RDMORT","HDMORT","DBMORT")],
+      check.keys=FALSE)
 
 ##################################
 # computing the internal consistency
@@ -1301,8 +1213,8 @@ alpha(DPA.Descriptors.Numeric[,c("HLTSTA","MEUNDA","DBPREV","TTHLOS","BDPREV","P
 # Cronbach's alpha coefficient
 # for each factor
 ##################################
-alpha(DPA.Descriptors.Numeric[,c("SMPREV","ARTINC","RDMORT","OVWINC","PDMORT","DBMORT","STMORT")],
-      check.keys=TRUE)
+alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
+      check.keys=FALSE)
 
 ##################################
 # computing the internal consistency
@@ -1310,8 +1222,8 @@ alpha(DPA.Descriptors.Numeric[,c("SMPREV","ARTINC","RDMORT","OVWINC","PDMORT","D
 # Cronbach's alpha coefficient
 # for each factor
 ##################################
-alpha(DPA.Descriptors.Numeric[,c("CCTUSE","DENVIS")],
-      check.keys=TRUE)
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
+      check.keys=FALSE)
 
 ##################################
 # Formulating the dandelion plot to
@@ -1330,6 +1242,115 @@ dandelion(FA_PA_V_3F_FactorLoading,
           bound=0,
           mcex=c(1,1.2),
           palet=DandelionPlotPalette)
+
+##################################
+# Conducting exploratory factor analysis
+# using Principal Axes extraction
+# and Varimax rotation
+# with 4 factors
+##################################
+(FA_PA_V_4F <- fa(DPA.Descriptors.Numeric,
+              nfactors = 4,
+              fm="pa",
+              rotate = "varimax",
+              residuals=TRUE,
+              SMC=TRUE,
+              n.obs=nrow(DPA.Descriptors.Numeric)))
+
+(FA_PA_V_4F_Summary <- FA_PA_V_4F %>%
+  model_parameters(sort = TRUE, threshold = "max"))
+
+summary(FA_PA_V_4F_Summary)
+
+##################################
+# Extracting the residuals
+# from the Exploratory Factor Analysis
+##################################
+(FA_PA_V_4F_Residual <- residuals(FA_PA_V_4F,
+                              diag=FALSE,
+                              na.rm=TRUE))
+
+##################################
+# Obtaining Fit Indices
+##################################
+(FA_PA_V_4F_RMS <- FA_PA_V_4F$rms)
+
+(FA_PA_V_4F_TLI <- FA_PA_V_4F$TLI)
+
+(FA_PA_V_4F_BIC <- FA_PA_V_4F$BIC)
+
+(FA_PA_V_4F_MaxResidual   <- max(abs(FA_PA_V_4F_Residual),na.rm=TRUE))
+
+(FA_PA_V_4F_HighResidual  <- sum(FA_PA_V_4F_Residual>abs(0.05),na.rm=TRUE))
+
+(FA_PA_V_4F_TotalResidual <- length(DPA.Descriptors.Numeric)*(length(DPA.Descriptors.Numeric)-1)/2)
+
+(FA_PA_V_4F_HighResidualRate <- FA_PA_V_4F_HighResidual/FA_PA_V_4F_TotalResidual)
+
+##################################
+# Graph the factor loading matrices
+##################################
+fa.diagram(FA_PA_V_4F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Principal Axes Factor Extraction + Varimax Rotation : 4 Factors",
+           cex=0.75)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("RDMORT","DBMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
+      check.keys=FALSE)
+
+##################################
+# computing the internal consistency
+# measure of reliability using the
+# Cronbach's alpha coefficient
+# for each factor
+##################################
+alpha(DPA.Descriptors.Numeric[,c("STMORT","OVWINC","HDMORT")],
+      check.keys=FALSE)
+
+##################################
+# Formulating the dandelion plot to
+# visualize both factor variances and loadings
+# from the factor loading matrices
+##################################
+FA_PA_V_4F_FactorLoading <- factload(DPA.Descriptors.Numeric,
+                                  cormeth = "pearson",
+                                  method = "prax",
+                                  nfac = 4,
+                                  rotation = "varimax")
+
+DandelionPlotPalette <- rev(rainbow(100, start = 0, end = 0.2))
+
+dandelion(FA_PA_V_4F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
+
 ```
 
 </details>
@@ -1376,8 +1397,6 @@ dandelion(FA_PA_V_3F_FactorLoading,
 
 </details>
 
-|
-|
 ###  1.3.7 Model Performance Validation
 |
 |
@@ -1456,6 +1475,7 @@ dandelion(FA_PA_V_3F_FactorLoading,
 | **[Book]** [Introduction to Research Methods](https://bookdown.org/ejvanholm/Textbook/) by Eric van Holm
 | **[Book]** [Using R for Social Work Research](https://bookdown.org/bean_jerry/using_r_for_social_work_research/) by Jerry Bean
 | **[Book]** [Introduction to R](https://methodenlehre.github.io/SGSCLM-R-course/index.html#requirements) by Andrew Ellis and Boris Mayer
+| **[Book]** [Handbook of Structural Equation Modeling](https://www.guilford.com/books/Handbook-of-Structural-Equation-Modeling/Rick-Hoyle/9781462544646) by Rick Hoyle
 | **[R Package]** [AppliedPredictiveModeling](https://cran.r-project.org/web//packages/AppliedPredictiveModeling/AppliedPredictiveModeling.pdf) by Max Kuhn
 | **[R Package]** [caret](https://topepo.github.io/caret/index.html) by Max Kuhn
 | **[R Package]** [rpart](https://mran.microsoft.com/web/packages/rpart/rpart.pdf) by Terry Therneau and Beth Atkinson
