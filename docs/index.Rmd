@@ -2374,7 +2374,7 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 | **[C]** All chronic disease indicator loadings for each latent factor were high (>0.60) and all statistically significant.
 |
-| **[D]** The **4-Factor Model** demonstrated high total reliability at 0.92 and individual latent factor reliability as follows.
+| **[D]** The **3-Factor Model** demonstrated high total reliability at 0.92 and individual latent factor reliability as follows.
 |      **[D.1]** **Poor Nutrition** Cronbach's Alpha = 0.88
 |      **[D.2]** **Tobacco Use** = 0.85
 |      **[D.3]** **Unhealthy Lifestyle** Cronbach's Alpha = 0.89
@@ -2552,6 +2552,9 @@ semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "st
 | **[Book]** [Using R for Social Work Research](https://bookdown.org/bean_jerry/using_r_for_social_work_research/) by Jerry Bean
 | **[Book]** [Introduction to R](https://methodenlehre.github.io/SGSCLM-R-course/index.html#requirements) by Andrew Ellis and Boris Mayer
 | **[Book]** [Handbook of Structural Equation Modeling](https://www.guilford.com/books/Handbook-of-Structural-Equation-Modeling/Rick-Hoyle/9781462544646) by Rick Hoyle
+| **[Book]** [A Beginner's Guide to Structural Equation Modeling](https://www.routledge.com/A-Beginners-Guide-to-Structural-Equation-Modeling/Whittaker-Schumacker/p/book/9780367477967) by Tiffany Whittaker and Randall Schumacker
+| **[Book]** [Principles and Practice of Structural Equation Modeling](https://www.guilford.com/books/Principles-and-Practice-of-Structural-Equation-Modeling/Rex-Kline/9781462551910) by Rex Kline
+| **[Book]** [Structural Equation Modeling with EQS and EQS/WINDOWS](https://us.sagepub.com/en-us/nam/structural-equation-modeling-with-eqs-and-eqswindows/book4319) by Barbara Byrne 
 | **[R Package]** [AppliedPredictiveModeling](https://cran.r-project.org/web//packages/AppliedPredictiveModeling/AppliedPredictiveModeling.pdf) by Max Kuhn
 | **[R Package]** [caret](https://topepo.github.io/caret/index.html) by Max Kuhn
 | **[R Package]** [rpart](https://mran.microsoft.com/web/packages/rpart/rpart.pdf) by Terry Therneau and Beth Atkinson
@@ -2627,6 +2630,8 @@ semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "st
 | **[Publication]** [Very Simple Structure: An Alternative Procedure For Estimating The Optimal Number Of Interpretable Factors](https://www.tandfonline.com/doi/abs/10.1207/s15327906mbr1404_2) by William Revelle and Thomas Rocklin (Multivariate Behavioral Research )
 | **[Publication]** [Determining the Number of Components from the Matrix of Partial Correlations](https://psycnet.apa.org/record/1977-07293-001) by Wayne Velicer (Psychometrika)
 | **[Publication]** [Dandelion Plot: A Method for the Visualization of R-mode Exploratory Factor Analyses](https://link.springer.com/article/10.1007/s00180-014-0518-x) by Artur Manukyan, Erhan Cene, Ahmet Sedef and Ibrahim Demir (Computational Statistics) 
+| **[Publication]** [Cutoff Criteria for Fit Indexes in Covariance Structure Analysis: Conventional Criteria Versus New Alternatives](https://www.tandfonline.com/doi/abs/10.1080/10705519909540118) by Litze Hu  and Peter Bentler (Structural Equation Modeling: A Multidisciplinary Journal)
+| **[Publication]** [Effects of Sample Size, Estimation Methods, and Model Specification on Structural Equation Modeling Fit Indexes](https://www.tandfonline.com/doi/abs/10.1080/10705519909540119) by Xitao Fan, Bruce Thompson and Lin Wang (Structural Equation Modeling: A Multidisciplinary Journal)
 | **[Course]** [Applied Data Mining and Statistical Learning](https://online.stat.psu.edu/stat508/) by Penn State Eberly College of Science
 |
 |
