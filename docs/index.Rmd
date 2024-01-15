@@ -1085,27 +1085,29 @@ corrplot(cor(DPA.Descriptors.Numeric,
 ####  1.3.6.1 Principal Axes Factor Extraction and Varimax Rotation
 |
 | **[A]** Appplying **Principal Axes** factor extraction and **Varimax** rotation, an evaluation was conducted using a set of empirical guidelines to determine the optimal number of factors to be retained for exploratory factor analysis. It was determined that:
-|      **[A.1]** 4 factors would be sufficient for an optimal balance between comprehensiveness and parsimony. 
-|      **[A.2]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
-|      **[A.3]** The choice of 4 factors was supported by the **Beta** and **Bartlett** methods for determining the optimal number of factors.
+|      **[A.1]** The choice of 3 factors was supported by the **Bentler**, **CNG**, **t** and **p** methods for determining the optimal number of factors.
+|      **[A.2]** The choice of 4 factors was supported by the **Beta** and **Bartlett** methods for determining the optimal number of factors.
+|      **[A.3]** 3 or 4 factors would be sufficiently plausible for an optimal balance between comprehensiveness and parsimony. 
+|      **[A.4]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
+
 |
 | **[B]** Results for the exploratory factor analysis using a **3-Factor Structure** were as follows:
 |      **[B.1]** Standardized Root Mean Square of the Residual = 0.03
 |      **[B.2]** Tucker-Lewis Fit Index = 0.98
 |      **[B.3]** Bayesian Information Criterion = -33.48
 |      **[B.4]** High Residual Rate = 0.11
-|      **[B.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|      **[B.5]** Factor 1 was a latent factor with higher loading towards the following descriptors:
 |             **[B.5.1]** <span style="color: #FF0000">STMORT</span>: Loading = 0.82, Communality = 0.80
 |             **[B.5.2]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.73, Communality = 0.72
 |             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.70, Communality = 0.63
 |             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.57, Communality = 0.62
 |             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.52, Communality = 0.41
 |             **[B.5.6]** Cronbach's Alpha = 0.88
-|      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|      **[B.6]** Factor 2 was a latent factor with higher loading towards the following descriptors:
 |             **[B.6.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.99, Communality = 1.06
 |             **[B.6.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.62, Communality = 0.84
 |             **[B.6.3]** Cronbach's Alpha = 0.89
-|      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|      **[B.7]** Factor 3 was a latent factor with higher loading towards the following descriptors:
 |             **[B.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.77, Communality = 0.90
 |             **[B.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.60, Communality = 0.62
 |             **[B.7.3]** Cronbach's Alpha = 0.85
@@ -1115,19 +1117,19 @@ corrplot(cor(DPA.Descriptors.Numeric,
 |      **[C.2]** Tucker-Lewis Fit Index = 1.08
 |      **[C.3]** Bayesian Information Criterion = -21.18
 |      **[C.4]** High Residual Rate = 0.05
-|      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|      **[C.5]** Factor 1 was a latent factor with higher loading towards the following descriptors:
 |             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.90, Communality = 0.90
 |             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.70, Communality = 0.89
 |             **[C.5.3]** Cronbach's Alpha = 0.89
-|      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|      **[C.6]** Factor 2 was a latent factor with higher loading towards the following descriptors:
 |             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.89, Communality = 0.95
 |             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.50, Communality = 0.44
 |             **[C.6.3]** Standardized Cronbach's Alpha = 0.76
-|      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|      **[C.7]** Factor 3 was a latent factor with higher loading towards the following descriptors:
 |             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.73, Communality = 0.87
 |             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.61, Communality = 0.65
 |             **[C.7.3]** Cronbach's Alpha = 0.85
-|      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
+|      **[C.8]** Factor 4 was a latent factor with higher loading towards the following descriptors:
 |             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.68, Communality = 0.79
 |             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.60, Communality = 0.73
 |             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.59, Communality = 0.79
@@ -1293,7 +1295,7 @@ summary(FA_PA_V_4F_Summary)
 (FA_PA_V_4F_HighResidualRate <- FA_PA_V_4F_HighResidual/FA_PA_V_4F_TotalResidual)
 
 ##################################
-# Graph the factor loading matrices
+# Graphing the factor loading matrices
 ##################################
 fa.diagram(FA_PA_V_4F,
            sort=TRUE,
@@ -1303,7 +1305,7 @@ fa.diagram(FA_PA_V_4F,
            cex=0.75)
 
 ##################################
-# computing the internal consistency
+# Computing the internal consistency
 # measure of reliability using the
 # Cronbach's alpha coefficient
 # for each factor
@@ -1312,7 +1314,7 @@ alpha(DPA.Descriptors.Numeric[,c("MEUNDA","ARTINC")],
       check.keys=FALSE)
 
 ##################################
-# computing the internal consistency
+# Computing the internal consistency
 # measure of reliability using the
 # Cronbach's alpha coefficient
 # for each factor
@@ -1321,7 +1323,7 @@ alpha(DPA.Descriptors.Numeric[,c("RDMORT","DBMORT")],
       check.keys=FALSE)
 
 ##################################
-# computing the internal consistency
+# Computing the internal consistency
 # measure of reliability using the
 # Cronbach's alpha coefficient
 # for each factor
@@ -1330,7 +1332,7 @@ alpha(DPA.Descriptors.Numeric[,c("SMPREV","PDMORT")],
       check.keys=FALSE)
 
 ##################################
-# computing the internal consistency
+# Computing the internal consistency
 # measure of reliability using the
 # Cronbach's alpha coefficient
 # for each factor
@@ -1365,28 +1367,29 @@ dandelion(FA_PA_V_4F_FactorLoading,
 ####  1.3.6.2 Principal Axes Factor Extraction and Promax Rotation
 |
 | **[A]** Appplying **Principal Axes** factor extraction and **Promax** rotation, an evaluation was conducted using a set of empirical guidelines to determine the optimal number of factors to be retained for exploratory factor analysis. It was determined that:
-|      **[A.1]** 4 factors would be sufficient for an optimal balance between comprehensiveness and parsimony. 
-|      **[A.2]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
-|      **[A.3]** The choice of 4 factors was supported by the **Beta** and **Bartlett** methods for determining the optimal number of factors.
+|      **[A.1]** The choice of 3 factors was supported by the **Bentler**, **CNG**, **t** and **p** methods for determining the optimal number of factors.
+|      **[A.2]** The choice of 4 factors was supported by the **Beta** and **Bartlett** methods for determining the optimal number of factors.
+|      **[A.3]** 3 or 4 factors would be sufficiently plausible for an optimal balance between comprehensiveness and parsimony. 
+|      **[A.4]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
 |
 | **[B]** Results for the exploratory factor analysis using a **3-Factor Structure** were as follows:
 |      **[B.1]** Standardized Root Mean Square of the Residual = 0.03
 |      **[B.2]** Tucker-Lewis Fit Index = 0.98
 |      **[B.3]** Bayesian Information Criterion = -33.48
 |      **[B.4]** High Residual Rate = 0.11
-|      **[B.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|      **[B.5]** Factor 1 was a latent factor with higher loading towards the following descriptors:
 |             **[B.5.1]** <span style="color: #FF0000">STMORT</span>: Loading = 0.98, Communality = 0.80
 |             **[B.5.2]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.73, Communality = 0.72
 |             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.74, Communality = 0.63
 |             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.52, Communality = 0.62
 |             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.48, Communality = 0.41
 |             **[B.5.6]** Cronbach's Alpha = 0.88
-|      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|      **[B.6]** Factor 2 was a latent factor with higher loading towards the following descriptors:
 |             **[B.6.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.91, Communality = 0.90
 |             **[B.6.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.63, Communality = 0.63
 |             **[B.6.3]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.57, Communality = 0.84
 |             **[B.6.4]** Cronbach's Alpha = 0.89
-|      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|      **[B.7]** Factor 3 was a latent factor with higher loading towards the following descriptors:
 |             **[B.7.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 1.05, Communality = 1.06
 |             **[B.7.2]** Cronbach's Alpha = 0.85
 |
@@ -1395,19 +1398,19 @@ dandelion(FA_PA_V_4F_FactorLoading,
 |      **[C.2]** Tucker-Lewis Fit Index = 1.08
 |      **[C.3]** Bayesian Information Criterion = -21.18
 |      **[C.4]** High Residual Rate = 0.05
-|      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|      **[C.5]** Factor 1 was a latent factor with higher loading towards the following descriptors:
 |             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.91, Communality = 0.90
 |             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.56, Communality = 0.89
 |             **[C.5.3]** Cronbach's Alpha = 0.89
-|      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|      **[C.6]** Factor 2 was a latent factor with higher loading towards the following descriptors:
 |             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 1.04, Communality = 0.95
 |             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.47, Communality = 0.44
 |             **[C.6.3]** Cronbach's Alpha = 0.76
-|      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|      **[C.7]** Factor 3 was a latent factor with higher loading towards the following descriptors:
 |             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.87, Communality = 0.87
 |             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.71, Communality = 0.65
 |             **[C.7.3]** Cronbach's Alpha = 0.85
-|      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
+|      **[C.8]** Factor 4 was a latent factor with higher loading towards the following descriptors:
 |             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.78, Communality = 0.79
 |             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.60, Communality = 0.73
 |             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.53, Communality = 0.79
@@ -1645,27 +1648,28 @@ dandelion(FA_PA_P_4F_FactorLoading,
 ####  1.3.6.3 Maximum Likelihood Factor Extraction and Varimax Rotation
 |
 | **[A]** Appplying **Maximum Likelihood** factor extraction and **Varimax** rotation, an evaluation was conducted using a set of empirical guidelines to determine the optimal number of factors to be retained for exploratory factor analysis. It was determined that:
-|      **[A.1]** 4 factors would be sufficient for an optimal balance between comprehensiveness and parsimony. 
-|      **[A.2]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
-|      **[A.3]** The choice of 4 factors was supported by the **Beta**, **Bartlett** and **Adjusted BIC** methods for determining the optimal number of factors.
+|      **[A.1]** The choice of 3 factors was supported by the **Bentler**, **CNG**, **t** and **p** methods for determining the optimal number of factors.
+|      **[A.2]** The choice of 4 factors was supported by the **Beta**, **Bartlett** and **Adjusted BIC** methods for determining the optimal number of factors.
+|      **[A.3]** 3 or 4 factors would be sufficiently plausible for an optimal balance between comprehensiveness and parsimony. 
+|      **[A.4]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
 |
 | **[B]** Results for the exploratory factor analysis using a **3-Factor Structure** were as follows:
 |      **[B.1]** Standardized Root Mean Square of the Residual = 0.03
 |      **[B.2]** Tucker-Lewis Fit Index = 0.99
 |      **[B.3]** Bayesian Information Criterion = -34.37
 |      **[B.4]** High Residual Rate = 0.13
-|      **[B.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|      **[B.5]** Factor 1 was a latent factor with higher loading towards the following descriptors:
 |             **[B.5.1]** <span style="color: #FF0000">STMORT</span>: Loading = 0.81, Communality = 0.79
 |             **[B.5.2]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.74, Communality = 0.75
 |             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.68, Communality = 0.61
 |             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.60, Communality = 0.67
 |             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.51, Communality = 0.38
 |             **[B.5.6]** Cronbach's Alpha = 0.88
-|      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|      **[B.6]** Factor 2 was a latent factor with higher loading towards the following descriptors:
 |             **[B.6.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.95, Communality = 1.00
 |             **[B.6.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.64, Communality = 0.84
 |             **[B.6.3]** Cronbach's Alpha = 0.89
-|      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|      **[B.7]** Factor 3 was a latent factor with higher loading towards the following descriptors:
 |             **[B.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.79, Communality = 0.93
 |             **[B.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.56, Communality = 0.61
 |             **[B.7.3]** Cronbach's Alpha = 0.85
@@ -1675,19 +1679,19 @@ dandelion(FA_PA_P_4F_FactorLoading,
 |      **[C.2]** Tucker-Lewis Fit Index = 1.09
 |      **[C.3]** Bayesian Information Criterion = -21.64
 |      **[C.4]** High Residual Rate = 0.06
-|      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|      **[C.5]** Factor 1 was a latent factor with higher loading towards the following descriptors:
 |             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.90, Communality = 0.90
 |             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.69, Communality = 0.89
 |             **[C.5.3]** Cronbach's Alpha = 0.89
-|      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|      **[C.6]** Factor 2 was a latent factor with higher loading towards the following descriptors:
 |             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.90, Communality = 0.96
 |             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.51, Communality = 0.43
 |             **[C.6.3]** Cronbach's Alpha = 0.76
-|      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|      **[C.7]** Factor 3 was a latent factor with higher loading towards the following descriptors:
 |             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.75, Communality = 0.90
 |             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.60, Communality = 0.63
 |             **[C.7.3]** Cronbach's Alpha = 0.85
-|      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
+|      **[C.8]** Factor 4 was a latent factor with higher loading towards the following descriptors:
 |             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.66, Communality = 0.77
 |             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.60, Communality = 0.73
 |             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.60, Communality = 0.80
@@ -1925,28 +1929,29 @@ dandelion(FA_ML_V_4F_FactorLoading,
 ####  1.3.6.4 Maximum Likelihood Factor Extraction and Promax Rotation
 |
 | **[A]** Appplying **Maximum Likelihood** factor extraction and **Promax** rotation, an evaluation was conducted using a set of empirical guidelines to determine the optimal number of factors to be retained for exploratory factor analysis. It was determined that:
-|      **[A.1]** 4 factors would be sufficient for an optimal balance between comprehensiveness and parsimony. 
-|      **[A.2]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
-|      **[A.3]** The choice of 4 factors was supported by the **Beta**, **Bartlett** and **Adjusted BIC** methods for determining the optimal number of factors.
+|      **[A.1]** The choice of 3 factors was supported by the **Bentler**, **CNG**, **t** and **p** methods for determining the optimal number of factors.
+|      **[A.2]** The choice of 4 factors was supported by the **Beta**, **Bartlett** and **Adjusted BIC** methods for determining the optimal number of factors.
+|      **[A.3]** 3 or 4 factors would be sufficiently plausible for an optimal balance between comprehensiveness and parsimony. 
+|      **[A.4]** To ensure that both under-extraction and over-extraction are assessed, models with 3 and 4 and factors were sequentially evaluated for their interpretability and theoretical meaningfulness.
 |
 | **[B]** Results for the exploratory factor analysis using a **3-Factor Structure** were as follows:
 |      **[B.1]** Standardized Root Mean Square of the Residual = 0.03
 |      **[B.2]** Tucker-Lewis Fit Index = 0.99
 |      **[B.3]** Bayesian Information Criterion = -34.38
 |      **[B.4]** High Residual Rate = 0.17
-|      **[B.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|      **[B.5]** Factor 1 was a latent factor with higher loading towards the following descriptors:
 |             **[B.5.1]** <span style="color: #FF0000">STMORT</span>: Loading = 0.96, Communality = 0.79
 |             **[B.5.2]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.76, Communality = 0.75
 |             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.72, Communality = 0.61
 |             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.58, Communality = 0.67
 |             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.50, Communality = 0.38
 |             **[B.5.6]** Cronbach's Alpha = 0.88
-|      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|      **[B.6]** Factor 2 was a latent factor with higher loading towards the following descriptors:
 |             **[B.6.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.91, Communality = 0.93
 |             **[B.6.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.56, Communality = 0.61
 |             **[B.6.3]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.54, Communality = 0.84
 |             **[B.6.4]** Cronbach's Alpha = 0.89
-|      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|      **[B.7]** Factor 3 was a latent factor with higher loading towards the following descriptors:
 |             **[B.7.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 1.02, Communality = 1.00
 |             **[B.7.2]** Cronbach's Alpha = 0.85
 |
@@ -1955,19 +1960,19 @@ dandelion(FA_ML_V_4F_FactorLoading,
 |      **[C.2]** Tucker-Lewis Fit Index = 1.09
 |      **[C.3]** Bayesian Information Criterion = -21.63
 |      **[C.4]** High Residual Rate = 0.06
-|      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
+|      **[C.5]** Factor 1 was a latent factor with higher loading towards the following descriptors:
 |             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.91, Communality = 0.90
 |             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.55, Communality = 0.89
 |             **[C.5.3]** Cronbach's Alpha = 0.89
-|      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
+|      **[C.6]** Factor 2 was a latent factor with higher loading towards the following descriptors:
 |             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 1.05, Communality = 0.96
 |             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.48, Communality = 0.43
 |             **[C.6.3]** Cronbach's Alpha = 0.76
-|      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
+|      **[C.7]** Factor 3 was a latent factor with higher loading towards the following descriptors:
 |             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.89, Communality = 0.90
 |             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.67, Communality = 0.63
 |             **[C.7.3]** Cronbach's Alpha = 0.85
-|      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
+|      **[C.8]** Factor 4 was a latent factor with higher loading towards the following descriptors:
 |             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.76, Communality = 0.77
 |             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.61, Communality = 0.73
 |             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.56, Communality = 0.79
@@ -2205,35 +2210,130 @@ dandelion(FA_ML_P_4F_FactorLoading,
 |
 ####  1.3.7.1 4-Factor Model Confirmatory Factor Analysis
 |
+| **[A]** Confirmatory factor analysis was conducted to evaluate the derived **4-Factor Model** from the exploratory factor analysis that hypothesized the relationship between 4 latent factors and observed chronic disease indicator variables as follows:
+|      **[A.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|             **[A.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
+|             **[A.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
+|             **[A.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
+|      **[A.2]** Factor 2 was a latent factor describing **Physical Inactivity** with higher loading towards the following descriptors:
+|             **[A.2.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
+|             **[A.2.2]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
+|      **[A.3]** Factor 3 was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
+|             **[A.3.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
+|             **[A.3.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
+|      **[A.4]** Factor 4 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|             **[A.4.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
+|             **[A.4.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
+|
+| **[B]** The **4-Factor Model** demonstrated sufficiently good fit based on the model performance metrics as follows:
+|      **[B.1]** Comparative Fit Index = 0.96 (Ideal Criterion: >0.90)
+|      **[B.2]** Tucker Lewis Index = 0.94 (Ideal Criterion: >0.90)
+|      **[B.3]** Standardized Root Mean Square of the Residual = 0.05 (Ideal Criterion: <0.08)
+|      **[B.4]** Root Mean Square Error of Approximation = 0.10 (Ideal Criterion: <0.08)
+|
+| **[C]** All chronic disease indicator loadings for each latent factor were high (>0.65) and all statistically significant.
+|
+| **[D]** The **4-Factor Model** demonstrated high total reliability at 0.92 and individual latent factor reliability as follows.
+|      **[D.1]** **Physical Inactivity**  Cronbach's Alpha = 0.86
+|      **[D.2]** **Poor Nutrition** Cronbach's Alpha = 0.76
+|      **[D.3]** **Tobacco Use** = 0.85
+|      **[D.4]** **Unhealthy Lifestyle** Cronbach's Alpha = 0.89
+|
+|
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.7.1, warning=FALSE, message=FALSE}
+##################################
+# Specifying the model structure
+# for confirmatory factor analysis
+##################################
+CFA_4F <- 'UNHLIF =~ HDMORT + STMORT + OVWINC
+           TOBUSE =~ SMPREV + PDMORT
+           PNUTRI =~ MEUNDA + ARTINC
+           PINACT =~ RDMORT + DBMORT'
 
-CFA_4F <- 'CARDIO =~ HDMORT + STMORT + OVWINC
-           PULMON =~ SMPREV + PDMORT
-           MENTAL =~ MEUNDA + ARTINC
-           NEPHRO =~ RDMORT + DBMORT'
-
+##################################
+# Fitting the model
+# for confirmatory factor analysis
+##################################
 CFA_4F_MODEL <- cfa(CFA_4F, data = DPA.Descriptors.Numeric, mimic =c("MPlus"), std.lv = TRUE)
 
-summary(CFA_4F_MODEL, fit.measures = TRUE)
+##################################
+# Generating a model performance summary
+# for confirmatory factor analysis
+##################################
+summary(CFA_4F_MODEL, fit.measures=TRUE)
 
+##################################
+# Testing the null hypothesis
+# that the matrix reproduced by the data
+# and the specified model are statistically the same
+# as the input or analysis matrix
+# (Ideal Criterion: P-Value=>0.05)
+##################################
 fitMeasures(CFA_4F_MODEL, c("chisq", "df", "pvalue"))
 
+##################################
+# Measuring the discrepancy between
+# the model-based and observed correlation matrices
+# (Ideal Criterion: RMSEA<0.08)
+##################################
 fitMeasures(CFA_4F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.pvalue"))
 
-fitMeasures(CFA_4F_MODEL, c("cfi", "srmr"))
+##################################
+# Assessing model adequacy by comparing
+# the hypothesized model 
+# to a baseline model
+# (Ideal Criterion: CFI>0.90)
+##################################
+fitMeasures(CFA_4F_MODEL, c("cfi"))
 
+##################################
+# Assessing model adequacy by evaluating
+# the improvement in fit of the hypothesized model
+# relative to a baseline model
+# (Ideal Criterion: TLI>0.90)
+##################################
+fitMeasures(CFA_4F_MODEL, c("tli"))
+
+##################################
+# Measuring the actual differences (discrepancies)
+# between the model-based correlations and the actual correlations
+# (Ideal Criterion: SRMR<0.08)
+##################################
+fitMeasures(CFA_4F_MODEL, c("srmr"))
+
+##################################
+# Evaluating correlation residuals 
+# using the pairwise coefficients 
+# to provide details about potential model misfit
+# (Ideal Criterion: Residuals<0.10)
+##################################
 residuals(CFA_4F_MODEL)$cov
 
+##################################
+# Evaluating loading magnitude estimates 
+# and fit statistics
+# (Ideal Criterion: Loading Estimates>0.50)
+# (Ideal Criterion: P-Value<0.05)
+##################################
 parameterEstimates(CFA_4F_MODEL) %>% 
   filter(op == "=~")
 
-standardizedSolution(CFA_4F_MODEL)
-
+##################################
+# Evaluating the measurement reliability
+# of the hypothesized model latent factors
+# (Ideal Criterion: Cronbach's Alpha>0.70)
+##################################
 semTools::compRelSEM(CFA_4F_MODEL, tau.eq=T, obs.var=T, return.total=T)
 
+##################################
+# Formulating a path diagram to visualize
+# the relationships and paths between latent factors
+# and observed chronic disease indicators
+# from the hypothesized model
+##################################
 CFA_4F_MODEL_FACTORS <- CFA_4F_MODEL@pta$vnames$lv[[1]]
 size <- .65
 semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "std", layout = "tree2", 
@@ -2252,36 +2352,125 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 ####  1.3.7.2 3-Factor Model Confirmatory Factor Analysis
 |
-
+| **[A]** Confirmatory factor analysis was conducted to evaluate the derived **3-Factor Model** from the exploratory factor analysis that hypothesized the relationship between 3 latent factors and observed chronic disease indicator variables as follows:
+|      **[A.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|             **[A.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
+|             **[A.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
+|             **[A.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
+|             **[A.1.4]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
+|             **[A.1.5]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
+|      **[A.2]** Factor 2 was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
+|             **[A.2.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
+|             **[A.2.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
+|      **[A.3]** Factor 3 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|             **[A.3.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
+|             **[A.3.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
+|
+| **[B]** The **3-Factor Model** demonstrated sufficiently good fit based on the model performance metrics as follows:
+|      **[B.1]** Comparative Fit Index = 0.95 (Ideal Criterion: >0.90)
+|      **[B.2]** Tucker Lewis Index = 0.93 (Ideal Criterion: >0.90)
+|      **[B.3]** Standardized Root Mean Square of the Residual = 0.05 (Ideal Criterion: <0.08)
+|      **[B.4]** Root Mean Square Error of Approximation = 0.11 (Ideal Criterion: <0.08)
+|
+| **[C]** All chronic disease indicator loadings for each latent factor were high (>0.60) and all statistically significant.
+|
+| **[D]** The **4-Factor Model** demonstrated high total reliability at 0.92 and individual latent factor reliability as follows.
+|      **[D.1]** **Poor Nutrition** Cronbach's Alpha = 0.88
+|      **[D.2]** **Tobacco Use** = 0.85
+|      **[D.3]** **Unhealthy Lifestyle** Cronbach's Alpha = 0.89
+|
+|
 
 ```{r section_1.3.7.2, warning=FALSE, message=FALSE}
-CFA_3F <- 'CARDIO =~ HDMORT + STMORT + OVWINC + RDMORT + DBMORT
-           PULMON =~ SMPREV + PDMORT
-           MENTAL =~ MEUNDA + ARTINC'
+##################################
+# Specifying the model structure
+# for confirmatory factor analysis
+##################################
+CFA_3F <- 'UNHLIF =~ HDMORT + STMORT + OVWINC + RDMORT + DBMORT
+           TOBUSE =~ SMPREV + PDMORT
+           PNUTRI =~ MEUNDA + ARTINC'
 
+##################################
+# Fitting the model
+# for confirmatory factor analysis
+##################################
 CFA_3F_MODEL <- cfa(CFA_3F, data = DPA.Descriptors.Numeric, mimic =c("MPlus"), std.lv = TRUE)
 
+##################################
+# Generating a model performance summary
+# for confirmatory factor analysis
+##################################
 summary(CFA_3F_MODEL, fit.measures = TRUE)
 
+##################################
+# Testing the null hypothesis
+# that the matrix reproduced by the data
+# and the specified model are statistically the same
+# as the input or analysis matrix
+# (Ideal Criterion: P-Value=>0.05)
+##################################
 fitMeasures(CFA_3F_MODEL, c("chisq", "df", "pvalue"))
 
+##################################
+# Measuring the discrepancy between
+# the model-based and observed correlation matrices
+# (Ideal Criterion: RMSEA<0.08)
+##################################
 fitMeasures(CFA_3F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.pvalue"))
 
-fitMeasures(CFA_3F_MODEL, c("cfi", "srmr"))
+##################################
+# Assessing model adequacy by comparing
+# the hypothesized model 
+# to a baseline model
+# (Ideal Criterion: CFI>0.90)
+##################################
+fitMeasures(CFA_3F_MODEL, c("cfi"))
 
+##################################
+# Assessing model adequacy by evaluating
+# the improvement in fit of the hypothesized model
+# relative to a baseline model
+# (Ideal Criterion: TLI>0.90)
+##################################
+fitMeasures(CFA_3F_MODEL, c("tli"))
+
+##################################
+# Measuring the actual differences (discrepancies)
+# between the model-based correlations and the actual correlations
+# (Ideal Criterion: SRMR<0.08)
+##################################
+fitMeasures(CFA_3F_MODEL, c("srmr"))
+
+##################################
+# Evaluating correlation residuals 
+# using the pairwise coefficients 
+# to provide details about potential model misfit
+# (Ideal Criterion: Residuals<0.10)
+##################################
 residuals(CFA_3F_MODEL)$cov
 
-parameterEstimates(CFA_3F_MODEL, standardized=FALSE) %>% 
-  filter(op == "=~") %>% 
-  select(Item=rhs, Standardized=est, ci.lower, ci.upper, SE=se, Z=z, 'p-value'=pvalue)
+##################################
+# Evaluating loading magnitude estimates 
+# and fit statistics
+# (Ideal Criterion: Loading Estimates>0.50)
+# (Ideal Criterion: P-Value<0.05)
+##################################
+parameterEstimates(CFA_3F_MODEL) %>% 
+  filter(op == "=~")
 
-parameterEstimates(CFA_3F_MODEL, standardized=FALSE, rsquare = TRUE) %>% 
-  filter(op == "r2") %>% 
-  select(Item=rhs, R2 = est) 
-
+##################################
+# Evaluating the measurement reliability
+# of the hypothesized model latent factors
+# (Ideal Criterion: Cronbach's Alpha>0.70)
+##################################
 semTools::compRelSEM(CFA_3F_MODEL, tau.eq=T, obs.var=T, return.total=T)
 
-CFA_3F_MODEL <- cfa(CFA_3F, data = DPA.Descriptors.Numeric)
+##################################
+# Formulating a path diagram to visualize
+# the relationships and paths between latent factors
+# and observed chronic disease indicators
+# from the hypothesized model
+##################################
 CFA_3F_MODEL_FACTORS <- CFA_3F_MODEL@pta$vnames$lv[[1]]
 size <- .65
 semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "std", layout = "tree2", 
@@ -2292,8 +2481,6 @@ semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "st
          sizeLat = 11 * size, sizeMan = 11 * size, sizeMan2 = 4 * size, 
          edge.label.cex = 1.2 * size, 
          edge.color = "#000000", edge.label.position = .40)
-
-
 ```
 
 </details>
