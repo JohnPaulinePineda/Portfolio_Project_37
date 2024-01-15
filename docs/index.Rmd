@@ -2381,6 +2381,8 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 |
 
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
 ```{r section_1.3.7.2, warning=FALSE, message=FALSE}
 ##################################
 # Specifying the model structure
