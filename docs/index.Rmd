@@ -815,6 +815,28 @@ for (i in 1:ncol(DPA.Descriptors.Numeric)) {
 
 </details>
 
+|
+|
+####  1.3.3.7 Data Normalization
+|
+| **[A]** Z-score normalization was applied to generate a transformed data with a distributional mean of zero and a standard deviation equal to one - allowing a consistent scale among the descriptors.
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.3.7, warning=FALSE, message=FALSE, fig.width=15, fig.height=2}
+##################################
+# Data Normalization
+##################################
+
+DPA.Descriptors.Numeric.CenteredScaled <- preProcess(DPA.Descriptors.Numeric, method = c("center","scale"))
+DPA.Descriptors.Numeric <- predict(DPA.Descriptors.Numeric.CenteredScaled, DPA.Descriptors.Numeric)
+
+```
+
+</details>
+
 ###  1.3.4 Data Pre-Assessment
 |
 |
@@ -845,10 +867,6 @@ for (i in 1:ncol(DPA.Descriptors.Numeric)) {
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.4.1, warning=FALSE, message=FALSE}
-
-DPA.Descriptors.Numeric.CenteredScaled <- preProcess(DPA.Descriptors.Numeric, method = c("center","scale"))
-DPA.Descriptors.Numeric <- predict(DPA.Descriptors.Numeric.CenteredScaled, DPA.Descriptors.Numeric)
-
 ##################################
 # Calculating the Kaiser-Meyer-Olkin Factor Adequacy
 ##################################
@@ -1057,30 +1075,6 @@ corrplot(cor(DPA.Descriptors.Numeric,
              sig.level = 0.05,
              p.mat = DPA_CorrelationTest$p,
              insig = "blank")
-
-##################################
-# Testing pairwise correlation between descriptors
-##################################
-DPA_CorrelationTest <- cor.mtest(DPA.Descriptors.Numeric,
-                       method = "pearson",
-                       conf.level = 0.95)
-
-##################################
-# Plotting the pairwise association
-# between descriptors
-##################################
-corrplot(cor(DPA.Descriptors.Numeric,
-             method = "pearson",
-             use="pairwise.complete.obs"),
-             method = "number",
-             type = "upper",
-             order = "original",
-             tl.col = "black",
-             tl.cex = 0.75,
-             tl.srt = 90,
-             sig.level = 0.05,
-             p.mat = DPA_CorrelationTest$p,
-             insig = "blank")
 ```
 
 </details>
@@ -1106,15 +1100,15 @@ corrplot(cor(DPA.Descriptors.Numeric,
 |             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.70, Communality = 0.63
 |             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.57, Communality = 0.62
 |             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.52, Communality = 0.41
-|             **[B.5.6]** Standardized Cronbach's Alpha = 0.88
+|             **[B.5.6]** Cronbach's Alpha = 0.88
 |      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
 |             **[B.6.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.99, Communality = 1.06
 |             **[B.6.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.62, Communality = 0.84
-|             **[B.6.3]** Standardized Cronbach's Alpha = 0.89
+|             **[B.6.3]** Cronbach's Alpha = 0.89
 |      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
 |             **[B.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.77, Communality = 0.90
 |             **[B.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.60, Communality = 0.62
-|             **[B.7.3]** Standardized Cronbach's Alpha = 0.85
+|             **[B.7.3]** Cronbach's Alpha = 0.85
 |
 | **[C]** Results for the exploratory factor analysis using a **4-Factor Structure** were as follows:
 |      **[C.1]** Standardized Root Mean Square of the Residual = 0.01
@@ -1124,7 +1118,7 @@ corrplot(cor(DPA.Descriptors.Numeric,
 |      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
 |             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.90, Communality = 0.90
 |             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.70, Communality = 0.89
-|             **[C.5.3]** Standardized Cronbach's Alpha = 0.89
+|             **[C.5.3]** Cronbach's Alpha = 0.89
 |      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
 |             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.89, Communality = 0.95
 |             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.50, Communality = 0.44
@@ -1132,12 +1126,12 @@ corrplot(cor(DPA.Descriptors.Numeric,
 |      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
 |             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.73, Communality = 0.87
 |             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.61, Communality = 0.65
-|             **[C.7.3]** Standardized Cronbach's Alpha = 0.85
+|             **[C.7.3]** Cronbach's Alpha = 0.85
 |      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
 |             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.68, Communality = 0.79
 |             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.60, Communality = 0.73
 |             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.59, Communality = 0.79
-|             **[C.8.4]** Standardized Cronbach's Alpha = 0.86
+|             **[C.8.4]** Cronbach's Alpha = 0.86
 |
 |
 
@@ -1386,15 +1380,15 @@ dandelion(FA_PA_V_4F_FactorLoading,
 |             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.74, Communality = 0.63
 |             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.52, Communality = 0.62
 |             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.48, Communality = 0.41
-|             **[B.5.6]** Standardized Cronbach's Alpha = 0.88
+|             **[B.5.6]** Cronbach's Alpha = 0.88
 |      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
 |             **[B.6.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.91, Communality = 0.90
 |             **[B.6.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.63, Communality = 0.63
 |             **[B.6.3]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.57, Communality = 0.84
-|             **[B.6.4]** Standardized Cronbach's Alpha = 0.89
+|             **[B.6.4]** Cronbach's Alpha = 0.89
 |      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
 |             **[B.7.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 1.05, Communality = 1.06
-|             **[B.7.2]** Standardized Cronbach's Alpha = 0.85
+|             **[B.7.2]** Cronbach's Alpha = 0.85
 |
 | **[C]** Results for the exploratory factor analysis using a **4-Factor Structure** were as follows:
 |      **[C.1]** Standardized Root Mean Square of the Residual = 0.01
@@ -1404,20 +1398,20 @@ dandelion(FA_PA_V_4F_FactorLoading,
 |      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
 |             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.91, Communality = 0.90
 |             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.56, Communality = 0.89
-|             **[C.5.3]** Standardized Cronbach's Alpha = 0.89
+|             **[C.5.3]** Cronbach's Alpha = 0.89
 |      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
 |             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 1.04, Communality = 0.95
 |             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.47, Communality = 0.44
-|             **[C.6.3]** Standardized Cronbach's Alpha = 0.76
+|             **[C.6.3]** Cronbach's Alpha = 0.76
 |      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
 |             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.87, Communality = 0.87
 |             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.71, Communality = 0.65
-|             **[C.7.3]** Standardized Cronbach's Alpha = 0.85
+|             **[C.7.3]** Cronbach's Alpha = 0.85
 |      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
 |             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.78, Communality = 0.79
 |             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.60, Communality = 0.73
 |             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.53, Communality = 0.79
-|             **[C.8.4]** Standardized Cronbach's Alpha = 0.86
+|             **[C.8.4]** Cronbach's Alpha = 0.86
 |
 |
 
@@ -1666,15 +1660,15 @@ dandelion(FA_PA_P_4F_FactorLoading,
 |             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.68, Communality = 0.61
 |             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.60, Communality = 0.67
 |             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.51, Communality = 0.38
-|             **[B.5.6]** Standardized Cronbach's Alpha = 0.88
+|             **[B.5.6]** Cronbach's Alpha = 0.88
 |      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
 |             **[B.6.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.95, Communality = 1.00
 |             **[B.6.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.64, Communality = 0.84
-|             **[B.6.3]** Standardized Cronbach's Alpha = 0.89
+|             **[B.6.3]** Cronbach's Alpha = 0.89
 |      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
 |             **[B.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.79, Communality = 0.93
 |             **[B.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.56, Communality = 0.61
-|             **[B.7.3]** Standardized Cronbach's Alpha = 0.85
+|             **[B.7.3]** Cronbach's Alpha = 0.85
 |
 | **[C]** Results for the exploratory factor analysis using a **4-Factor Structure** were as follows:
 |      **[C.1]** Standardized Root Mean Square of the Residual = 0.01
@@ -1684,20 +1678,20 @@ dandelion(FA_PA_P_4F_FactorLoading,
 |      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
 |             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.90, Communality = 0.90
 |             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.69, Communality = 0.89
-|             **[C.5.3]** Standardized Cronbach's Alpha = 0.89
+|             **[C.5.3]** Cronbach's Alpha = 0.89
 |      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
 |             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.90, Communality = 0.96
 |             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.51, Communality = 0.43
-|             **[C.6.3]** Standardized Cronbach's Alpha = 0.76
+|             **[C.6.3]** Cronbach's Alpha = 0.76
 |      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
 |             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.75, Communality = 0.90
 |             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.60, Communality = 0.63
-|             **[C.7.3]** Standardized Cronbach's Alpha = 0.85
+|             **[C.7.3]** Cronbach's Alpha = 0.85
 |      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
 |             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.66, Communality = 0.77
 |             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.60, Communality = 0.73
 |             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.60, Communality = 0.80
-|             **[C.8.4]** Standardized Cronbach's Alpha = 0.86
+|             **[C.8.4]** Cronbach's Alpha = 0.86
 |
 |
 
@@ -1946,15 +1940,15 @@ dandelion(FA_ML_V_4F_FactorLoading,
 |             **[B.5.3]** <span style="color: #FF0000">RDMORT</span>: Loading = 0.72, Communality = 0.61
 |             **[B.5.4]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.58, Communality = 0.67
 |             **[B.5.5]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.50, Communality = 0.38
-|             **[B.5.6]** Standardized Cronbach's Alpha = 0.88
+|             **[B.5.6]** Cronbach's Alpha = 0.88
 |      **[B.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
 |             **[B.6.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.91, Communality = 0.93
 |             **[B.6.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.56, Communality = 0.61
 |             **[B.6.3]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.54, Communality = 0.84
-|             **[B.6.4]** Standardized Cronbach's Alpha = 0.89
+|             **[B.6.4]** Cronbach's Alpha = 0.89
 |      **[B.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
 |             **[B.7.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 1.02, Communality = 1.00
-|             **[B.7.2]** Standardized Cronbach's Alpha = 0.85
+|             **[B.7.2]** Cronbach's Alpha = 0.85
 |
 | **[C]** Results for the exploratory factor analysis using a **4-Factor Structure** were as follows:
 |      **[C.1]** Standardized Root Mean Square of the Residual = 0.01
@@ -1964,20 +1958,20 @@ dandelion(FA_ML_V_4F_FactorLoading,
 |      **[C.5]** Factor 1 was a latent variable with higher loading towards the following descriptors:
 |             **[C.5.1]** <span style="color: #FF0000">MEUNDA</span>: Loading = 0.91, Communality = 0.90
 |             **[C.5.2]** <span style="color: #FF0000">ARTINC</span>: Loading = 0.55, Communality = 0.89
-|             **[C.5.3]** Standardized Cronbach's Alpha = 0.89
+|             **[C.5.3]** Cronbach's Alpha = 0.89
 |      **[C.6]** Factor 2 was a latent variable with higher loading towards the following descriptors:
 |             **[C.6.1]** <span style="color: #FF0000">RDMORT</span>: Loading = 1.05, Communality = 0.96
 |             **[C.6.2]** <span style="color: #FF0000">DBMORT</span>: Loading = 0.48, Communality = 0.43
-|             **[C.6.3]** Standardized Cronbach's Alpha = 0.76
+|             **[C.6.3]** Cronbach's Alpha = 0.76
 |      **[C.7]** Factor 3 was a latent variable with higher loading towards the following descriptors:
 |             **[C.7.1]** <span style="color: #FF0000">SMPREV</span>: Loading = 0.89, Communality = 0.90
 |             **[C.7.2]** <span style="color: #FF0000">PDMORT</span>: Loading = 0.67, Communality = 0.63
-|             **[C.7.3]** Standardized Cronbach's Alpha = 0.85
+|             **[C.7.3]** Cronbach's Alpha = 0.85
 |      **[C.8]** Factor 4 was a latent variable with higher loading towards the following descriptors:
 |             **[C.8.1]** <span style="color: #FF0000">HDMORT</span>: Loading = 0.76, Communality = 0.77
 |             **[C.8.2]** <span style="color: #FF0000">STMORT</span>: Loading = 0.61, Communality = 0.73
 |             **[C.8.3]** <span style="color: #FF0000">OVWINC</span>: Loading = 0.56, Communality = 0.79
-|             **[C.8.4]** Standardized Cronbach's Alpha = 0.86
+|             **[C.8.4]** Cronbach's Alpha = 0.86
 |
 |
 
@@ -2209,10 +2203,12 @@ dandelion(FA_ML_P_4F_FactorLoading,
 ###  1.3.7 Model Performance Validation
 |
 |
+####  1.3.7.1 4-Factor Model Confirmatory Factor Analysis
+|
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
-```{r section_1.3.7, warning=FALSE, message=FALSE}
+```{r section_1.3.7.1, warning=FALSE, message=FALSE}
 
 CFA_4F <- 'CARDIO =~ HDMORT + STMORT + OVWINC
            PULMON =~ SMPREV + PDMORT
@@ -2249,6 +2245,16 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
          edge.label.cex = 1.2 * size, 
          edge.color = "#000000", edge.label.position = .40)
 
+```
+
+</details>
+|
+|
+####  1.3.7.2 3-Factor Model Confirmatory Factor Analysis
+|
+
+
+```{r section_1.3.7.2, warning=FALSE, message=FALSE}
 CFA_3F <- 'CARDIO =~ HDMORT + STMORT + OVWINC + RDMORT + DBMORT
            PULMON =~ SMPREV + PDMORT
            MENTAL =~ MEUNDA + ARTINC'
@@ -2257,11 +2263,11 @@ CFA_3F_MODEL <- cfa(CFA_3F, data = DPA.Descriptors.Numeric, mimic =c("MPlus"), s
 
 summary(CFA_3F_MODEL, fit.measures = TRUE)
 
-fitMeasures(CFA_3F_MODEL, c("chisq.scaled", "df", "pvalue.scaled"))
+fitMeasures(CFA_3F_MODEL, c("chisq", "df", "pvalue"))
 
-fitMeasures(CFA_3F_MODEL, c("rmsea.scaled", "rmsea.ci.lower.scaled", "rmsea.ci.upper.scaled", "rmsea.pvalue.scaled"))
+fitMeasures(CFA_3F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.pvalue"))
 
-fitMeasures(CFA_3F_MODEL, c("cfi.scaled", "srmr"))
+fitMeasures(CFA_3F_MODEL, c("cfi", "srmr"))
 
 residuals(CFA_3F_MODEL)$cov
 
