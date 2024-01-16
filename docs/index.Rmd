@@ -2253,6 +2253,7 @@ dandelion(FA_ML_P_4F_FactorLoading,
 ```{r section_1.3.6.5, warning=FALSE, message=FALSE}
 ##################################
 # Consolidating the fit indices
+# from the exploratory factor analysis
 ##################################
 FA_RMSSummary <- c(FA_PA_V_3F_RMS,
                    FA_PA_V_4F_RMS,
@@ -2730,11 +2731,138 @@ semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "st
 
 ###  1.3.8 Model Selection
 |
+| **[A]** Among candidates, optimal results were obtained for the confirmatory factor analysis model with a **4-Factor Structure** by demonstrating excellent model fit metrics. In addition, the latent variables obtained were contextually meaningful as individual factors in the analysis.
+|      **[A.1]** Highest Comparative Fit Index
+|      **[A.2]** Highest Tucker-Lewis Fit Index
+|      **[A.3]** Lowest Standardized Root Mean Square of the Residual 
+|      **[A.4]** Lowest Root Mean Square Error of Approximation
+|
+| **[B]** A **4-Factor Model** was evaluated as sufficiently plausible to represent the relationship between 4 latent factors and observed chronic disease indicator variables as follows:
+|      **[B.1]** An underlying construct corresponding to **Unhealthy Lifestyle** influencing:
+|             **[B.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
+|             **[B.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
+|             **[B.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
+|      **[B.2]** An underlying construct corresponding to **Physical Inactivity** influencing:
+|             **[B.2.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
+|             **[B.2.2]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
+|      **[B.3]** An underlying construct corresponding to **Poor Nutrition** influencing:
+|             **[B.3.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
+|             **[B.3.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
+|      **[B.4]** An underlying construct corresponding to **Tobacco Use** influencing:
+|             **[B.4.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
+|             **[B.4.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
+|
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.8, warning=FALSE, message=FALSE}
+##################################
+# Consolidating the fit indices
+# from the confirmatory factor analysis
+##################################
+CFA_RMSEASummary <- c(CFA_4F_MODEL_RMSEA,
+                      CFA_3F_MODEL_RMSEA)
+
+CFA_CFISummary <- c(CFA_4F_MODEL_CFI,
+                    CFA_3F_MODEL_CFI)
+
+CFA_TLISummary <- c(CFA_4F_MODEL_TLI,
+                    CFA_3F_MODEL_TLI)
+
+CFA_SRMRSummary <- c(CFA_4F_MODEL_SRMR,
+                     CFA_3F_MODEL_SRMR)
+
+CFA_AlgorithmSummary <- c("4-Factor Confirmatory Factor Analysis",
+                          "3-Factor Confirmatory Factor Analysis")
+
+CFA_Summary <- cbind(CFA_RMSEASummary,
+                     CFA_CFISummary,
+                     CFA_TLISummary,
+                     CFA_SRMRSummary,
+                     CFA_AlgorithmSummary)
+
+CFA_Summary <- as.data.frame(CFA_Summary)
+names(CFA_Summary) <- c("RMSEA",
+                       "CFI",
+                       "TLI",
+                       "SRMR",
+                       "Algorithm")
+
+CFA_Summary$RMSEA <- as.numeric(as.character(CFA_Summary$RMSEA))
+CFA_Summary$CFI   <- as.numeric(as.character(CFA_Summary$CFI))
+CFA_Summary$TLI   <- as.numeric(as.character(CFA_Summary$TLI))
+CFA_Summary$SRMR  <- as.numeric(as.character(CFA_Summary$SRMR))
+
+CFA_Summary$Algorithm <- factor(CFA_Summary$Algorithm,
+                                levels = c("4-Factor Confirmatory Factor Analysis",
+                                           "3-Factor Confirmatory Factor Analysis"))
+
+print(CFA_Summary, row.names=FALSE)
+
+##################################
+# Consolidating all calculated values
+# for the Root Mean Square Error of Approximation
+##################################
+(RMSEA_Plot <- dotplot(Algorithm ~ RMSEA,
+                       data = CFA_Summary,
+                       main = "Algorithm Comparison : Root Mean Square Error of Approximation",
+                       ylab = "Algorithm",
+                       xlab = "RMSEA",
+                       auto.key = list(adj = 1),
+                       type=c("p", "h"),  
+                       origin = 0,
+                       alpha = 0.45,
+                       pch = 16,
+                       cex = 2))
+
+##################################
+# Consolidating all calculated values
+# for the Tucker-Lewis Fit Index
+##################################
+(CFI_Plot <- dotplot(Algorithm ~ CFI,
+                     data = CFA_Summary,
+                     main = "Algorithm Comparison : Comparative Fit Index",
+                     ylab = "Algorithm",
+                     xlab = "CFI",
+                     auto.key = list(adj = 1),
+                     type=c("p", "h"),  
+                     origin = 0,
+                     alpha = 0.45,
+                     pch = 16,
+                     cex = 2))
+
+##################################
+# Consolidating all calculated values
+# for the Tucker-Lewis Fit Index
+##################################
+(TLI_Plot <- dotplot(Algorithm ~ TLI,
+                     data = CFA_Summary,
+                     main = "Algorithm Comparison : Tucker-Lewis Fit Index",
+                     ylab = "Algorithm",
+                     xlab = "TLI",
+                     auto.key = list(adj = 1),
+                     type=c("p", "h"),  
+                     origin = 0,
+                     alpha = 0.45,
+                     pch = 16,
+                     cex = 2))
+
+##################################
+# Consolidating all calculated values
+# for the Standardized Root Mean Square of the Residual
+##################################
+(SRMR_Plot <- dotplot(Algorithm ~ SRMR,
+                     data = CFA_Summary,
+                     main = "Algorithm Comparison : Standardized Root Mean Square of the Residual",
+                     ylab = "Algorithm",
+                     xlab = "SRMR",
+                     auto.key = list(adj = 1),
+                     type=c("p", "h"),  
+                     origin = 0,
+                     alpha = 0.45,
+                     pch = 16,
+                     cex = 2))
 
 ```
 
@@ -2750,7 +2878,14 @@ semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "st
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.9.1, warning=FALSE, message=FALSE}
-
+##################################
+# Plotting the Dandelion Plot
+# for the optimal EFA model
+##################################
+dandelion(FA_ML_V_4F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
 ```
 
 </details>
@@ -2764,7 +2899,20 @@ semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "st
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
 ```{r section_1.3.9.2, warning=FALSE, message=FALSE}
-
+##################################
+# Plotting the Path Diagram
+# for the optimal CFA model
+##################################
+CFA_4F_MODEL_FACTORS <- CFA_4F_MODEL@pta$vnames$lv[[1]]
+size <- .65
+semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "std", layout = "tree2", 
+         rotation = 4, style = "lisrel", optimizeLatRes = TRUE, 
+         structural = FALSE, layoutSplit = FALSE,
+         intercepts = FALSE, residuals = T, 
+         curve = 1, curvature = 3, nCharNodes = 8, 
+         sizeLat = 11 * size, sizeMan = 11 * size, sizeMan2 = 4 * size, 
+         edge.label.cex = 1.2 * size, 
+         edge.color = "#000000", edge.label.position = .40)
 ```
 
 </details>
