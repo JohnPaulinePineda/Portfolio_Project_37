@@ -2209,7 +2209,42 @@ dandelion(FA_ML_P_4F_FactorLoading,
 |
 ####  1.3.6.5 Model Assessment
 |
-| **[A]**
+| **[A]** Among candidates, optimal results were obtained for the exploratory factor analysis models applying **Maximum Likelihood Extraction** with both **3-Factor Structure** and **4-Factor Structure** by demonstrating excellent model fit metrics. In addition, the latent variables obtained were contextually meaningful as individual factors in the analysis.
+|      **[A.1]** Lowest Standardized Root Mean Square of the Residual
+|      **[A.2]** Highest Tucker-Lewis Fit Index
+|      **[A.3]** Lowest Bayesian Information Criterion
+|      **[A.4]** Lowest High Residual Rate
+|
+| **[B]** No difference was observed for the exploratory factor analysis models applying **Varimax** and **Promax** rotation, although **Varimax** rotation was selected for the improved interpretability of the extracted formulated loadings.
+|
+| **[C]** The selected **4-Factor Model** from the exploratory factor analysis hypothesized the relationship between 4 latent factors and observed chronic disease indicator variables as follows:
+|      **[C.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|             **[C.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
+|             **[C.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
+|             **[C.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
+|      **[C.2]** Factor 2 was a latent factor describing **Physical Inactivity** with higher loading towards the following descriptors:
+|             **[C.2.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
+|             **[C.2.2]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
+|      **[C.3]** Factor 3 was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
+|             **[C.3.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
+|             **[C.3.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
+|      **[C.4]** Factor 4 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|             **[C.4.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
+|             **[C.4.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
+|
+| **[D]** The selected **3-Factor Model** from the exploratory factor analysis hypothesized the relationship between 3 latent factors and observed chronic disease indicator variables as follows:
+|      **[D.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|             **[D.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
+|             **[D.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
+|             **[D.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
+|             **[D.1.4]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
+|             **[D.1.5]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
+|      **[D.2]** Factor 2 was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
+|             **[D.2.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
+|             **[D.2.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
+|      **[D.3]** Factor 3 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|             **[D.3.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
+|             **[D.3.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
 |
 |
 
@@ -2369,13 +2404,6 @@ fa.diagram(FA_ML_V_4F,
            main="Maximum Likelihood Factor Extraction + Varimax Rotation : 4 Factors",
            cex=0.75)
 
-fa.diagram(FA_ML_P_4F,
-           sort=TRUE,
-           cut=0,
-           digits=3,
-           main="Maximum Likelihood Factor Extraction + Promax Rotation : 4 Factors",
-           cex=0.75)
-
 fa.diagram(FA_ML_V_3F,
            sort=TRUE,
            cut=0,
@@ -2383,12 +2411,6 @@ fa.diagram(FA_ML_V_3F,
            main="Maximum Likelihood Factor Extraction + Varimax Rotation : 3 Factors",
            cex=0.75)
 
-fa.diagram(FA_ML_P_3F,
-           sort=TRUE,
-           cut=0,
-           digits=3,
-           main="Maximum Likelihood Factor Extraction + Promax Rotation : 3 Factors",
-           cex=0.75)
 
 ##################################
 # Plotting the Dandelion Plot
@@ -2399,20 +2421,11 @@ dandelion(FA_ML_V_4F_FactorLoading,
           mcex=c(1,1.2),
           palet=DandelionPlotPalette)
 
-dandelion(FA_ML_P_4F_FactorLoading,
-          bound=0,
-          mcex=c(1,1.2),
-          palet=DandelionPlotPalette)
-
 dandelion(FA_ML_V_3F_FactorLoading,
           bound=0,
           mcex=c(1,1.2),
           palet=DandelionPlotPalette)
 
-dandelion(FA_ML_P_3F_FactorLoading,
-          bound=0,
-          mcex=c(1,1.2),
-          palet=DandelionPlotPalette)
 ```
 
 </details>
@@ -2493,6 +2506,8 @@ fitMeasures(CFA_4F_MODEL, c("chisq", "df", "pvalue"))
 ##################################
 fitMeasures(CFA_4F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.pvalue"))
 
+(CFA_4F_MODEL_RMSEA <- fitMeasures(CFA_4F_MODEL, c("rmsea")))
+
 ##################################
 # Assessing model adequacy by comparing
 # the hypothesized model 
@@ -2500,6 +2515,8 @@ fitMeasures(CFA_4F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.
 # (Ideal Criterion: CFI>0.90)
 ##################################
 fitMeasures(CFA_4F_MODEL, c("cfi"))
+
+(CFA_4F_MODEL_CFI <- fitMeasures(CFA_4F_MODEL, c("cfi")))
 
 ##################################
 # Assessing model adequacy by evaluating
@@ -2509,12 +2526,16 @@ fitMeasures(CFA_4F_MODEL, c("cfi"))
 ##################################
 fitMeasures(CFA_4F_MODEL, c("tli"))
 
+(CFA_4F_MODEL_TLI <- fitMeasures(CFA_4F_MODEL, c("tli")))
+
 ##################################
 # Measuring the actual differences (discrepancies)
 # between the model-based correlations and the actual correlations
 # (Ideal Criterion: SRMR<0.08)
 ##################################
 fitMeasures(CFA_4F_MODEL, c("srmr"))
+
+(CFA_4F_MODEL_SRMR <- fitMeasures(CFA_4F_MODEL, c("srmr")))
 
 ##################################
 # Evaluating correlation residuals 
@@ -2632,6 +2653,8 @@ fitMeasures(CFA_3F_MODEL, c("chisq", "df", "pvalue"))
 ##################################
 fitMeasures(CFA_3F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.pvalue"))
 
+(CFA_3F_MODEL_RMSEA <- fitMeasures(CFA_3F_MODEL, c("rmsea")))
+
 ##################################
 # Assessing model adequacy by comparing
 # the hypothesized model 
@@ -2639,6 +2662,8 @@ fitMeasures(CFA_3F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.
 # (Ideal Criterion: CFI>0.90)
 ##################################
 fitMeasures(CFA_3F_MODEL, c("cfi"))
+
+(CFA_3F_MODEL_CFI <- fitMeasures(CFA_3F_MODEL, c("cfi")))
 
 ##################################
 # Assessing model adequacy by evaluating
@@ -2648,12 +2673,16 @@ fitMeasures(CFA_3F_MODEL, c("cfi"))
 ##################################
 fitMeasures(CFA_3F_MODEL, c("tli"))
 
+(CFA_3F_MODEL_TLI <- fitMeasures(CFA_3F_MODEL, c("tli")))
+
 ##################################
 # Measuring the actual differences (discrepancies)
 # between the model-based correlations and the actual correlations
 # (Ideal Criterion: SRMR<0.08)
 ##################################
 fitMeasures(CFA_3F_MODEL, c("srmr"))
+
+(CFA_3F_MODEL_SRMR <- fitMeasures(CFA_3F_MODEL, c("srmr")))
 
 ##################################
 # Evaluating correlation residuals 
