@@ -2485,6 +2485,9 @@ CFA_4F <- 'UNHLIF =~ HDMORT + STMORT + OVWINC
 ##################################
 CFA_4F_MODEL <- cfa(CFA_4F, data = DPA.Descriptors.Numeric, mimic =c("MPlus"), std.lv = TRUE)
 
+CFA_4F_MODEL_CHANGE <- modindices(CFA_4F_MODEL, sort = TRUE) 
+head(CFA_4F_MODEL_CHANGE, 15)
+
 ##################################
 # Generating a model performance summary
 # for confirmatory factor analysis
@@ -2515,8 +2518,6 @@ fitMeasures(CFA_4F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.
 # to a baseline model
 # (Ideal Criterion: CFI>0.90)
 ##################################
-fitMeasures(CFA_4F_MODEL, c("cfi"))
-
 (CFA_4F_MODEL_CFI <- fitMeasures(CFA_4F_MODEL, c("cfi")))
 
 ##################################
@@ -2525,8 +2526,6 @@ fitMeasures(CFA_4F_MODEL, c("cfi"))
 # relative to a baseline model
 # (Ideal Criterion: TLI>0.90)
 ##################################
-fitMeasures(CFA_4F_MODEL, c("tli"))
-
 (CFA_4F_MODEL_TLI <- fitMeasures(CFA_4F_MODEL, c("tli")))
 
 ##################################
@@ -2534,8 +2533,6 @@ fitMeasures(CFA_4F_MODEL, c("tli"))
 # between the model-based correlations and the actual correlations
 # (Ideal Criterion: SRMR<0.08)
 ##################################
-fitMeasures(CFA_4F_MODEL, c("srmr"))
-
 (CFA_4F_MODEL_SRMR <- fitMeasures(CFA_4F_MODEL, c("srmr")))
 
 ##################################
@@ -2662,8 +2659,6 @@ fitMeasures(CFA_3F_MODEL, c("rmsea", "rmsea.ci.lower", "rmsea.ci.upper", "rmsea.
 # to a baseline model
 # (Ideal Criterion: CFI>0.90)
 ##################################
-fitMeasures(CFA_3F_MODEL, c("cfi"))
-
 (CFA_3F_MODEL_CFI <- fitMeasures(CFA_3F_MODEL, c("cfi")))
 
 ##################################
@@ -2672,8 +2667,6 @@ fitMeasures(CFA_3F_MODEL, c("cfi"))
 # relative to a baseline model
 # (Ideal Criterion: TLI>0.90)
 ##################################
-fitMeasures(CFA_3F_MODEL, c("tli"))
-
 (CFA_3F_MODEL_TLI <- fitMeasures(CFA_3F_MODEL, c("tli")))
 
 ##################################
@@ -2681,8 +2674,6 @@ fitMeasures(CFA_3F_MODEL, c("tli"))
 # between the model-based correlations and the actual correlations
 # (Ideal Criterion: SRMR<0.08)
 ##################################
-fitMeasures(CFA_3F_MODEL, c("srmr"))
-
 (CFA_3F_MODEL_SRMR <- fitMeasures(CFA_3F_MODEL, c("srmr")))
 
 ##################################
