@@ -2205,6 +2205,218 @@ dandelion(FA_ML_P_4F_FactorLoading,
 
 </details>
 
+|
+|
+####  1.3.6.5 Model Assessment
+|
+| **[A]**
+|
+|
+
+<details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
+
+```{r section_1.3.6.5, warning=FALSE, message=FALSE}
+##################################
+# Consolidating the fit indices
+##################################
+FA_RMSSummary <- c(FA_PA_V_3F_RMS,
+                   FA_PA_V_4F_RMS,
+                   FA_PA_P_3F_RMS,
+                   FA_PA_P_4F_RMS,
+                   FA_ML_V_3F_RMS,
+                   FA_ML_V_4F_RMS,
+                   FA_ML_P_3F_RMS,
+                   FA_ML_P_4F_RMS)
+
+FA_TLISummary <- c(FA_PA_V_3F_TLI,
+                   FA_PA_V_4F_TLI,
+                   FA_PA_P_3F_TLI,
+                   FA_PA_P_4F_TLI,
+                   FA_ML_V_3F_TLI,
+                   FA_ML_V_4F_TLI,
+                   FA_ML_P_3F_TLI,
+                   FA_ML_P_4F_TLI)
+
+FA_BICSummary <- c(FA_PA_V_3F_BIC,
+                   FA_PA_V_4F_BIC,
+                   FA_PA_P_3F_BIC,
+                   FA_PA_P_4F_BIC,
+                   FA_ML_V_3F_BIC,
+                   FA_ML_V_4F_BIC,
+                   FA_ML_P_3F_BIC,
+                   FA_ML_P_4F_BIC)
+
+FA_HighResidualRateSummary <- c(FA_PA_V_3F_HighResidualRate,
+                                FA_PA_V_4F_HighResidualRate,
+                                FA_PA_P_3F_HighResidualRate,
+                                FA_PA_P_4F_HighResidualRate,
+                                FA_ML_V_3F_HighResidualRate,
+                                FA_ML_V_4F_HighResidualRate,
+                                FA_ML_P_3F_HighResidualRate,
+                                FA_ML_P_4F_HighResidualRate)
+
+FA_AlgorithmSummary <- c("3-Factor Principal Axes Extraction + Varimax Rotation",
+                         "4-Factor Principal Axes Extraction + Varimax Rotation",
+                         "3-Factor Principal Axes Extraction + Promax Rotation",
+                         "4-Factor Principal Axes Extraction + Promax Rotation",
+                         "3-Factor Maximum Likelihood Extraction + Varimax Rotation",
+                         "4-Factor Maximum Likelihood Extraction + Varimax Rotation",
+                         "3-Factor Maximum Likelihood Extraction + Promax Rotation",
+                         "4-Factor Maximum Likelihood Extraction + Promax Rotation")
+
+FA_Summary <- cbind(FA_RMSSummary,
+                    FA_TLISummary,
+                    FA_BICSummary,
+                    FA_HighResidualRateSummary,
+                    FA_AlgorithmSummary)
+
+FA_Summary <- as.data.frame(FA_Summary)
+names(FA_Summary) <- c("RMS",
+                       "TLI",
+                       "BIC",
+                       "HighResidualRate",
+                       "Algorithm")
+
+FA_Summary$RMS <- as.numeric(as.character(FA_Summary$RMS))
+FA_Summary$TLI <- as.numeric(as.character(FA_Summary$TLI))
+FA_Summary$BIC <- as.numeric(as.character(FA_Summary$BIC))
+FA_Summary$HighResidualRate <- as.numeric(as.character(FA_Summary$HighResidualRate))
+
+FA_Summary$Algorithm <- factor(FA_Summary$Algorithm ,
+                                        levels = c("3-Factor Principal Axes Extraction + Varimax Rotation",
+                                                   "4-Factor Principal Axes Extraction + Varimax Rotation",
+                                                   "3-Factor Principal Axes Extraction + Promax Rotation",
+                                                   "4-Factor Principal Axes Extraction + Promax Rotation",
+                                                   "3-Factor Maximum Likelihood Extraction + Varimax Rotation",
+                                                   "4-Factor Maximum Likelihood Extraction + Varimax Rotation",
+                                                   "3-Factor Maximum Likelihood Extraction + Promax Rotation",
+                                                   "4-Factor Maximum Likelihood Extraction + Promax Rotation"))
+
+print(FA_Summary, row.names=FALSE)
+
+##################################
+# Consolidating all calculated values
+# for the Standardized Root Mean Square of the Residual
+##################################
+(RMS_Plot <- dotplot(Algorithm ~ RMS,
+                     data = FA_Summary,
+                     main = "Algorithm Comparison : Standardized Root Mean Square of the Residual",
+                     ylab = "Algorithm",
+                     xlab = "RMSR",
+                     auto.key = list(adj = 1),
+                     type=c("p", "h"),  
+                     origin = 0,
+                     alpha = 0.45,
+                     pch = 16,
+                     cex = 2))
+
+##################################
+# Consolidating all calculated values
+# for the Tucker-Lewis Fit Index
+##################################
+(TLI_Plot <- dotplot(Algorithm ~ TLI,
+                     data = FA_Summary,
+                     main = "Algorithm Comparison : Tucker-Lewis Fit Index",
+                     ylab = "Algorithm",
+                     xlab = "TLI",
+                     auto.key = list(adj = 1),
+                     type=c("p", "h"),  
+                     origin = 0,
+                     alpha = 0.45,
+                     pch = 16,
+                     cex = 2))
+
+##################################
+# Consolidating all calculated values
+# for the Bayesian Information Criterion
+##################################
+(BIC_Plot <- dotplot(Algorithm ~ BIC,
+                     data = FA_Summary,
+                     main = "Algorithm Comparison : Bayesian Information Criterion",
+                     ylab = "Algorithm",
+                     xlab = "BIC",
+                     auto.key = list(adj = 1),
+                     type=c("p", "h"),  
+                     origin = 0,
+                     alpha = 0.45,
+                     pch = 16,
+                     cex = 2))
+
+##################################
+# Consolidating all calculated values
+# for the High Residual Rate
+##################################
+(HighResidualRate_Plot <- dotplot(Algorithm ~ HighResidualRate,
+                     data = FA_Summary,
+                     main = "Algorithm Comparison : High Residual Rate ",
+                     ylab = "Algorithm",
+                     xlab = "High Residual Rate",
+                     auto.key = list(adj = 1),
+                     type=c("p", "h"),  
+                     origin = 0,
+                     alpha = 0.45,
+                     pch = 16,
+                     cex = 2))
+
+##################################
+# Plotting the Factor Loading Diagram
+# for the optimal EFA models
+##################################
+fa.diagram(FA_ML_V_4F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Maximum Likelihood Factor Extraction + Varimax Rotation : 4 Factors",
+           cex=0.75)
+
+fa.diagram(FA_ML_P_4F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Maximum Likelihood Factor Extraction + Promax Rotation : 4 Factors",
+           cex=0.75)
+
+fa.diagram(FA_ML_V_3F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Maximum Likelihood Factor Extraction + Varimax Rotation : 3 Factors",
+           cex=0.75)
+
+fa.diagram(FA_ML_P_3F,
+           sort=TRUE,
+           cut=0,
+           digits=3,
+           main="Maximum Likelihood Factor Extraction + Promax Rotation : 3 Factors",
+           cex=0.75)
+
+##################################
+# Plotting the Dandelion Plot
+# for the optimal EFA models
+##################################
+dandelion(FA_ML_V_4F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
+
+dandelion(FA_ML_P_4F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
+
+dandelion(FA_ML_V_3F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
+
+dandelion(FA_ML_P_3F_FactorLoading,
+          bound=0,
+          mcex=c(1,1.2),
+          palet=DandelionPlotPalette)
+```
+
+</details>
+
 ###  1.3.7 Model Performance Validation
 |
 |
