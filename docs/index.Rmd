@@ -100,6 +100,15 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 | [Promax Rotation](https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543) is an oblique rotation method which allows for more flexibility by accommodating the possibility of correlated factors. The algorithm aims to simplify the factor structure by both maximizing the variance of the squared loadings within each factor and allowing for correlated factors. It uses a more complex mathematical approach to find the optimal rotation that accounts for both variance and correlation. The results provide a more accurate representation of the underlying relationships when the factors are expected to be correlated.
 |
+###  1.2.3 Model Performance Evaluation
+|
+|
+###  1.2.4 Model Presentation
+|
+| [Dandelion Plots](https://cran.r-project.org/web/packages/DandEFA/DandEFA.pdf) provide a simultaneous visualization of both factor variances and loadings in an exploratory factor analysis. Each central line represents a different factor and is connected to a star graph. These star graphs visualize the factor loadings for the corresponding factor with negative and positive loadings indicated by different colors. Explained variance of each factor can be observed by the size of each star graph or by the angle between the current and the consecutive central line.  A comparison of the derived communalities and uniquenesses is also provided together with the cumulative explanation ratios of factors.
+|
+| [Path Diagrams](https://cran.r-project.org/web/packages/lavaan/lavaan.pdf) provide a visual representation of the hypothesized relationships among latent (unobserved) factors and their observed indicators in a confirmatory factor analysis by illustrating the structure of the model and indicating how the latent factors influence the observed variables. The key components of a path diagram include unobserved constructs that are postulated to underlie the observed variability in a set of measured variables represented by circles or ovals, observed indicators assumed to be influenced by the underlying latent factors represented by rectangles or squares, arrows connecting latent factors to observed indicators representing factor loadings suggesting that the latent factor causes variation in the observed variable, numerical values assigned to the arrows indicating the strength and direction of the relationship between the latent factor and the observed variable, and double-headed arrows connecting two latent factors representing the covariance between those factors.
+|
 |
 ##  1.3 Results
 |
@@ -2864,6 +2873,11 @@ print(CFA_Summary, row.names=FALSE)
 |
 ####  1.3.9.1 Exploratory Factor Analysis Dandelion Plot
 |
+| **[A]** The formulated dandelion plot for the final **4-Factor Model** from the exploratory factor analysis showed:
+|      **[A.1]** Comparable explained variance between the 4 latent factors as presented through the sizes of the star graphs.
+|      **[A.2]** Unique list of chronic disease indicators with the most dominant loadings identified in the star graphs representing each latent factor.
+|      **[A.3]** Chronic disease indicators with the most and least communality contributions.
+|
 |
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
@@ -2884,6 +2898,11 @@ dandelion(FA_ML_V_4F_FactorLoading,
 |
 |
 ####  1.3.9.2 Confirmatory Factor Analysis Path Diagram
+|
+| **[A]** The formulated path diagram for the final **4-Factor Model** from the confirmatory factor analysis showed:
+|      **[A.1]** magnitude and direction of relationships between the underlying constructs and the chronic disease indicators.
+|      **[A.2]** estimated variance for each chronic disease indicator.
+|      **[A.3]** estimated pairwise covariance between the underlying constructs.
 |
 |
 
