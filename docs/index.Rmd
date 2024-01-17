@@ -106,9 +106,9 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 ###  1.2.3 Model Performance Evaluation
 |
-| [Tucker Lewis Index](https://www.amazon.sg/Exploratory-Confirmatory-Factor-Analysis-Understanding/dp/1591470935) (TLI) assesses the goodness of fit of a proposed confirmatory factor analysis model to the observed data by comparing the fit of the specified model with the fit of a baseline model. The metric is more preferred for smaller sample sizes. The formula involves computing the ratio of the improvement in fit from the proposed model to the fit of the null model. Values range between 0 and 1 with higher measurements indicating a better model fit.
+| [Tucker Lewis Index](https://www.amazon.sg/Exploratory-Confirmatory-Factor-Analysis-Understanding/dp/1591470935) (TLI) is an incremental fit metric which assesses the goodness of fit of a proposed confirmatory factor analysis model to the observed data by comparing the fit of the specified model with the fit of a baseline model. The formula involves computing the ratio of the improvement in fit from the proposed model to the fit of the null model using non-normed measurements, while taking into account model complexity. Values may fall below zero or be above one with higher measurements indicating a better model fit.
 |
-| [Comparative Fit Index](https://www.amazon.sg/Exploratory-Confirmatory-Factor-Analysis-Understanding/dp/1591470935) (CFI) assesses the goodness of fit of a proposed confirmatory factor analysis model to the observed data by comparing the fit of the specified model with the fit of a baseline model. The metric is more robust against different sample sizes. The formula involves computing the ratio of the improvement in fit from the proposed model to the fit of the null model. The metric values range between 0 and 1 with higher measurements indicating a better model fit.
+| [Comparative Fit Index](https://www.amazon.sg/Exploratory-Confirmatory-Factor-Analysis-Understanding/dp/1591470935) (CFI) is an incremental fit metric which which assesses the goodness of fit of a proposed confirmatory factor analysis model to the observed data by comparing the fit of the specified model with the fit of a baseline model. The formula involves computing the ratio of the improvement in fit from the proposed model to the fit of the null model using normed measurements, with relativere insensitivity to model complexity. The metric values range between 0 and 1 with higher measurements indicating a better model fit.
 |
 | [Standardized Root Mean Square of the Residual](https://www.amazon.sg/Exploratory-Confirmatory-Factor-Analysis-Understanding/dp/1591470935) (SRMR) provides a measure of the average standardized residual, representing the average discrepancy between the observed and predicted covariance matrices. The metric is calculated by taking the square root of the average of the squared differences between the observed and predicted covariance matrices, standardized by the observed variable variances. Values range from 0 to 1, with lower values indicating better model fit. The SRMR is particularly sensitive to misspecifications in the model's covariances, making it a useful index for assessing the fit of the covariance structure.
 |
@@ -864,11 +864,11 @@ DPA.Descriptors.Numeric <- predict(DPA.Descriptors.Numeric.CenteredScaled, DPA.D
 ####  1.3.4.1 Correlation Matrix Assessment - Kaiser-Meyer-Olkin Factor Adequacy
 |
 | **[A]** 5 descriptors with low KMO values were excluded from the dataset to improve the strength and patterns of relationships between variables and ensure sufficient common variance among variables for extracting underlying factors.
-|      **[A.1]** <span style="color: #FF0000">PDMORT</span> = 0.15
-|      **[A.2]** <span style="color: #FF0000">DBMORT</span> = 0.35
-|      **[A.3]** <span style="color: #FF0000">STMORT</span> = 0.56
-|      **[A.4]** <span style="color: #FF0000">HDMORT</span> = 0.47
-|      **[A.5]** <span style="color: #FF0000">RDMORT</span> = 0.59
+|      **[A.1]** <span style="color: #FF0000">ASMORT</span> = 0.15
+|      **[A.2]** <span style="color: #FF0000">INFVAC</span> = 0.35
+|      **[A.3]** <span style="color: #FF0000">HLTINS</span> = 0.56
+|      **[A.4]** <span style="color: #FF0000">LDMORT</span> = 0.47
+|      **[A.5]** <span style="color: #FF0000">PSMUSE</span> = 0.59
 |
 | **[B]** The KMO measure of sampling adequacy was acceptable with a computed value of 0.87 for the complete model, indicating the suitability of the data for exploratory factor analysis. The estimated proportion of variance among all the observed variables was sufficiently adequate.
 |
@@ -2949,6 +2949,7 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 # **3. References**
 |
+| **[Book]** [Multivariate Data Analysis](https://prod.cengageasia.com/title/default/detail?isbn=9781473756540) by Barry Babin, Joseph Hair, Rolph Anderson and William Black
 | **[Book]** [Using Multivariate Analysis](https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543) by Barbara Tabachnick and Linda Fidell
 | **[Book]** [A Step-by-Step Guide to Exploratory Factor Analysis with R and RStudio](https://www.taylorfrancis.com/books/mono/10.4324/9781003120001/step-step-guide-exploratory-factor-analysis-rstudio-marley-watkins) by Marley Watkins
 | **[Book]** [Just Enough R](https://benwhalley.github.io/just-enough-r/) by Ben Whalley
