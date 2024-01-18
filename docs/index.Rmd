@@ -82,13 +82,13 @@ knitr::opts_chunk$set(echo = TRUE, fig.width=15, fig.height=10)
 |
 | Preliminary data used in the study was evaluated and prepared for analysis and modelling using the following methods: 
 |
-| [Covariance Validity](https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543) evaluates whether the ratio of associated variables in the data set are sufficient enough to support the assumption that correlations exist. The criterion is computed by determining the proportion of correlation coefficients with values of at least 30% between all pairs of variables in the data set. A value closer to 1 suggests an adequate percentage of pairwise-correlated variables.
-|
-| [Determinant Computation](https://www.taylorfrancis.com/books/mono/10.4324/9781003120001/step-step-guide-exploratory-factor-analysis-rstudio-marley-watkins) reflects the extent of multicollinearity among the variables in a correlation matrix. An extremely small determinant value indicates that the variables are highly correlated and nearly linearly dependent which can lead to unstable results and difficulty in interpreting their individual contributions.
+| [Kaiser-Meyer-Olkin Factor Adequacy](https://link.springer.com/article/10.1007/BF02291817) evaluates whether the observed variables are suitable for exploratory factor analysis based on their common variance and the potential for extracting meaningful factors. The criterion is computed by examining the ratio of the sum of squared correlations between variables to the sum of squared partial correlations. A KMO value closer to 1 suggests that the variables have high shared variance and are suitable to proceed with the analysis.
 |
 | [Bartlett’s Test of Sphericity](https://www.semanticscholar.org/paper/THE-EFFECT-OF-STANDARDIZATION-ON-A-%CF%872-APPROXIMATION-Bartlett/95d549d2c055360b34cc7d1fce739179c29e39bb) evaluates whether the correlations between variables in a data set are significant enough to support the assumption that underlying factors exist and can be extracted. The test calculates a Chi-Square statistic based on the differences between the observed correlation matrix and an identity matrix. The larger the Chi-Square value, there is more evidence against the null hypothesis stating that the correlation matrix is an identity matrix which indicates that the variables are uncorrelated and do not have any underlying structure.
 |
-| [Kaiser-Meyer-Olkin Factor Adequacy](https://link.springer.com/article/10.1007/BF02291817) evaluates whether the observed variables are suitable for exploratory factor analysis based on their common variance and the potential for extracting meaningful factors. The criterion is computed by examining the ratio of the sum of squared correlations between variables to the sum of squared partial correlations. A KMO value closer to 1 suggests that the variables have high shared variance and are suitable to proceed with the analysis.
+| [Determinant Computation](https://www.taylorfrancis.com/books/mono/10.4324/9781003120001/step-step-guide-exploratory-factor-analysis-rstudio-marley-watkins) reflects the extent of multicollinearity among the variables in a correlation matrix. An extremely small determinant value indicates that the variables are highly correlated and nearly linearly dependent which can lead to unstable results and difficulty in interpreting their individual contributions.
+|
+| [Covariance Validity](https://www.pearson.com/en-us/subject-catalog/p/using-multivariate-statistics/P200000003097/9780137526543) evaluates whether the ratio of associated variables in the data set are sufficient enough to support the assumption that correlations exist. The criterion is computed by determining the proportion of correlation coefficients with values of at least 30% between all pairs of variables in the data set. A value closer to 1 suggests an adequate percentage of pairwise-correlated variables.
 |
 ###  1.2.2 Model Formulation
 |
@@ -838,7 +838,7 @@ for (i in 1:ncol(DPA.Descriptors.Numeric)) {
 
 |
 |
-####  1.3.3.7 Data Normalization
+####  1.3.3.7 Data Standardization
 |
 | **[A]** Z-score normalization was applied to generate a transformed data with a distributional mean of zero and a standard deviation equal to one - allowing a consistent scale among the descriptors.
 |
@@ -2944,6 +2944,7 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_1.png)
 |
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_2.png)
 |
 # **3. References**
 |
