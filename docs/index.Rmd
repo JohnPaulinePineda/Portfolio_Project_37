@@ -1066,7 +1066,7 @@ qgraph(cor(DPA.Descriptors.Numeric),
 |
 ####  1.3.5.1 Correlation Matrix
 |
-| **[A]** All pairwise correlations among descriptors were positive with values ranging from 0.28 to 0.82 . 
+| **[A]** All pairwise correlations among descriptors were positive with values ranging from 0.28 to 0.82 and were determined as statistically significant. 
 |
 |
 
@@ -3035,6 +3035,8 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_1.png)
 |
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_2.png)
+|
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_3.png)
 |
 # **3. References**
 |
