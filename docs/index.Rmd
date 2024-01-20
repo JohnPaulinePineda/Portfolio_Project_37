@@ -2326,7 +2326,7 @@ dandelion(FA_ML_P_4F_FactorLoading,
 |      **[A.3]** Lowest Bayesian Information Criterion
 |      **[A.4]** Lowest High Residual Rate
 |
-| **[B]** No difference was observed for the exploratory factor analysis models applying **Varimax** and **Promax** rotation, although **Varimax** rotation was selected for the improved interpretability of the extracted formulated loadings.
+| **[B]** Among the applied **Varimax** and **Promax** rotation methods, **Varimax** rotation was selected for the improved interpretability of the extracted formulated loadings.
 |
 | **[C]** The selected **4-Factor Model** from the exploratory factor analysis hypothesized the relationship between 4 latent factors and observed chronic disease indicator variables as follows:
 |      **[C.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
@@ -3037,6 +3037,8 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_2.png)
 |
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_3.png)
+|
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_4.png)
 |
 # **3. References**
 |
