@@ -2361,7 +2361,7 @@ dandelion(FA_ML_P_4F_FactorLoading,
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
-```{r section_1.3.6.5, warning=FALSE, message=FALSE}
+```{r section_1.3.6.5, warning=FALSE, message=FALSE, fig.width=15, fig.height=5}
 ##################################
 # Consolidating the fit indices
 # from the exploratory factor analysis
@@ -2587,8 +2587,8 @@ dandelion(FA_ML_V_3F_FactorLoading,
 ##################################
 CFA_4F <- 'UNHLIF =~ HDMORT + STMORT + OVWINC
            TOBUSE =~ SMPREV + PDMORT
-           PNUTRI =~ MEUNDA + ARTINC
-           PINACT =~ RDMORT + DBMORT'
+           PINACT =~ MEUNDA + ARTINC
+           PNUTRI =~ RDMORT + DBMORT'
 
 ##################################
 # Fitting the model
@@ -2681,7 +2681,7 @@ size <- .65
 semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "std", layout = "tree2", 
          rotation = 4, style = "lisrel", optimizeLatRes = TRUE, 
          structural = FALSE, layoutSplit = FALSE,
-         intercepts = FALSE, residuals = T, 
+         intercepts = FALSE, residuals = FALSE, 
          curve = 1, curvature = 3, nCharNodes = 8, 
          sizeLat = 11 * size, sizeMan = 11 * size, sizeMan2 = 4 * size, 
          edge.label.cex = 1.2 * size, 
@@ -2699,27 +2699,27 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |             **[A.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
 |             **[A.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
 |             **[A.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
-|             **[A.1.4]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
-|             **[A.1.5]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
-|      **[A.2]** Factor 2 was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
-|             **[A.2.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
-|             **[A.2.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
-|      **[A.3]** Factor 3 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
-|             **[A.3.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
-|             **[A.3.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
+|             **[A.1.4]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
+|             **[A.1.5]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
+|      **[A.2]** Factor 2 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|             **[A.2.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
+|             **[A.2.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
+|             **[A.2.3]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
+|      **[A.3]** Factor 3 was a latent factor describing **Poor Mental Health** with higher loading towards the following descriptors:
+|             **[A.3.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
 |
 | **[B]** The **3-Factor Model** demonstrated sufficiently good fit based on the model performance metrics as follows:
-|      **[B.1]** Comparative Fit Index = 0.95 (Ideal Criterion: >0.90)
-|      **[B.2]** Tucker Lewis Index = 0.93 (Ideal Criterion: >0.90)
-|      **[B.3]** Standardized Root Mean Square of the Residual = 0.05 (Ideal Criterion: <0.08)
-|      **[B.4]** Root Mean Square Error of Approximation = 0.11 (Ideal Criterion: <0.08)
+|      **[B.1]** Comparative Fit Index = 0.91 (Ideal Criterion: >0.90)
+|      **[B.2]** Tucker Lewis Index = 0.86 (Ideal Criterion: >0.90)
+|      **[B.3]** Standardized Root Mean Square of the Residual = 0.06 (Ideal Criterion: <0.08)
+|      **[B.4]** Root Mean Square Error of Approximation = 0.16 (Ideal Criterion: <0.08)
 |
 | **[C]** All chronic disease indicator loadings for each latent factor were high (>0.60) and all statistically significant.
 |
 | **[D]** The **3-Factor Model** demonstrated high total reliability at 0.92 and individual latent factor reliability as follows.
-|      **[D.1]** **Poor Nutrition** Cronbach's Alpha = 0.88
-|      **[D.2]** **Tobacco Use** = 0.85
-|      **[D.3]** **Unhealthy Lifestyle** Cronbach's Alpha = 0.89
+|      **[D.1]** **Unhealthy Lifestyle** Cronbach's Alpha = 0.88
+|      **[D.2]** **Tobacco Use** = 0.89
+|      **[D.3]** **Poor Mental Health** Cronbach's Alpha = Not Applicable
 |
 |
 
@@ -2731,8 +2731,8 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 # for confirmatory factor analysis
 ##################################
 CFA_3F <- 'UNHLIF =~ HDMORT + STMORT + OVWINC + RDMORT + DBMORT
-           TOBUSE =~ SMPREV + PDMORT
-           PNUTRI =~ MEUNDA + ARTINC'
+           TOBUSE =~ SMPREV + PDMORT + ARTINC
+           POMENT =~ MEUNDA'
 
 ##################################
 # Fitting the model
@@ -2822,7 +2822,7 @@ size <- .65
 semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "std", layout = "tree2", 
          rotation = 4, style = "lisrel", optimizeLatRes = TRUE, 
          structural = FALSE, layoutSplit = FALSE,
-         intercepts = FALSE, residuals = T, 
+         intercepts = FALSE, residuals = FALSE, 
          curve = 1, curvature = 3, nCharNodes = 8, 
          sizeLat = 11 * size, sizeMan = 11 * size, sizeMan2 = 4 * size, 
          edge.label.cex = 1.2 * size, 
@@ -2858,7 +2858,7 @@ semPlot::semPaths(CFA_3F_MODEL, latents = CFA_3F_MODEL_FACTORS, whatLabels = "st
 
 <details><summary><mark style="background-color: #000000;color: #FFFFFF">**Code Chunk | Output**</mark></summary>
 
-```{r section_1.3.8, warning=FALSE, message=FALSE}
+```{r section_1.3.8, warning=FALSE, message=FALSE, fig.width=15, fig.height=4}
 ##################################
 # Consolidating the fit indices
 # from the confirmatory factor analysis
@@ -3020,7 +3020,7 @@ size <- .65
 semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "std", layout = "tree2", 
          rotation = 4, style = "lisrel", optimizeLatRes = TRUE, 
          structural = FALSE, layoutSplit = FALSE,
-         intercepts = FALSE, residuals = T, 
+         intercepts = FALSE, residuals = FALSE, 
          curve = 1, curvature = 3, nCharNodes = 8, 
          sizeLat = 11 * size, sizeMan = 11 * size, sizeMan2 = 4 * size, 
          edge.label.cex = 1.2 * size, 
