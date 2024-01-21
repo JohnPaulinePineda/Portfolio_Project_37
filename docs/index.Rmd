@@ -2326,7 +2326,7 @@ dandelion(FA_ML_P_4F_FactorLoading,
 |      **[A.3]** Lowest Bayesian Information Criterion
 |      **[A.4]** Lowest High Residual Rate
 |
-| **[B]** Among the applied **Varimax** and **Promax** rotation methods, **Varimax** rotation was selected for the improved interpretability of the extracted formulated loadings.
+| **[B]** Among the applied **Varimax** and **Promax** rotation methods, **Promax** rotation was selected with the assumption of correlation among the extracted formulated loadings.
 |
 | **[C]** The selected **4-Factor Model** from the exploratory factor analysis hypothesized the relationship between 4 latent factors and observed chronic disease indicator variables as follows:
 |      **[C.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
@@ -2348,14 +2348,14 @@ dandelion(FA_ML_P_4F_FactorLoading,
 |             **[D.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
 |             **[D.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
 |             **[D.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
-|             **[D.1.4]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
-|             **[D.1.5]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
-|      **[D.2]** Factor 2 was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
-|             **[D.2.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
-|             **[D.2.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
-|      **[D.3]** Factor 3 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
-|             **[D.3.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
-|             **[D.3.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
+|             **[D.1.4]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
+|             **[D.1.5]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
+|      **[D.2]** Factor 2 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|             **[D.2.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
+|             **[D.2.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
+|             **[D.2.3]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
+|      **[D.3]** Factor 3 was a latent factor describing **Poor Mental Health** with higher loading towards the following descriptors:
+|             **[D.3.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
 |
 |
 
@@ -2548,17 +2548,17 @@ dandelion(FA_ML_V_3F_FactorLoading,
 ####  1.3.7.1 4-Factor Model Confirmatory Factor Analysis
 |
 | **[A]** Confirmatory factor analysis was conducted to evaluate the derived **4-Factor Model** from the exploratory factor analysis that hypothesized the relationship between 4 latent factors and observed chronic disease indicator variables as follows:
-|      **[A.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|      **[A.1]** Factor 1 <span style="color: #FF0000">UNHLIF</span> was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
 |             **[A.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
 |             **[A.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
 |             **[A.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
-|      **[A.2]** Factor 2 was a latent factor describing **Physical Inactivity** with higher loading towards the following descriptors:
+|      **[A.2]** Factor 2 <span style="color: #FF0000">PINACT</span> was a latent factor describing **Physical Inactivity** with higher loading towards the following descriptors:
 |             **[A.2.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
 |             **[A.2.2]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
-|      **[A.3]** Factor 3 was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
+|      **[A.3]** Factor 3 <span style="color: #FF0000">PNUTRI</span> was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
 |             **[A.3.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
 |             **[A.3.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
-|      **[A.4]** Factor 4 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|      **[A.4]** Factor 4 <span style="color: #FF0000">TOBUSE</span> was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
 |             **[A.4.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
 |             **[A.4.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
 |
@@ -2695,17 +2695,17 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 ####  1.3.7.2 3-Factor Model Confirmatory Factor Analysis
 |
 | **[A]** Confirmatory factor analysis was conducted to evaluate the derived **3-Factor Model** from the exploratory factor analysis that hypothesized the relationship between 3 latent factors and observed chronic disease indicator variables as follows:
-|      **[A.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|      **[A.1]** Factor 1 <span style="color: #FF0000">UNHLIF</span> was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
 |             **[A.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
 |             **[A.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
 |             **[A.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
 |             **[A.1.4]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
 |             **[A.1.5]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
-|      **[A.2]** Factor 2 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|      **[A.2]** Factor 2 <span style="color: #FF0000">TOBUSE</span> was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
 |             **[A.2.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
 |             **[A.2.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
 |             **[A.2.3]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
-|      **[A.3]** Factor 3 was a latent factor describing **Poor Mental Health** with higher loading towards the following descriptors:
+|      **[A.3]** Factor 3 <span style="color: #FF0000">POMENT</span> was a latent factor describing **Poor Mental Health** with higher loading towards the following descriptors:
 |             **[A.3.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
 |
 | **[B]** The **3-Factor Model** demonstrated sufficiently good fit based on the model performance metrics as follows:
@@ -3032,6 +3032,37 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 # **2. Summary** <a name="summary"></a>
 |
+| **A hypothesized 4-factor model structure extracted using maximum likelihood with applied latent factor correlations provided a set of robust and reliable estimates of the underlying constructs that influenced and manifested the observed chronic disease indicators, described as follows:**
+|
+| **[1] Unhealthy Lifestyle**
+|         **[1.1] Higher Heart Disease Mortality**
+|         **[1.2] Higher Stroke Mortality**
+|         **[1.3] Higher Overweight Incidence**
+|
+| **[2] Tobacco Use**
+|         **[2.1] Higher Smoking Prevalence**
+|         **[2.2] Higher COPD Mortality**
+|
+| **[3] Poor Nutrition**
+|         **[3.1] Higher Renal Disease Mortality**
+|         **[3.2] Higher Diabetes Mortality**
+|
+| **[4] Physical Inactivity**
+|         **[3.1] Higher Renal Disease Mortality**
+|         **[3.2] Higher Diabetes Mortality**
+|
+| **Overall, the formulated model from the factor analyses effectively estimated contextually meaningful latent constructs based on patterns of observed chronic disease indicator correlations. Addressing issues related to unhealthy lifestyle, tobacco use, poor nutrition, and physical inactivity requires a multifaceted approach involving individuals, communities, healthcare systems, and policymakers. Comprehensive health education programs can be implemented to raise awareness about the risks of unhealthy behaviors, including smoking, poor nutrition, and physical inactivity. Tobacco control initiatives can be strengthened including public awareness campaigns, tobacco taxation, smoke-free policies, and smoking cessation programs. Policies can be advocated that create a supportive environment for community programs promoting nutrition interventions, physical wellness and healthcare access. Addressing these issues requires a collaborative effort across various sectors, and sustainable change often involves a combination of individual behavior change, community engagement, and policy implementation. Public health initiatives and interventions should consider the social determinants of health and work towards creating environments that support and promote healthy lifestyles.**
+|
+| **[A]** From an initial dataset comprised of 50 observations and 15 descriptors, an optimal subset of **50 observations and 9 descriptors** representing chronic disease indicators were determined after conducting data quality evaluation and correlation adequacy assessment, excluding cases or variables noted with irregularities and applying preprocessing operations most suitable for the downstream analysis.
+|
+| **[B]** Multiple exploratory factor analysis model structures with various parameter combinations were formulated considering different **Factor Extraction** and **Factor Rotation** methods. The best models were determined using performance metrics **Bayesian Information Criterion (BIC)** and **High Residual Rate**. All candidate models were additionally compared based on the contexts presented by the derived latent factors including their loadings and correlations. 
+|
+| **[C]** The **3-Factor** and **4-Factor** model structures from the exploratory factor analysis which implemented **Maximum Likelihood Factor Extraction** and **Promax Rotation** demonstrated the best fit and improved interpretation of their latent factors. The selected **3-Factor Model** hypothesized the relationship between 3 latent factors and observed chronic disease indicators including **Unhealthy Lifestyle** with higher loadings toward increased **Heart Disease Mortality**, **Stroke Mortality**, **Overweight Incidence**, **Renal Disease Mortality** and **Diabetes Mortality**; **Poor Mental Health** with higher loading towards increased **Mentally Unhealthy Days**; and **Tobacco Use** with higher loadings toward increased **Smoking Prevalence** and **Pulmonary Disease Mortality**. The selected **4-Factor Model** hypothesized the relationship between 4 latent factors and observed chronic disease indicators including **Unhealthy Lifestyle** with higher loadings toward increased **Heart Disease Mortality**, **Stroke Mortality** and **Overweight Incidence**; **Physical Inactivity** with higher loadings toward increased **Mentally Unhealthy Days** and **Arthritis Incidence**; **Poor Nutrition** with higher loadings toward increased **Renal Disease Mortality** and **Diabetes Mortality**; and **Tobacco Use** with higher loadings toward increased **Smoking Prevalence** and **Pulmonary Disease Mortality**. 
+|
+| **[D]** Confirmatory factor analysis was conducted to evaluate the hypothesized **3-Factor** and **4-Factor** model structures using performance metrics **Root Mean Square Error of Approximation (RMSEA)**, **Comparative Fit Index (CFI)**, **Tucker Lewis Index (TLI)**,  and **Standardized Root Mean Square Error of  the Residual (SRMR)**. The hypothesized **4-Factor Model** model provided a better fit to the observed chronic disease indicators. Factor loadings and latent factor correlations also aligned with theoretical expectations. The final model was defined by the respective factors and indicators as follows: **Unhealthy Lifestyle** with higher loadings toward increased **Heart Disease Mortality**, **Stroke Mortality** and **Overweight Incidence**; **Physical Inactivity** with higher loadings toward increased **Mentally Unhealthy Days** and **Arthritis Incidence**; **Poor Nutrition** with higher loadings toward increased **Renal Disease Mortality** and **Diabetes Mortality**; and **Tobacco Use** with higher loadings toward increased **Smoking Prevalence** and **Pulmonary Disease Mortality**..
+|
+| **[D]** Post-hoc exploration of the model results involved **Dandelion Plots** which simultaneously visualized both factor variances and loadings from the exploratory factor analysis; and **Path Diagrams** which illustrated the structure of the model from confirmatory factor analysis by indicating how the latent factors influence the observed variables. These results helped provide insights on the importance, contribution and effect of the various underlying constructs to the observed chronic disease indicators.
+|
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_1.png)
 |
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_2.png)
@@ -3041,6 +3072,8 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_4.png)
 |
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_5.png)
+|
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_6.png)
 |
 # **3. References**
 |
