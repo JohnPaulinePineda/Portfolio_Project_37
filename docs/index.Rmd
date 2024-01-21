@@ -2329,28 +2329,28 @@ dandelion(FA_ML_P_4F_FactorLoading,
 | **[B]** Among the applied **Varimax** and **Promax** rotation methods, **Promax** rotation was selected with the assumption of correlation among the extracted formulated loadings.
 |
 | **[C]** The selected **4-Factor Model** from the exploratory factor analysis hypothesized the relationship between 4 latent factors and observed chronic disease indicator variables as follows:
-|      **[C.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|      **[C.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loadings toward the following descriptors:
 |             **[C.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
 |             **[C.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
 |             **[C.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
-|      **[C.2]** Factor 2 was a latent factor describing **Physical Inactivity** with higher loading towards the following descriptors:
+|      **[C.2]** Factor 2 was a latent factor describing **Physical Inactivity** with higher loadings toward the following descriptors:
 |             **[C.2.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
 |             **[C.2.2]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
-|      **[C.3]** Factor 3 was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
+|      **[C.3]** Factor 3 was a latent factor describing **Poor Nutrition** with higher loadings toward the following descriptors:
 |             **[C.3.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
 |             **[C.3.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
-|      **[C.4]** Factor 4 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|      **[C.4]** Factor 4 was a latent factor describing **Tobacco Use** with higher loadings toward the following descriptors:
 |             **[C.4.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
 |             **[C.4.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
 |
 | **[D]** The selected **3-Factor Model** from the exploratory factor analysis hypothesized the relationship between 3 latent factors and observed chronic disease indicator variables as follows:
-|      **[D.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|      **[D.1]** Factor 1 was a latent factor describing **Unhealthy Lifestyle** with higher loadings toward the following descriptors:
 |             **[D.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
 |             **[D.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
 |             **[D.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
 |             **[D.1.4]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
 |             **[D.1.5]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
-|      **[D.2]** Factor 2 was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|      **[D.2]** Factor 2 was a latent factor describing **Tobacco Use** with higher loadings toward the following descriptors:
 |             **[D.2.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
 |             **[D.2.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
 |             **[D.2.3]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
@@ -2548,17 +2548,17 @@ dandelion(FA_ML_V_3F_FactorLoading,
 ####  1.3.7.1 4-Factor Model Confirmatory Factor Analysis
 |
 | **[A]** Confirmatory factor analysis was conducted to evaluate the derived **4-Factor Model** from the exploratory factor analysis that hypothesized the relationship between 4 latent factors and observed chronic disease indicator variables as follows:
-|      **[A.1]** Factor 1 <span style="color: #FF0000">UNHLIF</span> was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|      **[A.1]** Factor 1 <span style="color: #FF0000">UNHLIF</span> was a latent factor describing **Unhealthy Lifestyle** with higher loadings toward the following descriptors:
 |             **[A.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
 |             **[A.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
 |             **[A.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
-|      **[A.2]** Factor 2 <span style="color: #FF0000">PINACT</span> was a latent factor describing **Physical Inactivity** with higher loading towards the following descriptors:
+|      **[A.2]** Factor 2 <span style="color: #FF0000">PINACT</span> was a latent factor describing **Physical Inactivity** with higher loadings toward the following descriptors:
 |             **[A.2.1]** <span style="color: #FF0000">MEUNDA</span>: Mentally Unhealthy Days
 |             **[A.2.2]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
-|      **[A.3]** Factor 3 <span style="color: #FF0000">PNUTRI</span> was a latent factor describing **Poor Nutrition** with higher loading towards the following descriptors:
+|      **[A.3]** Factor 3 <span style="color: #FF0000">PNUTRI</span> was a latent factor describing **Poor Nutrition** with higher loadings toward the following descriptors:
 |             **[A.3.1]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
 |             **[A.3.2]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
-|      **[A.4]** Factor 4 <span style="color: #FF0000">TOBUSE</span> was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|      **[A.4]** Factor 4 <span style="color: #FF0000">TOBUSE</span> was a latent factor describing **Tobacco Use** with higher loadings toward the following descriptors:
 |             **[A.4.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
 |             **[A.4.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
 |
@@ -2695,13 +2695,13 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 ####  1.3.7.2 3-Factor Model Confirmatory Factor Analysis
 |
 | **[A]** Confirmatory factor analysis was conducted to evaluate the derived **3-Factor Model** from the exploratory factor analysis that hypothesized the relationship between 3 latent factors and observed chronic disease indicator variables as follows:
-|      **[A.1]** Factor 1 <span style="color: #FF0000">UNHLIF</span> was a latent factor describing **Unhealthy Lifestyle** with higher loading towards the following descriptors:
+|      **[A.1]** Factor 1 <span style="color: #FF0000">UNHLIF</span> was a latent factor describing **Unhealthy Lifestyle** with higher loadings toward the following descriptors:
 |             **[A.1.1]** <span style="color: #FF0000">HDMORT</span>: Heart Disease Mortality
 |             **[A.1.2]** <span style="color: #FF0000">STMORT</span>: Stroke Mortality
 |             **[A.1.3]** <span style="color: #FF0000">OVWINC</span>: Overweight Incidence
 |             **[A.1.4]** <span style="color: #FF0000">RDMORT</span>: Renal Disease Mortality
 |             **[A.1.5]** <span style="color: #FF0000">DBMORT</span>: Diabetes Mortality
-|      **[A.2]** Factor 2 <span style="color: #FF0000">TOBUSE</span> was a latent factor describing **Tobacco Use** with higher loading towards the following descriptors:
+|      **[A.2]** Factor 2 <span style="color: #FF0000">TOBUSE</span> was a latent factor describing **Tobacco Use** with higher loadings toward the following descriptors:
 |             **[A.2.1]** <span style="color: #FF0000">SMPREV</span>: Smoking Prevalence
 |             **[A.2.2]** <span style="color: #FF0000">PDMORT</span>: Pulmonary Disease Mortality
 |             **[A.2.3]** <span style="color: #FF0000">ARTINC</span>: Arthritis Incidence
@@ -3002,9 +3002,9 @@ dandelion(FA_ML_V_4F_FactorLoading,
 ####  1.3.9.2 Confirmatory Factor Analysis Path Diagram
 |
 | **[A]** The formulated path diagram for the final **4-Factor Model** from the confirmatory factor analysis showed:
-|      **[A.1]** magnitude and direction of relationships between the underlying constructs and the chronic disease indicators.
-|      **[A.2]** estimated variance for each chronic disease indicator.
-|      **[A.3]** estimated pairwise covariance between the underlying constructs.
+|      **[A.1]** Magnitude and direction of relationships between the underlying constructs and the chronic disease indicators.
+|      **[A.2]** Estimated variance for each chronic disease indicator.
+|      **[A.3]** Estimated pairwise covariance between the underlying constructs.
 |
 |
 
@@ -3061,7 +3061,7 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 | **[D]** Confirmatory factor analysis was conducted to evaluate the hypothesized **3-Factor** and **4-Factor** model structures using performance metrics **Root Mean Square Error of Approximation (RMSEA)**, **Comparative Fit Index (CFI)**, **Tucker Lewis Index (TLI)**,  and **Standardized Root Mean Square Error of  the Residual (SRMR)**. The hypothesized **4-Factor Model** model provided a better fit to the observed chronic disease indicators. Factor loadings and latent factor correlations also aligned with theoretical expectations. The final model was defined by the respective factors and indicators as follows: **Unhealthy Lifestyle** with higher loadings toward increased **Heart Disease Mortality**, **Stroke Mortality** and **Overweight Incidence**; **Physical Inactivity** with higher loadings toward increased **Mentally Unhealthy Days** and **Arthritis Incidence**; **Poor Nutrition** with higher loadings toward increased **Renal Disease Mortality** and **Diabetes Mortality**; and **Tobacco Use** with higher loadings toward increased **Smoking Prevalence** and **Pulmonary Disease Mortality**..
 |
-| **[D]** Post-hoc exploration of the model results involved **Dandelion Plots** which simultaneously visualized both factor variances and loadings from the exploratory factor analysis; and **Path Diagrams** which illustrated the structure of the model from confirmatory factor analysis by indicating how the latent factors influence the observed variables. These results helped provide insights on the importance, contribution and effect of the various underlying constructs to the observed chronic disease indicators.
+| **[E]** Post-hoc exploration of the model results involved **Dandelion Plots** which simultaneously visualized both factor variances and loadings from the exploratory factor analysis; and **Path Diagrams** which illustrated the structure of the model from confirmatory factor analysis by indicating how the latent factors influence the observed variables. These results helped provide insights on the importance, contribution and effect of the various underlying constructs to the observed chronic disease indicators.
 |
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_1.png)
 |
@@ -3122,14 +3122,19 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 | **[R Package]** [gplots](https://cran.r-project.org/web/packages/gplots/gplots.pdf) by Tal Galili
 | **[R Package]** [qgraph](https://cran.r-project.org/web/packages/qgraph/qgraph.pdf) by Sacha Epskamp
 | **[R Package]** [ggplot2](https://search.r-project.org/R/refmans/stats/html/00Index.html) by Hadley Wickham, Winston Chang, Lionel Henry and Thomas Lin Pedersen
+| **[R Package]** [GGally](xx) by xx
 | **[R Package]** [psych](https://cran.r-project.org/web/packages/psych/psych.pdf) by William Revelle
 | **[R Package]** [nFactors](https://cran.r-project.org/web/packages/nFactors/nFactors.pdf) by Gilles Raiche and David Magis
 | **[R Package]** [MBESS](https://cran.r-project.org/web/packages/MBESS/MBESS.pdf) by Ken Kelley
 | **[R Package]** [DandEFA](https://cran.r-project.org/web/packages/DandEFA/DandEFA.pdf) by Artur Manukyan, Ahmet Sedef, Erhan Cene and Ibrahim Demir
 | **[R Package]** [EFAtools](https://cran.r-project.org/web/packages/EFAtools/EFAtools.pdf) by Markus Steiner and Silvia Grieder
-| **[R Package]** [parameters](https://cran.r-project.org/web/packages/parameters/parameters.pdf) by Daniel Ludecke
-| **[R Package]** [performance](https://cran.r-project.org/web/packages/performance/performance.pdf) by Daniel Ludecke
-| **[R Package]** [HH](https://cran.r-project.org/web/packages/HH/HH.pdf) by Richard Heiberger
+| **[R Package]** [tidyverse](https://www.tidyverse.org/packages/) by hadley Wickham
+| **[R Package]** [lavaan](https://cran.r-project.org/web/packages/lavaan/lavaan.pdf) by Yves Rosseel
+| **[R Package]** [semPlot](https://cran.r-project.org/web/packages/semPlot/semPlot.pdf) by Sacha Epskamp
+| **[R Package]** [semoutput](https://dr-jt.github.io/semoutput/) by Jason Tsukahara
+| **[R Package]** [sjPlot](https://cran.r-project.org/web/packages/sjPlot/sjPlot.pdf) by Daniel Lüdecke
+| **[R Package]** [GPArotation](https://cran.r-project.org/web/packages/GPArotation/GPArotation.pdf) by  Coen Bernaards
+| **[R Package]** [semTools](https://cran.r-project.org/web/packages/semTools/semTools.pdf) by Terrence Jorgensen
 | **[Article]** [6 Dimensionality Reduction Techniques in R (with Examples)](https://cmdlinetips.com/2022/07/dimensionality-reduction-techniques-in-r/) by CMDLineTips Team
 | **[Article]** [6 Dimensionality Reduction Algorithms With Python](https://machinelearningmastery.com/dimensionality-reduction-algorithms-with-python/) by Jason Brownlee
 | **[Article]** [Introduction to Dimensionality Reduction for Machine Learning](https://machinelearningmastery.com/dimensionality-reduction-for-machine-learning/) by Jason Brownlee
