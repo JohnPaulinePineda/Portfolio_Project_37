@@ -3048,8 +3048,8 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |         **[3.2] Higher Diabetes Mortality**
 |
 | **[4] Physical Inactivity**
-|         **[3.1] Higher Renal Disease Mortality**
-|         **[3.2] Higher Diabetes Mortality**
+|         **[4.1] Higher Renal Disease Mortality**
+|         **[4.2] Higher Diabetes Mortality**
 |
 | **Overall, the formulated model from the factor analyses effectively estimated contextually meaningful latent constructs based on patterns of observed chronic disease indicator correlations. Addressing issues related to unhealthy lifestyle, tobacco use, poor nutrition, and physical inactivity requires a multifaceted approach involving individuals, communities, healthcare systems, and policymakers. Comprehensive health education programs can be implemented to raise awareness about the risks of unhealthy behaviors, including smoking, poor nutrition, and physical inactivity. Tobacco control initiatives can be strengthened including public awareness campaigns, tobacco taxation, smoke-free policies, and smoking cessation programs. Policies can be advocated that create a supportive environment for community programs promoting nutrition interventions, physical wellness and healthcare access. Addressing these issues requires a collaborative effort across various sectors, and sustainable change often involves a combination of individual behavior change, community engagement, and policy implementation. Public health initiatives and interventions should consider the social determinants of health and work towards creating environments that support and promote healthy lifestyles.**
 |
@@ -3065,15 +3065,15 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 | **The current results have limitations which can be further addressed by extending the study to include the following actions:**
 |
-| [1] Performing sensitivity analysis for EFA by altering the analysis parameters to an extended list of extraction and rotation methods to ensure the stability of the results
+| **[1]** Performing sensitivity analysis for EFA by altering the analysis parameters to an extended list of extraction and rotation methods to ensure the stability of the results
 |
-| [2] Including an assessment of model parsimony for CFA to aim for a balance between model complexity and fit
+| **[2]** Including an assessment of model parsimony for CFA to aim for a balance between model complexity and fit
 |
-| [3] Additionally assessing convergent and discriminant validity of CFA by examining factor loadings, average variance extracted (AVE), and correlations between factors
+| **[3]** Additionally assessing convergent and discriminant validity of CFA by examining factor loadings, average variance extracted (AVE), and correlations between factors
 |
-| [4] Conducting sensitivity analyses for CFA by testing alternative models or including additional paths to assess potential misspecification of the measurement model
+| **[4]** Conducting sensitivity analyses for CFA by testing alternative models or including additional paths to assess potential misspecification of the measurement model
 |
-| [5] Considering modifying the CFA model based on theoretical rationale, modification indices, or substantive considerations to improve model fit and theoretical coherence
+| **[5]** Considering modifying the CFA model based on theoretical rationale, modification indices, or substantive considerations to improve model fit and theoretical coherence
 |
 | ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_1.png)
 |
