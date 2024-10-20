@@ -1,6 +1,6 @@
 ---
 title: 'Unsupervised Learning : Uncovering Underlying Constructs of Chronic Disease Indicators Across US States Using Exploratory and Confirmatory Factor Analyses'
-author: "John Pauline Pineda"
+author: "<b><a href='https://github.com/JohnPaulinePineda'>John Pauline Pineda</a></b>"
 date: "November 5, 2023"
 output: 
   html_document:
@@ -170,7 +170,7 @@ library(RANN)
 library(pls)
 library(corrplot)
 library(lares)
-library(DMwR)
+library(DMwR2)
 library(gridExtra)
 library(rattle)
 library(RColorBrewer)
@@ -196,12 +196,17 @@ library(GPArotation)
 library(semTools)
 
 ##################################
+# Defining file paths
+##################################
+DATASETS_ORIGINAL_PATH <- file.path("datasets","original")
+
+##################################
 # Loading source and
 # formulating the analysis set
 ##################################
-CDI <- read.csv("ChronicDiseaseIndicators.csv",
-                      na.strings=c("NA","NaN"," ",""),
-                      stringsAsFactors = FALSE)
+CDI <- read.csv(file.path("..", DATASETS_ORIGINAL_PATH, "ChronicDiseaseIndicators.csv"),
+                na.strings=c("NA","NaN"," ",""),
+                stringsAsFactors = FALSE)
 CDI <- as.data.frame(CDI)
 
 ##################################
@@ -3075,17 +3080,19 @@ semPlot::semPaths(CFA_4F_MODEL, latents = CFA_4F_MODEL_FACTORS, whatLabels = "st
 |
 | **[5]** Considering modifying the CFA model based on theoretical rationale, modification indices, or substantive considerations to improve model fit and theoretical coherence
 |
-| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_1.png)
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/images/summary_0.png)
 |
-| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_2.png)
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/images/summary_1.png)
 |
-| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_3.png)
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/images/summary_2.png)
 |
-| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_4.png)
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/images/summary_3.png)
 |
-| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_5.png)
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/images/summary_4.png)
 |
-| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/docs/summary_6.png)
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/images/summary_5.png)
+|
+| ![](D:/Github_Codes/ProjectPortfolio/Portfolio_Project_37/images/summary_6.png)
 |
 # **3. References**
 |
